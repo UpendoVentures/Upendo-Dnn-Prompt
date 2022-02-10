@@ -1,7 +1,7 @@
 # Upendo Prompt  
 This is a [DNN CMS](https://dnncommunity.org) extension that installs prompts to help you perform repetitive tasks.  
 
-This project was originally created by [Upendo Ventures](https://upendoventures.com/What/CMS/DNN) for the [DNN Summit 2022](https://dnnsummit.org] conference, and was used to present how to create prompts in DNN for the built-in command line interface used by superusers.  
+This project was originally created by [Upendo Ventures](https://upendoventures.com/What/CMS/DNN) for the [DNN Summit 2022](https://dnnsummit.org) conference, and was used to present how to create prompts in DNN for the built-in command line interface used by superusers.  
 
 * [Documentation](https://github.com/UpendoVentures/Upendo-Dnn-Prompt/wiki)  
 * [Download the Latest Release](https://github.com/UpendoVentures/Upendo-Dnn-Prompt/releases/latest)  
