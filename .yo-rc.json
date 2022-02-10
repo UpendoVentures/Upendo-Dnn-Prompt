@@ -1,0 +1,12 @@
+{
+  "generator-upendodnn": {
+    "promptValues": {
+      "yourName": "Will Strohl",
+      "company": "Upendo",
+      "companyUrl": "https://upendoventures.com",
+      "emailAddy": "solutions@upendoventures.com",
+      "companyName": "UpendoVentures",
+      "objectPrefix": "uvm"
+    }
+  }
+}

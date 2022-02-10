@@ -1,0 +1,15 @@
+<style>
+	div.uv-install-wrapper h3, div.uv-install-wrapper h4, div.uv-install-wrapper p, div.uv-install-wrapper hr, div.uv-install-wrapper ul { margin-bottom: 0.5em; }
+	div.uv-install-wrapper ul { padding-left: 2em; }
+</style>
+<div class="uv-install-wrapper">
+
+	<h1>UpendoPrompt Modules Extension for DNN</h1>
+
+	<h2>Version 01.00.00</h2>
+	<ul>
+		<li>Initial release.</li>
+		<li>Includes a prompt for: popup-mode</li>
+	</ul>
+
+</div>
