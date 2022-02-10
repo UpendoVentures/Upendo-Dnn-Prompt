@@ -1,3 +1,10 @@
+# Upendo Prompt  
+This is a [DNN CMS](https://dnncommunity.org) extension that installs prompts to help you perform repetitive tasks.  
+
+Please see the [Upendo Prompt project wiki](https://github.com/UpendoVentures/Upendo-Dnn-Prompt/wiki) for usage details.  
+
+This project was originally created for and used to present how to create prompts in DNN for the built-in command line interface used by superusers.  
+
 **A Special Note to ALL Developers...**  
 Please do not begin any development until you first read through and understand all of the notes in the README below.  
 
@@ -8,8 +15,7 @@ The previous version was not adhering to known best practices and as a result, i
 The solution currently expects to be in the following environment, but you can update that to be any version you'd like, provided all extensions will be compatible:  
 
 - DNN:  09.04.04  
-- Hotcakes Commerce:  03.02.03  
-- SQL:  2014+  
+- SQL:  2017+  
 
 You should build and develop in a development environment that's separate from the local environment where you'd be testing.  The examples below help to illustrate this...  
 
