@@ -3,7 +3,7 @@ This is a [DNN CMS](https://dnncommunity.org) extension that installs prompts to
 
 Please see the [Upendo Prompt project wiki](https://github.com/UpendoVentures/Upendo-Dnn-Prompt/wiki) for usage details.  
 
-This project was originally created for and used to present how to create prompts in DNN for the built-in command line interface used by superusers.  
+This project was originally created by [Upendo Ventures](https://upendoventures.com/What/CMS/DNN) for and used to present how to create prompts in DNN for the built-in command line interface used by superusers.  
 
 ---------------------------------------------
 
