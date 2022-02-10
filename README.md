@@ -5,6 +5,8 @@ Please see the [Upendo Prompt project wiki](https://github.com/UpendoVentures/Up
 
 This project was originally created for and used to present how to create prompts in DNN for the built-in command line interface used by superusers.  
 
+---------------------------------------------
+
 **A Special Note to ALL Developers...**  
 Please do not begin any development until you first read through and understand all of the notes in the README below.  
 
