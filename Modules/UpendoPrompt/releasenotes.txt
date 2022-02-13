@@ -6,7 +6,12 @@
 
 	<h1>UpendoPrompt Modules Extension for DNN</h1>
 
-	<h2>Version 01.00.00</h2>
+	<h2>Version 01.01.01</h2>
+	<ul>
+		<li>`debug-mode`: Removes a redundant call to save the configuration update.</li>
+	</ul>
+
+	<h2>Version 01.01.00</h2>
 	<ul>
 		<li>Includes a prompt for: `debug-mode`</li>
 		<li>Resolves localization fixes for the 'popup-mode' prompt.</li>
