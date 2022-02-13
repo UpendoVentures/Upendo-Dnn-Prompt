@@ -153,8 +153,6 @@ namespace Upendo.Modules.UpendoPrompt.Commands
             var app = DotNetNukeContext.Current.Application;
             var merge = new DotNetNuke.Services.Installer.XmlMerge(xmlDoc, Globals.FormatVersion(app.Version), app.Description);
             merge.UpdateConfigs();
-
-            merge.UpdateConfigs();
         }
 
         protected override void LogError(Exception ex)
