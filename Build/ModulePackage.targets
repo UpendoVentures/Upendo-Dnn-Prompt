@@ -58,6 +58,7 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       <InstallInclude Include="**\*.jpg" Exclude="packages\**;node_modules\**;clientApp\**;client-app\**" />
       <InstallInclude Include="**\*.bmp" Exclude="packages\**;node_modules\**;clientApp\**;client-app\**" />
       <InstallInclude Include="**\*.xml" Exclude="packages\**;node_modules\**;clientApp\**;client-app\**;bin\**" />
+      <InstallInclude Include="**\*.resources" Exclude="packages\**;node_modules\**;clientApp\**;client-app\**;bin\**" />
       <InstallInclude Include="**\web.config" Exclude="packages\**;node_modules\**;clientApp\**;client-app\**" />
     </ItemGroup>
 

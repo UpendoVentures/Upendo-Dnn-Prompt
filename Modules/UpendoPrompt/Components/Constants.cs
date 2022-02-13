@@ -32,15 +32,19 @@ namespace Upendo.Modules.UpendoPrompt.Components
         public const string PromptCategory = "Upendo Ventures";
         public const string OutputPrefix = "Upendo Prompt";
 
-        public static class PortalSettingKeys
+        public const string STATE_TRUE = "true";
+        public const string STATE_FALSE = "false";
+
+        public static class SettingKeys
         {
-            public const string PortalSetting_Popups = "EnablePopUps";
+            public const string HostSetting_DebugMode = "DebugMode";
+            public const string PortalSetting_Popup = "EnablePopUps";
         }
 
         public static class LocalizationKeys
         {
-            public const string PopupsEnabled = "PopupsEnabled";
-            public const string PopupsDisabled = "PopupsDisabled";
+            public const string PopupsEnabled = "PopupEnabled";
+            public const string PopupDisabled = "PopupDisabled";
             public const string ErrorOccurred = "ErrorOccurred";
 
             public const string FlagMode = "Prompt_PopupMode_FlagMode";
@@ -50,6 +54,9 @@ namespace Upendo.Modules.UpendoPrompt.Components
             public const string PromptScopeInvalid = "Prompt_ScopeInvalid";
             public const string ScopeCurrent = "ScopeCurrent";
             public const string ScopeAll = "ScopeAll";
+
+            public const string DebugOn = "DebugOn";
+            public const string DebugOff = "DebugOff";
         }
     }
 }
