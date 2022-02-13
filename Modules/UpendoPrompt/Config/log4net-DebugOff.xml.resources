@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <nodes configfile="DotNetNuke.log4net.config">
+    <node path="/log4net/root/level" action="updateattribute" name="value" value="Error" />
+  </nodes>
+</configuration>

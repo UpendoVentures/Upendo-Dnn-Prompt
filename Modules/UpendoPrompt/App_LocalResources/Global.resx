@@ -117,31 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DebugOff.Text" xml:space="preserve">
+    <value>Debugging has been turned off in all areas of the site.</value>
+  </data>
+  <data name="DebugOn.Text" xml:space="preserve">
+    <value>Debugging has been enabled throughout the site. All visitors will experience slow page loads for the next few moments. </value>
+  </data>
   <data name="ErrorOccurred.Text" xml:space="preserve">
     <value>An error occurred. Please check the log files to find and resolve the issue.</value>
   </data>
   <data name="ModuleHelp.Text" xml:space="preserve">
     <value>&lt;p&gt;No information at this time.&lt;/p&gt;</value>
   </data>
-  <data name="PopupsDisabled.Text" xml:space="preserve">
+  <data name="PopupDisabled.Text" xml:space="preserve">
     <value>Popups have been disabled for {0}.</value>
   </data>
-  <data name="PopupsEnabled.Text" xml:space="preserve">
+  <data name="PopupEnabled.Text" xml:space="preserve">
     <value>Popups have been enabled for {0}.</value>
   </data>
-  <data name="PromptPopupsMode.Text" xml:space="preserve">
+  <data name="PromptDebugMode.Text" xml:space="preserve">
+    <value>Allows you to turn on debugging in your site. This method enables debugging in the web.config, site settings, and the Log4Net configuration file.</value>
+  </data>
+  <data name="PromptPopupMode.Text" xml:space="preserve">
     <value>Allows you to enable/disable the popup editing feature on the current website or all sites in this installation. </value>
   </data>
   <data name="Prompt_ModeInvalid.Text" xml:space="preserve">
     <value>The mode can only be 'enable' or 'disable'. The default is 'disable'.</value>
   </data>
-  <data name="Prompt_PopupsMode_FlagMode.Text" xml:space="preserve">
+  <data name="Prompt_PopupMode_FlagMode.Text" xml:space="preserve">
     <value>Specify whether you want to enable or disable the popups on the specified site(s). Acceptable values include 'enable' and 'disable'.  </value>
   </data>
-  <data name="Prompt_PopupsMode_FlagScope.Text" xml:space="preserve">
+  <data name="Prompt_PopupMode_FlagScope.Text" xml:space="preserve">
     <value>Specify whether you want to apply this to only the current site, or all sites. The accepted values include 'current' and 'all'.</value>
   </data>
-  <data name="Prompt_PopupsMode_ResultHtml.Text" xml:space="preserve">
+  <data name="Prompt_PopupMode_ResultHtml.Text" xml:space="preserve">
     <value>&lt;div&gt;
 	&lt;h4&gt;Enable or disable popups on the current or all sites&lt;/h4&gt;
 	

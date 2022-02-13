@@ -8,8 +8,16 @@
 
 	<h2>Version 01.00.00</h2>
 	<ul>
+		<li>Includes a prompt for: `debug-mode`</li>
+		<li>Resolves localization fixes for the 'popup-mode' prompt.</li>
+		<li>Cleaned up a minor typo in the solution project file.</li>
+		<li>Updated build process to include .resource files when in a Config folder.</li>
+	</ul>
+
+	<h2>Version 01.00.00</h2>
+	<ul>
 		<li>Initial release.</li>
-		<li>Includes a prompt for: popup-mode</li>
+		<li>Includes a prompt for: `popup-mode`</li>
 	</ul>
 
 </div>

@@ -100,7 +100,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                 {
                     PortalController.Instance.UpdatePortalSetting(
                         PortalSettings.PortalId,
-                        Constants.PortalSettingKeys.PortalSetting_Popups,
+                        Constants.SettingKeys.PortalSetting_Popup,
                         newMode.ToString(),
                         true,
                         PortalSettings.CultureCode,
@@ -112,7 +112,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                     {
                         PortalController.Instance.UpdatePortalSetting(
                             portal.PortalID, // deprecated - REPLACE!!!
-                            Constants.PortalSettingKeys.PortalSetting_Popups,
+                            Constants.SettingKeys.PortalSetting_Popup,
                             newMode.ToString(),
                             true,
                             portal.CultureCode,
@@ -133,7 +133,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                 }
                 else
                 {
-                    output = string.Format(this.LocalizeString(Constants.LocalizationKeys.PopupsDisabled), outputScope);
+                    output = string.Format(this.LocalizeString(Constants.LocalizationKeys.PopupDisabled), outputScope);
                 }
 
                 return new ConsoleResultModel
