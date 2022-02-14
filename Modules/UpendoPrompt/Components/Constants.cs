@@ -31,9 +31,16 @@ namespace Upendo.Modules.UpendoPrompt.Components
         public const string Namespace = "uvm";
         public const string PromptCategory = "Upendo Ventures";
         public const string OutputPrefix = "Upendo Prompt";
+        
+        public const string CONFIG_EXT = ".config";
+        public const string LOG4NET_CONFIG = "DotNetNuke.log4net.config";
 
         public const string STATE_TRUE = "true";
         public const string STATE_FALSE = "false";
+
+        public const string FORMAT_IMPORTANT = "<span style=\"color:red;font-weight:bold;>{0}</span>";
+        public const string FORMAT_WARNING = "<span style=\"color:yellow;font-weight:bold;>{0}</span>";
+        public const string FORMAT_SUCCESS = "<span style=\"color:green;font-weight:bold;>{0}</span>";
 
         public static class SettingKeys
         {
@@ -57,6 +64,15 @@ namespace Upendo.Modules.UpendoPrompt.Components
 
             public const string DebugOn = "DebugOn";
             public const string DebugOff = "DebugOff";
+
+            public const string DebugStatus_Host = "DebugStatusHost";
+            public const string DebugStatus_Log4net = "DebugStatusLog4net";
+            public const string DebugStatus_WebConfig = "DebugStatusWebConfig";
+            public const string DebugEnabled = "DebugEnabled";
+            public const string DebugDisabled = "DebugDisabled";
+
+            public const string ENABLED = "Enabled";
+            public const string DISABLED = "Disabled";
         }
     }
 }

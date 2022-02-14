@@ -24,8 +24,12 @@
 #endregion
 
 using System;
+using System.IO;
+using System.Xml;
 using Dnn.PersonaBar.Library.Prompt;
 using Dnn.PersonaBar.Library.Prompt.Models;
+using DotNetNuke.Common;
+using DotNetNuke.Common.Utilities;
 
 namespace Upendo.Modules.UpendoPrompt.Components
 {
@@ -41,6 +45,40 @@ namespace Upendo.Modules.UpendoPrompt.Components
             {
                 return Constants.PromptLocalResourceFile;
             }
+        }
+
+        protected string GetConfigFile(string configFile)
+        {
+            if (configFile.EndsWith(Constants.CONFIG_EXT, StringComparison.InvariantCultureIgnoreCase))
+            {
+                var configDoc = Config.Load(configFile);
+                using (var txtWriter = new StringWriter())
+                {
+                    using (var writer = new XmlTextWriter(txtWriter))
+                    {
+                        writer.Formatting = Formatting.Indented;
+                        configDoc.WriteTo(writer);
+                    }
+
+                    return txtWriter.ToString();
+                }
+            }
+            else
+            {
+                var doc = File.ReadAllText(Path.Combine(Globals.ApplicationMapPath, configFile));
+                return doc;
+            }
+        }
+
+        protected bool GetLog4netStatus()
+        {
+            var doc = new XmlDocument();
+            doc.Load(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Constants.LOG4NET_CONFIG));
+
+            var node = doc.DocumentElement.SelectSingleNode("/log4net/root/level");
+            var log4netStatus = node.Attributes["value"].Value.ToString();
+
+            return (log4netStatus == "All");
         }
     }
 }
