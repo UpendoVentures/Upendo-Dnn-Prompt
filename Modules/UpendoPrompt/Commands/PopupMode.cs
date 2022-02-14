@@ -138,7 +138,8 @@ namespace Upendo.Modules.UpendoPrompt.Commands
 
                 return new ConsoleResultModel
                 {
-                    Output = output
+                    Output = output,
+                    IsError = false
                 };
             }
             catch (Exception e)

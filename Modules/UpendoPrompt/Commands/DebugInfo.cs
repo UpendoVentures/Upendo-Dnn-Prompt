@@ -24,8 +24,13 @@
 #endregion
 
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Web;
 using System.Xml;
+using System.Xml.Linq;
 using Dnn.PersonaBar.Library.Helper;
 using Dnn.PersonaBar.Library.Prompt;
 using Dnn.PersonaBar.Library.Prompt.Attributes;
@@ -40,25 +45,16 @@ using DotNetNuke.Entities.Profile;
 using DotNetNuke.Entities.Users;
 using DotNetNuke.Instrumentation;
 using Upendo.Modules.UpendoPrompt.Components;
+using Upendo.Modules.UpendoPrompt.Entities;
 using Constants = Upendo.Modules.UpendoPrompt.Components.Constants;
 
 namespace Upendo.Modules.UpendoPrompt.Commands
 {
-    [ConsoleCommand("debug-mode", Constants.PromptCategory, "PromptDebugMode")]
-    public class DebugMode : PromptBase, IConsoleCommand
+    [ConsoleCommand("debug-info", Constants.PromptCategory, "PromptDebugInfo")]
+    public class DebugInfo : PromptBase, IConsoleCommand
     {
-        private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(DebugMode));
-
-        #region Constants
-
-        private const string WEBCONFIG_DEBUG_ON = "~/DesktopModules/UpendoPrompt/Config/webConfig-DebugOn.xml.resources";
-        private const string WEBCONFIG_DEBUG_OFF = "~/DesktopModules/UpendoPrompt/Config/webConfig-DebugOff.xml.resources";
+        private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(DebugInfo));
         
-        private const string LOG4NET_DEBUG_ON = "~/DesktopModules/UpendoPrompt/Config/log4net-DebugOn.xml.resources";
-        private const string LOG4NET_DEBUG_OFF = "~/DesktopModules/UpendoPrompt/Config/log4net-DebugOff.xml.resources";
-
-        #endregion
-
         #region Implementation
 
         public override void Init(string[] args, PortalSettings portalSettings, UserInfo userInfo, int activeTabId)
@@ -70,33 +66,50 @@ namespace Upendo.Modules.UpendoPrompt.Commands
         {
             try
             {
-                var currentState = Host.DebugMode;
-                var newState = !currentState;
+                var debugHost = Host.DebugMode;
+                var debugWebConfig = HttpContext.Current.IsDebuggingEnabled;
+                var debugLog4net = GetLog4netStatus(); 
 
-                // site debug mode
-                HostController.Instance.Update(Constants.SettingKeys.HostSetting_DebugMode, newState.ToString());
+                var enabled = LocalizeString(Constants.LocalizationKeys.ENABLED).ToUpper();
+                // DNN is stripping out comments with HTML added 
+                //var enabled = string.Format(Constants.FORMAT_IMPORTANT, LocalizeString(Constants.LocalizationKeys.ENABLED));
+                var disabled = LocalizeString(Constants.LocalizationKeys.DISABLED).ToUpper();
 
-                // web.config debug mode
-                MergeWebConfig(newState);
-                
-                // log4net debug mode
-                MergeLog4net(newState);
+                var messages = new List<PromptMessage>();
+
+                messages.Add(new PromptMessage
+                {
+                    Message = string.Format(LocalizeString(Constants.LocalizationKeys.DebugStatus_Host), debugHost ? enabled : disabled)
+                });
+
+                messages.Add(new PromptMessage
+                {
+                    Message = string.Format(LocalizeString(Constants.LocalizationKeys.DebugStatus_WebConfig), debugWebConfig ? enabled : disabled)
+                });
+
+                messages.Add(new PromptMessage
+                {
+                    Message = string.Format(LocalizeString(Constants.LocalizationKeys.DebugStatus_Log4net), debugLog4net ? enabled : disabled)
+                });
 
                 var output = string.Empty;
-
-                if (newState)
+                if (debugWebConfig || debugLog4net || debugHost)
                 {
-                    output = this.LocalizeString(Constants.LocalizationKeys.DebugOn);
+                    output = LocalizeString(Constants.LocalizationKeys.DebugEnabled);
+                    // DNN is stripping out comments with HTML added 
+                    //output = string.Format(Constants.FORMAT_IMPORTANT, LocalizeString(Constants.LocalizationKeys.DebugEnabled));
                 }
                 else
                 {
-                    output = this.LocalizeString(Constants.LocalizationKeys.DebugOff);
+                    output = LocalizeString(Constants.LocalizationKeys.DebugDisabled);
                 }
-                
+
                 return new ConsoleResultModel
-                {
-                    Output = output,
-                    IsError = false
+                { 
+                    Records = messages.Count,
+                    Data = messages,
+                    IsError = false, 
+                    Output = output
                 };
             }
             catch (Exception e)
@@ -109,27 +122,6 @@ namespace Upendo.Modules.UpendoPrompt.Commands
         #endregion
 
         #region Helpers
-
-        private void MergeWebConfig(bool newState)
-        {
-            var filePath = System.Web.HttpContext.Current.Server.MapPath(newState ? WEBCONFIG_DEBUG_ON : WEBCONFIG_DEBUG_OFF);
-
-            ExecuteMerge(filePath);
-        }
-
-        private void MergeLog4net(bool newState)
-        {
-            var filePath = System.Web.HttpContext.Current.Server.MapPath(newState ? LOG4NET_DEBUG_ON : LOG4NET_DEBUG_OFF);
-
-            ExecuteMerge(filePath);
-        }
-
-        private void ExecuteMerge(string xmlDoc)
-        {
-            var app = DotNetNukeContext.Current.Application;
-            var merge = new DotNetNuke.Services.Installer.XmlMerge(xmlDoc, Globals.FormatVersion(app.Version), app.Description);
-            merge.UpdateConfigs();
-        }
 
         protected override void LogError(Exception ex)
         {

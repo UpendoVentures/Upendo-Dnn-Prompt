@@ -6,6 +6,12 @@
 
 	<h1>UpendoPrompt Modules Extension for DNN</h1>
 
+	<h2>Version 01.02.00</h2>
+	<ul>
+		<li>`debug-info`: A new command is available that lists the debug mode for the major 3 debug areas.</li>
+		<li>Some minor refactoring was necessary to add the new prompt.</li>
+	</ul>
+
 	<h2>Version 01.01.01</h2>
 	<ul>
 		<li>`debug-mode`: Removes a redundant call to save the configuration update.</li>
