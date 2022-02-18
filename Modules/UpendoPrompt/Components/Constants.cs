@@ -73,6 +73,14 @@ namespace Upendo.Modules.UpendoPrompt.Components
 
             public const string ENABLED = "Enabled";
             public const string DISABLED = "Disabled";
+
+            public const string RECORDS_NONE = "RecordsNone";
+            public const string RECORDS_SOME = "RecordsSome";
+        }
+
+        public static class Procedures
+        {
+            public const string ThemesUsed = "uvm_Prompt_GetThemesUsed";
         }
     }
 }

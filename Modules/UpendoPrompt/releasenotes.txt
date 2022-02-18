@@ -6,6 +6,12 @@
 
 	<h1>UpendoPrompt Modules Extension for DNN</h1>
 
+	<h2>Version 01.03.00</h2>
+	<ul>
+		<li>`themes-used`: A new command is available that lists the themes used throughout the DNN instance.</li>
+		<li>Updated the help text for `debug-info` and `debug-mode`.</li>
+	</ul>
+
 	<h2>Version 01.02.00</h2>
 	<ul>
 		<li>`debug-info`: A new command is available that lists the debug mode for the major 3 debug areas.</li>
