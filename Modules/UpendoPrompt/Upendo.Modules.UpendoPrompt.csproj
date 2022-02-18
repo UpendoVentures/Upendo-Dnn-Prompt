@@ -77,6 +77,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\ThemesUsed.cs" />
     <Compile Include="Commands\DebugInfo.cs" />
     <Compile Include="Commands\DebugMode.cs" />
     <Compile Include="Commands\PopupMode.cs" />
@@ -86,8 +87,11 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Components\PromptBase.cs" />
+    <Compile Include="Data\DataAccess.cs" />
     <Compile Include="Entities\Interfaces\IPromptMessage.cs" />
+    <Compile Include="Entities\Interfaces\IThemeItem.cs" />
     <Compile Include="Entities\PromptMessage.cs" />
+    <Compile Include="Entities\ThemeItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View.ascx.cs">
       <DependentUpon>View.ascx</DependentUpon>
@@ -100,6 +104,8 @@
   <ItemGroup>
     <Content Include="NuGet.config" />
     <None Include="packages.config" />
+    <Content Include="Providers\DataProviders\SqlDataProvider\01.03.00.SqlDataProvider" />
+    <Content Include="Providers\DataProviders\SqlDataProvider\Uninstall.SqlDataProvider" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="DotNetNuke" />
