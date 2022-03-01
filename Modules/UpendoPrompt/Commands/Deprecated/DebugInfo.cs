@@ -24,36 +24,38 @@
 #endregion
 
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Web;
+using System.Xml;
+using System.Xml.Linq;
+using Dnn.PersonaBar.Library.Helper;
 using Dnn.PersonaBar.Library.Prompt;
 using Dnn.PersonaBar.Library.Prompt.Attributes;
 using Dnn.PersonaBar.Library.Prompt.Models;
 using DotNetNuke.Application;
 using DotNetNuke.Common;
+using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Controllers;
 using DotNetNuke.Entities.Host; 
 using DotNetNuke.Entities.Portals;
+using DotNetNuke.Entities.Profile;
 using DotNetNuke.Entities.Users;
 using DotNetNuke.Instrumentation;
 using Upendo.Modules.UpendoPrompt.Components;
+using Upendo.Modules.UpendoPrompt.Entities;
 using Constants = Upendo.Modules.UpendoPrompt.Components.Constants;
 
-namespace Upendo.Modules.UpendoPrompt.Commands
+namespace Upendo.Modules.UpendoPrompt.Commands.Deprecated
 {
-    [ConsoleCommand("set-debug", Constants.PromptCategory, "PromptDebugMode")]
-    public class DebugMode : PromptBase, IConsoleCommand
+    [Obsolete("Please use 'list-debug' instead. Will be removed in version 1.5.0 or higher.")]
+    [ConsoleCommand("debug-info", Constants.PromptCategory, "PromptDebugInfo")]
+    public class DebugInfo : PromptBase, IConsoleCommand
     {
-        private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(DebugMode));
-
-        #region Constants
-
-        private const string WEBCONFIG_DEBUG_ON = "~/DesktopModules/UpendoPrompt/Config/webConfig-DebugOn.xml.resources";
-        private const string WEBCONFIG_DEBUG_OFF = "~/DesktopModules/UpendoPrompt/Config/webConfig-DebugOff.xml.resources";
+        private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(DebugInfo));
         
-        private const string LOG4NET_DEBUG_ON = "~/DesktopModules/UpendoPrompt/Config/log4net-DebugOn.xml.resources";
-        private const string LOG4NET_DEBUG_OFF = "~/DesktopModules/UpendoPrompt/Config/log4net-DebugOff.xml.resources";
-
-        #endregion
-
         #region Implementation
 
         public override void Init(string[] args, PortalSettings portalSettings, UserInfo userInfo, int activeTabId)
@@ -65,29 +67,8 @@ namespace Upendo.Modules.UpendoPrompt.Commands
         {
             try
             {
-                var currentState = Host.DebugMode;
-                var newState = !currentState;
+                var output = string.Format(LocalizeString(Constants.LocalizationKeys.DEPRECATED), "list-debug");
 
-                // site debug mode
-                HostController.Instance.Update(Constants.SettingKeys.HostSetting_DebugMode, newState.ToString());
-
-                // web.config debug mode
-                MergeWebConfig(newState);
-                
-                // log4net debug mode
-                MergeLog4net(newState);
-
-                var output = string.Empty;
-
-                if (newState)
-                {
-                    output = this.LocalizeString(Constants.LocalizationKeys.DebugOn);
-                }
-                else
-                {
-                    output = this.LocalizeString(Constants.LocalizationKeys.DebugOff);
-                }
-                
                 return new ConsoleResultModel
                 {
                     Output = output,
@@ -104,27 +85,6 @@ namespace Upendo.Modules.UpendoPrompt.Commands
         #endregion
 
         #region Helpers
-
-        private void MergeWebConfig(bool newState)
-        {
-            var filePath = System.Web.HttpContext.Current.Server.MapPath(newState ? WEBCONFIG_DEBUG_ON : WEBCONFIG_DEBUG_OFF);
-
-            ExecuteMerge(filePath);
-        }
-
-        private void MergeLog4net(bool newState)
-        {
-            var filePath = System.Web.HttpContext.Current.Server.MapPath(newState ? LOG4NET_DEBUG_ON : LOG4NET_DEBUG_OFF);
-
-            ExecuteMerge(filePath);
-        }
-
-        private void ExecuteMerge(string xmlDoc)
-        {
-            var app = DotNetNukeContext.Current.Application;
-            var merge = new DotNetNuke.Services.Installer.XmlMerge(xmlDoc, Globals.FormatVersion(app.Version), app.Description);
-            merge.UpdateConfigs();
-        }
 
         protected override void LogError(Exception ex)
         {

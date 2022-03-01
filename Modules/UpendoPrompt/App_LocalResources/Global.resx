@@ -138,6 +138,9 @@
   <data name="DebugStatusWebConfig.Text" xml:space="preserve">
     <value>Debugging in the web.config is {0}.</value>
   </data>
+  <data name="Deprecated.Text" xml:space="preserve">
+    <value>This command has been deprecated. Please use '{0}' instead. This command will be removed in a future release.</value>
+  </data>
   <data name="Disabled.Text" xml:space="preserve">
     <value>disabled</value>
   </data>
@@ -172,22 +175,22 @@
     <value>&lt;div&gt;
         &lt;p&gt;Helps you see and know where debugging might already be turned on. This is helpful when you're not sure or have multiple people working on a site.&lt;/p&gt;
         &lt;h4&gt;Toggle whether the site is in debug mode, or running normally&lt;/h4&gt;
-        &lt;code class="block"&gt;debug-info&lt;/code&gt;
+        &lt;code class="block"&gt;list-debug&lt;/code&gt;
         &lt;p&gt;This command does not have any options.&lt;/p&gt;
         &lt;p&gt;If you find that one or more areas have debug turned on, you should use the command below to disable debug mode. You may need to run it twice.&lt;/p&gt;
-        &lt;code class="block"&gt;debug-mode&lt;/code&gt;
+        &lt;code class="block"&gt;set-debug&lt;/code&gt;
     &lt;/div&gt;</value>
   </data>
   <data name="Prompt_DebugMode_ResultHtml.Text" xml:space="preserve">
     <value>&lt;div&gt;
         &lt;p&gt;When you need more information to help diagnose and resolve an error, this command can help you get more verbose and detailed information.&lt;/p&gt;
         &lt;p&gt;&lt;strong&gt;WARNING!&lt;/strong&gt; When used, this command will RESTART your website. Page loads for the next few moments after running this command will be slower.&lt;/p&gt;
-        &lt;h4&gt;Using debug-mode&lt;/h4&gt;
-        &lt;code class="block"&gt;debug-mode&lt;/code&gt;
+        &lt;h4&gt;Using set-debug&lt;/h4&gt;
+        &lt;code class="block"&gt;set-debug&lt;/code&gt;
         &lt;p&gt;This command does not have any options.&lt;/p&gt;
         &lt;p&gt;When you run this command, debug mode is toggled in the superuser settings, web.config, and the DotNetNuke.log4net.config files.&lt;/p&gt;
         &lt;p&gt;If you're unsure if you need to run this command, first try running the command below.&lt;/p&gt;
-        &lt;code class="block"&gt;debug-info&lt;/code&gt;
+        &lt;code class="block"&gt;list-debug&lt;/code&gt;
     &lt;/div&gt;</value>
   </data>
   <data name="Prompt_ModeInvalid.Text" xml:space="preserve">
@@ -203,7 +206,7 @@
     <value>&lt;div&gt;
 	&lt;h4&gt;Enable or disable popups on the current or all sites&lt;/h4&gt;
 	
-	&lt;code class="block"&gt;popups-mode [--mode &amp;lt;enable|disable&amp;gt;] [--scope &amp;lt;current|all&amp;gt;]&lt;/code&gt;
+	&lt;code class="block"&gt;set-popups [--mode &amp;lt;enable|disable&amp;gt;] [--scope &amp;lt;current|all&amp;gt;]&lt;/code&gt;
 	&lt;p&gt;Popups have been [enabled/disabled] for [this site/all sites].&lt;/p&gt;
 	&lt;p&gt;Note:  If you don't enter any command arguments, you'll simply disable popups on the current website only.&lt;/p&gt;
 &lt;/div&gt;</value>
@@ -215,8 +218,8 @@
     <value>&lt;div&gt;
         &lt;p&gt;Ideally, this list should be as short as possible on most websites.&lt;/p&gt;
         &lt;p&gt;View all of the theme settings used on the entire DNN instance&lt;/p&gt;
-        &lt;h4&gt;Using themes-used&lt;/h4&gt;
-        &lt;code class="block"&gt;themes-used&lt;/code&gt;
+        &lt;h4&gt;Using list-themes&lt;/h4&gt;
+        &lt;code class="block"&gt;list-themes&lt;/code&gt;
         &lt;p&gt;A listing of all of the themes that have been specified in the superuser settings, site settings, pages, and modules will be listed.&lt;/p&gt;
     &lt;/div&gt;</value>
   </data>

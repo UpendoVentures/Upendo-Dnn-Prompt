@@ -24,24 +24,13 @@
 #endregion
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Web;
-using System.Xml;
-using System.Xml.Linq;
-using Dnn.PersonaBar.Library.Helper;
 using Dnn.PersonaBar.Library.Prompt;
 using Dnn.PersonaBar.Library.Prompt.Attributes;
 using Dnn.PersonaBar.Library.Prompt.Models;
-using DotNetNuke.Application;
-using DotNetNuke.Common;
-using DotNetNuke.Common.Utilities;
-using DotNetNuke.Entities.Controllers;
 using DotNetNuke.Entities.Host; 
 using DotNetNuke.Entities.Portals;
-using DotNetNuke.Entities.Profile;
 using DotNetNuke.Entities.Users;
 using DotNetNuke.Instrumentation;
 using Upendo.Modules.UpendoPrompt.Components;
@@ -50,7 +39,7 @@ using Constants = Upendo.Modules.UpendoPrompt.Components.Constants;
 
 namespace Upendo.Modules.UpendoPrompt.Commands
 {
-    [ConsoleCommand("debug-info", Constants.PromptCategory, "PromptDebugInfo")]
+    [ConsoleCommand("list-debug", Constants.PromptCategory, "PromptDebugInfo")]
     public class DebugInfo : PromptBase, IConsoleCommand
     {
         private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(DebugInfo));

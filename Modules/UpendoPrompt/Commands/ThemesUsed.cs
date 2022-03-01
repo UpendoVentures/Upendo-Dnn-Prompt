@@ -25,27 +25,19 @@
 
 using System;
 using System.Linq;
-using Dnn.PersonaBar.Library.Helper;
 using Dnn.PersonaBar.Library.Prompt;
 using Dnn.PersonaBar.Library.Prompt.Attributes;
 using Dnn.PersonaBar.Library.Prompt.Models;
-using DotNetNuke.Application;
-using DotNetNuke.Common;
-using DotNetNuke.Common.Utilities;
-using DotNetNuke.Entities.Controllers;
-using DotNetNuke.Entities.Host; 
 using DotNetNuke.Entities.Portals;
-using DotNetNuke.Entities.Profile;
 using DotNetNuke.Entities.Users;
 using DotNetNuke.Instrumentation;
 using Upendo.Modules.UpendoPrompt.Components;
 using Upendo.Modules.UpendoPrompt.Data;
-using Upendo.Modules.UpendoPrompt.Entities;
 using Constants = Upendo.Modules.UpendoPrompt.Components.Constants;
 
 namespace Upendo.Modules.UpendoPrompt.Commands
 {
-    [ConsoleCommand("themes-used", Constants.PromptCategory, "PromptThemeseUsed")]
+    [ConsoleCommand("list-themes", Constants.PromptCategory, "PromptThemeseUsed")]
     public class ThemesUsed : PromptBase, IConsoleCommand
     {
         private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(ThemesUsed));

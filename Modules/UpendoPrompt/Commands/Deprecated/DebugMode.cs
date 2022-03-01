@@ -24,35 +24,31 @@
 #endregion
 
 using System;
+using System.IO;
+using System.Xml;
+using Dnn.PersonaBar.Library.Helper;
 using Dnn.PersonaBar.Library.Prompt;
 using Dnn.PersonaBar.Library.Prompt.Attributes;
 using Dnn.PersonaBar.Library.Prompt.Models;
 using DotNetNuke.Application;
 using DotNetNuke.Common;
+using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Controllers;
 using DotNetNuke.Entities.Host; 
 using DotNetNuke.Entities.Portals;
+using DotNetNuke.Entities.Profile;
 using DotNetNuke.Entities.Users;
 using DotNetNuke.Instrumentation;
 using Upendo.Modules.UpendoPrompt.Components;
 using Constants = Upendo.Modules.UpendoPrompt.Components.Constants;
 
-namespace Upendo.Modules.UpendoPrompt.Commands
+namespace Upendo.Modules.UpendoPrompt.Commands.Deprecated
 {
-    [ConsoleCommand("set-debug", Constants.PromptCategory, "PromptDebugMode")]
+    [Obsolete("Please use 'debug-mode' instead. Will be removed in version 1.5.0 or higher.")]
+    [ConsoleCommand("debug-mode", Constants.PromptCategory, "PromptDebugMode")]
     public class DebugMode : PromptBase, IConsoleCommand
     {
         private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(DebugMode));
-
-        #region Constants
-
-        private const string WEBCONFIG_DEBUG_ON = "~/DesktopModules/UpendoPrompt/Config/webConfig-DebugOn.xml.resources";
-        private const string WEBCONFIG_DEBUG_OFF = "~/DesktopModules/UpendoPrompt/Config/webConfig-DebugOff.xml.resources";
-        
-        private const string LOG4NET_DEBUG_ON = "~/DesktopModules/UpendoPrompt/Config/log4net-DebugOn.xml.resources";
-        private const string LOG4NET_DEBUG_OFF = "~/DesktopModules/UpendoPrompt/Config/log4net-DebugOff.xml.resources";
-
-        #endregion
 
         #region Implementation
 
@@ -65,28 +61,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
         {
             try
             {
-                var currentState = Host.DebugMode;
-                var newState = !currentState;
-
-                // site debug mode
-                HostController.Instance.Update(Constants.SettingKeys.HostSetting_DebugMode, newState.ToString());
-
-                // web.config debug mode
-                MergeWebConfig(newState);
-                
-                // log4net debug mode
-                MergeLog4net(newState);
-
-                var output = string.Empty;
-
-                if (newState)
-                {
-                    output = this.LocalizeString(Constants.LocalizationKeys.DebugOn);
-                }
-                else
-                {
-                    output = this.LocalizeString(Constants.LocalizationKeys.DebugOff);
-                }
+                var output = string.Format(LocalizeString(Constants.LocalizationKeys.DEPRECATED), "set-debug");
                 
                 return new ConsoleResultModel
                 {
@@ -104,28 +79,6 @@ namespace Upendo.Modules.UpendoPrompt.Commands
         #endregion
 
         #region Helpers
-
-        private void MergeWebConfig(bool newState)
-        {
-            var filePath = System.Web.HttpContext.Current.Server.MapPath(newState ? WEBCONFIG_DEBUG_ON : WEBCONFIG_DEBUG_OFF);
-
-            ExecuteMerge(filePath);
-        }
-
-        private void MergeLog4net(bool newState)
-        {
-            var filePath = System.Web.HttpContext.Current.Server.MapPath(newState ? LOG4NET_DEBUG_ON : LOG4NET_DEBUG_OFF);
-
-            ExecuteMerge(filePath);
-        }
-
-        private void ExecuteMerge(string xmlDoc)
-        {
-            var app = DotNetNukeContext.Current.Application;
-            var merge = new DotNetNuke.Services.Installer.XmlMerge(xmlDoc, Globals.FormatVersion(app.Version), app.Description);
-            merge.UpdateConfigs();
-        }
-
         protected override void LogError(Exception ex)
         {
             if (ex != null)

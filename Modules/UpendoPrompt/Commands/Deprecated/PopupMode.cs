@@ -38,9 +38,10 @@ using DotNetNuke.Common.Utilities; // added for the commented-out clearing of ca
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.Entities.Users;
 
-namespace Upendo.Modules.UpendoPrompt.Commands
+namespace Upendo.Modules.UpendoPrompt.Commands.Deprecated
 {
-    [ConsoleCommand("set-popups", Constants.PromptCategory, "PromptPopupMode")]
+    [Obsolete("Please use 'set-popups' instead. Will be removed in version 1.5.0 or higher.")]
+    [ConsoleCommand("popup-mode", Constants.PromptCategory, "PromptPopupMode")]
     public class PopupMode : PromptBase, IConsoleCommand
     {
         private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(PopupMode));
@@ -94,47 +95,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
         {
             try
             {
-                bool newMode = Mode == MODE_ENABLE; // if the mode is not 'disable', enable it
-
-                if (Scope == SCOPE_CURRENT)
-                {
-                    PortalController.Instance.UpdatePortalSetting(
-                        PortalSettings.PortalId,
-                        Constants.SettingKeys.PortalSetting_Popup,
-                        newMode.ToString(),
-                        true,
-                        PortalSettings.CultureCode,
-                        false);
-                }
-                else if (Scope == SCOPE_ALL)
-                {
-                    foreach (PortalInfo portal in PortalController.Instance.GetPortals())
-                    {
-                        PortalController.Instance.UpdatePortalSetting(
-                            portal.PortalID, // deprecated - REPLACE!!!
-                            Constants.SettingKeys.PortalSetting_Popup,
-                            newMode.ToString(),
-                            true,
-                            portal.CultureCode,
-                            false);
-                    }
-
-                    // clear DNN cache 
-                    //DataCache.ClearCache();
-                    //DotNetNuke.Web.Client.ClientResourceManagement.ClientResourceManager.ClearCache();
-                }
-
-                var output = string.Empty;
-                var outputScope = this.LocalizeString(this.Scope == SCOPE_CURRENT ? Constants.LocalizationKeys.ScopeCurrent : Constants.LocalizationKeys.ScopeAll);
-
-                if (Mode == MODE_ENABLE)
-                {
-                    output = string.Format(this.LocalizeString(Constants.LocalizationKeys.PopupsEnabled), outputScope);
-                }
-                else
-                {
-                    output = string.Format(this.LocalizeString(Constants.LocalizationKeys.PopupDisabled), outputScope);
-                }
+                var output = string.Format(LocalizeString(Constants.LocalizationKeys.DEPRECATED), "set-popups");
 
                 return new ConsoleResultModel
                 {
