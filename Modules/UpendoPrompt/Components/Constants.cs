@@ -76,6 +76,8 @@ namespace Upendo.Modules.UpendoPrompt.Components
 
             public const string RECORDS_NONE = "RecordsNone";
             public const string RECORDS_SOME = "RecordsSome";
+
+            public const string DEPRECATED= "Deprecated";
         }
 
         public static class Procedures

@@ -6,6 +6,14 @@
 
 	<h1>UpendoPrompt Modules Extension for DNN</h1>
 
+	<h2>Version 01.03.01</h2>
+	<ul>
+		<li>Renamed `debug-info` to `list-debug`. The deprecated `debug-info` command will be removed in version 1.5.0 or newer.</li>
+		<li>Renamed `debug-mode` to `set-debug`. The deprecated `debug-mode` command will be removed in version 1.5.0 or newer.</li>
+		<li>Renamed `popups-mode` to `set-popups`. The deprecated `popup-mode` command will be removed in version 1.5.0 or newer.</li>
+		<li>Renamed `themes-used` to `list-themes`. The deprecated `themes-used` command will be removed in version 1.5.0 or newer.</li>
+	</ul>
+
 	<h2>Version 01.03.00</h2>
 	<ul>
 		<li>`themes-used`: A new command is available that lists the themes used throughout the DNN instance.</li>
