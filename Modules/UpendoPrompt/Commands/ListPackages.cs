@@ -24,6 +24,8 @@
 #endregion
 
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Dnn.PersonaBar.Library.Prompt;
 using Dnn.PersonaBar.Library.Prompt.Attributes;
@@ -33,14 +35,15 @@ using DotNetNuke.Entities.Users;
 using DotNetNuke.Instrumentation;
 using Upendo.Modules.UpendoPrompt.Components;
 using Upendo.Modules.UpendoPrompt.Data;
+using Upendo.Modules.UpendoPrompt.Entities;
 using Constants = Upendo.Modules.UpendoPrompt.Components.Constants;
 
 namespace Upendo.Modules.UpendoPrompt.Commands
 {
-    [ConsoleCommand("list-themes", Constants.PromptCategory, "PromptThemeseUsed")]
-    public class ThemesUsed : PromptBase, IConsoleCommand
+    [ConsoleCommand("list-packages", Constants.PromptCategory, "PromptListPackages")]
+    public class ListPackages : PromptBase, IConsoleCommand
     {
-        private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(ThemesUsed));
+        private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(ListPackages));
         
         #region Implementation
 
@@ -53,20 +56,41 @@ namespace Upendo.Modules.UpendoPrompt.Commands
         {
             try
             {
-                var dbAccess = new DataAccess();
-                var themesUsed = dbAccess.GetThemesUsed();
-                var recordCount = themesUsed.Count();
+                var recordCount = 0;
+                var folderPath = this.GetPackageBackupPath();
+                string[] filePaths = Directory.GetFiles(folderPath, Constants.FOLDER_EXTENSIONPACKAGES, SearchOption.TopDirectoryOnly);
+
+                var messages = new List<PromptMessage>();
+                foreach (string filePath in filePaths.OrderBy(f => f).ToList())
+                {
+                    messages.Add(new PromptMessage
+                    {
+                        Message = filePath.Replace(folderPath, string.Empty)
+                    });
+                }
+
+                recordCount = messages.Count;
 
                 var output = string.Empty;
                 output = LocalizeString(recordCount > 0 ? Constants.LocalizationKeys.RECORDS_SOME : Constants.LocalizationKeys.RECORDS_NONE);
 
-                return new ConsoleResultModel
+                if (recordCount > 0)
                 {
-                    Records = recordCount,
-                    Data = themesUsed,
-                    IsError = false, 
-                    Output = output
-                };
+                    return new ConsoleResultModel
+                    {
+                        Records = recordCount,
+                        Data = messages,
+                        Output = output
+                    };
+                }
+                else
+                {
+                    return new ConsoleResultModel
+                    {
+                        Records = recordCount,
+                        Output = output
+                    };
+                }
             }
             catch (Exception e)
             {
@@ -78,6 +102,17 @@ namespace Upendo.Modules.UpendoPrompt.Commands
         #endregion
 
         #region Helpers
+        private string GetPackageBackupPath()
+        {
+            var folderPath = Path.Combine(DotNetNuke.Common.Globals.ApplicationMapPath, DotNetNuke.Services.Installer.Util.BackupInstallPackageFolder);
+
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+
+            return folderPath;
+        }
 
         protected override void LogError(Exception ex)
         {

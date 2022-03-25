@@ -85,6 +85,7 @@
     <Compile Include="Commands\Deprecated\PopupMode.cs" />
     <Compile Include="Commands\Deprecated\ThemesUsed.cs" />
     <Compile Include="Commands\Impersonate.cs" />
+    <Compile Include="Commands\ListPackages.cs" />
     <Compile Include="Commands\ThemesUsed.cs" />
     <Compile Include="Commands\DebugInfo.cs" />
     <Compile Include="Commands\DebugMode.cs" />
