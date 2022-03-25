@@ -6,6 +6,11 @@
 
 	<h1>UpendoPrompt Modules Extension for DNN</h1>
 
+	<h2>Version 01.04.00</h2>
+	<ul>
+		<li>Added `impersonate` as a new command. This allows authorized end-users to impersonate other user accounts.</li>
+	</ul>
+
 	<h2>Version 01.03.01</h2>
 	<ul>
 		<li>Renamed `debug-info` to `list-debug`. The deprecated `debug-info` command will be removed in version 1.5.0 or newer.</li>

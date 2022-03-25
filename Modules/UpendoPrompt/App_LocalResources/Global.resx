@@ -150,6 +150,9 @@
   <data name="ErrorOccurred.Text" xml:space="preserve">
     <value>An error occurred. Please check the log files to find and resolve the issue.</value>
   </data>
+  <data name="Impersonate.Text" xml:space="preserve">
+    <value>Allows you as a superuser to impersonate another user account by either Username or UserID.</value>
+  </data>
   <data name="ModuleHelp.Text" xml:space="preserve">
     <value>&lt;p&gt;No information at this time.&lt;/p&gt;</value>
   </data>
@@ -193,6 +196,39 @@
         &lt;code class="block"&gt;list-debug&lt;/code&gt;
     &lt;/div&gt;</value>
   </data>
+  <data name="Prompt_ImpersonateFlagsInvalid.Text" xml:space="preserve">
+    <value>You must either specify a valid UserID -OR- Username value to impersonate another user account. Both were empty. Please only specify one.</value>
+  </data>
+  <data name="Prompt_ImpersonateNotAuthorized.Text" xml:space="preserve">
+    <value>This user account is not authorized to perform this action. </value>
+  </data>
+  <data name="Prompt_ImpersonateNoUserFound.Text" xml:space="preserve">
+    <value>No user account was found matching your query. Please check the UserID or Username you entered for accuracy and try again. </value>
+  </data>
+  <data name="Prompt_ImpersonateSuccess.Text" xml:space="preserve">
+    <value>Impersonation was successful. Please refresh the page. </value>
+  </data>
+  <data name="Prompt_Impersonate_FlagUserID.Text" xml:space="preserve">
+    <value>The `userid` flag allows you to specify a user account to impersonate by entering their UserID.  This flag should be used by itself. </value>
+  </data>
+  <data name="Prompt_Impersonate_FlagUsername.Text" xml:space="preserve">
+    <value>The `username` flag allows you to specify a user account to impersonate by entering their username. This flag should be used by itself. </value>
+  </data>
+  <data name="Prompt_Impersonate_ResultHtml.Text" xml:space="preserve">
+    <value>&lt;div&gt;
+        &lt;p&gt;Impersonation is a userful tool to use to help diagnose and troubleshoot issues on a website. This command allows you to do this. After running this command, you will be redirected to the website homepage, but logged in as the user account you specified. This may or may not work with non-DNN authentication providers.&lt;/p&gt;
+        &lt;h4&gt;Using impersonate&lt;/h4&gt;
+        &lt;code class="block"&gt;impersonate&lt;/code&gt;
+        &lt;p&gt;This command has two flags that you need to be aware of. The `username` must be a string value that exactly matches a valid username on the same site (portal).  The `userid` must also be a valid UserID, on the same site (portal).&lt;/p&gt;
+        &lt;p&gt;Example using the `username` flag:&lt;/p&gt;
+        &lt;code class="block"&gt;impersonate --username supersecretusername&lt;/code&gt;
+        &lt;p&gt;Example using the `userid` flag:&lt;/p&gt;
+        &lt;code class="block"&gt;impersonate --userid 1234&lt;/code&gt;
+        &lt;h4&gt;Output&lt;/p&gt;
+        &lt;p&gt;If successful, you will see the message below and a log entry will be added to the event log (a.k.a., Admin Logs).&lt;/p&gt;
+        &lt;code&gt;Impersonation was successful. Please refresh the page.&lt;/code&gt;
+    &lt;/div&gt;</value>
+  </data>
   <data name="Prompt_ModeInvalid.Text" xml:space="preserve">
     <value>The mode can only be 'enable' or 'disable'. The default is 'disable'.</value>
   </data>
@@ -222,6 +258,9 @@
         &lt;code class="block"&gt;list-themes&lt;/code&gt;
         &lt;p&gt;A listing of all of the themes that have been specified in the superuser settings, site settings, pages, and modules will be listed.&lt;/p&gt;
     &lt;/div&gt;</value>
+  </data>
+  <data name="Prompt_UserImpersonated.Text" xml:space="preserve">
+    <value>{0} has chosen to impersonate {1}.</value>
   </data>
   <data name="RecordsNone.Text" xml:space="preserve">
     <value>No matches were found for your query.</value>
