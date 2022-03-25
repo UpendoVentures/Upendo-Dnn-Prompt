@@ -78,6 +78,14 @@ namespace Upendo.Modules.UpendoPrompt.Components
             public const string RECORDS_SOME = "RecordsSome";
 
             public const string DEPRECATED= "Deprecated";
+
+            public const string FlagUsername = "Prompt_Impersonate_FlagUsername";
+            public const string FlagUserId = "Prompt_Impersonate_FlagUserID";
+
+            public const string ImpersonateFlagsInvalid = "Prompt_ImpersonateFlagsInvalid";
+            public const string ImpersonateNoUserFound = "Prompt_ImpersonateNoUserFound";
+            public const string ImpersonateNotAuthorized = "Prompt_ImpersonateNotAuthorized";
+            public const string ImpersonateSuccess = "Prompt_ImpersonateSuccess";
         }
 
         public static class Procedures
