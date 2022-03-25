@@ -168,6 +168,9 @@
   <data name="PromptDebugMode.Text" xml:space="preserve">
     <value>Allows you to turn on debugging in your site. This method enables debugging in the web.config, site settings, and the Log4Net configuration file.</value>
   </data>
+  <data name="PromptListPackages.Text" xml:space="preserve">
+    <value>This command allows you to list and see the extension packages that have been saved in the `/App_Data/ExtensionPackages/` folder.</value>
+  </data>
   <data name="PromptPopupMode.Text" xml:space="preserve">
     <value>Allows you to enable/disable the popup editing feature on the current website or all sites in this installation. </value>
   </data>
@@ -226,7 +229,22 @@
         &lt;code class="block"&gt;impersonate --userid 1234&lt;/code&gt;
         &lt;h4&gt;Output&lt;/p&gt;
         &lt;p&gt;If successful, you will see the message below and a log entry will be added to the event log (a.k.a., Admin Logs).&lt;/p&gt;
-        &lt;code&gt;Impersonation was successful. Please refresh the page.&lt;/code&gt;
+        &lt;code class="block"&gt;Impersonation was successful. Please refresh the page.&lt;/code&gt;
+    &lt;/div&gt;</value>
+  </data>
+  <data name="Prompt_ListPackages_ResultHtml.Text" xml:space="preserve">
+    <value>&lt;div&gt;
+        &lt;p&gt;Newer versions of DNN saves any installed extension into the `/App_Data/ExtensionPackages/` folder. This is meant to be used with the site import/export feature. Using this command will allow you to view the files in that folder in alphabetical order.&lt;/p&gt;
+        &lt;h4&gt;Using list-packages&lt;/h4&gt;
+        &lt;code class="block"&gt;list-packages&lt;/code&gt;
+        &lt;p&gt;This command does not have any flags&lt;/p&gt;
+        &lt;code class="block"&gt;list-packages&lt;/code&gt;
+        &lt;h4&gt;Output&lt;/p&gt;
+        &lt;p&gt;If successful, you will see an alphabetized listing of the packages found in that folder, along with a message stating that there were records found or not.&lt;/p&gt;
+        &lt;p&gt;Records Found:&lt;/p&gt;
+        &lt;code class="block"&gt;Maches were found for your query.&lt;/code&gt;
+        &lt;p&gt;No Records Found:&lt;/p&gt;
+        &lt;code class="block"&gt;No matches were found for your query.&lt;/code&gt;
     &lt;/div&gt;</value>
   </data>
   <data name="Prompt_ModeInvalid.Text" xml:space="preserve">

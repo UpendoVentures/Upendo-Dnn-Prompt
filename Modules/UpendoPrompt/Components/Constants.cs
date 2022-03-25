@@ -42,6 +42,8 @@ namespace Upendo.Modules.UpendoPrompt.Components
         public const string FORMAT_WARNING = "<span style=\"color:yellow;font-weight:bold;>{0}</span>";
         public const string FORMAT_SUCCESS = "<span style=\"color:green;font-weight:bold;>{0}</span>";
 
+        public const string FOLDER_EXTENSIONPACKAGES = "*.resources";
+
         public static class SettingKeys
         {
             public const string HostSetting_DebugMode = "DebugMode";
