@@ -156,6 +156,12 @@
   <data name="ModuleHelp.Text" xml:space="preserve">
     <value>&lt;p&gt;No information at this time.&lt;/p&gt;</value>
   </data>
+  <data name="PackageDeletionErrorFormat.Text" xml:space="preserve">
+    <value>Error Deleting: {0}</value>
+  </data>
+  <data name="PackageDeletionSuccess.Text" xml:space="preserve">
+    <value>Successfully deleted {0} of {1} files in the `/App_Data/ExtensionPackages/` folder.</value>
+  </data>
   <data name="PopupDisabled.Text" xml:space="preserve">
     <value>Popups have been disabled for {0}.</value>
   </data>
@@ -167,6 +173,9 @@
   </data>
   <data name="PromptDebugMode.Text" xml:space="preserve">
     <value>Allows you to turn on debugging in your site. This method enables debugging in the web.config, site settings, and the Log4Net configuration file.</value>
+  </data>
+  <data name="PromptDeletePackages.Text" xml:space="preserve">
+    <value>This prompt command will allow you to delete all of the saved packages in the `/App_Code/ExtensionPackages/` folder. This should only be done with websites that do not have any plans of using the website import/export features.</value>
   </data>
   <data name="PromptListPackages.Text" xml:space="preserve">
     <value>This command allows you to list and see the extension packages that have been saved in the `/App_Data/ExtensionPackages/` folder.</value>
@@ -197,6 +206,22 @@
         &lt;p&gt;When you run this command, debug mode is toggled in the superuser settings, web.config, and the DotNetNuke.log4net.config files.&lt;/p&gt;
         &lt;p&gt;If you're unsure if you need to run this command, first try running the command below.&lt;/p&gt;
         &lt;code class="block"&gt;list-debug&lt;/code&gt;
+    &lt;/div&gt;</value>
+  </data>
+  <data name="Prompt_DeletePackages_ResultHtml.Text" xml:space="preserve">
+    <value>&lt;div&gt;
+        &lt;p&gt;Newer versions of DNN saves any installed extension into the `/App_Data/ExtensionPackages/` folder. This command allows you to delete those files to save disk space.&lt;/p&gt;
+        &lt;h4&gt;Using delete-packages&lt;/h4&gt;
+        &lt;code class="block"&gt;delete-packages&lt;/code&gt;
+        &lt;p&gt;This command does not have any flags&lt;/p&gt;
+        &lt;code class="block"&gt;delete-packages&lt;/code&gt;
+        &lt;h4&gt;Output&lt;/p&gt;
+        &lt;p&gt;If completely successful, you will see a single message similar to that seen below (the numbers will be different for everyone).&lt;/p&gt;
+        &lt;code class="block"&gt;Successfully deleted 41 of 41 files in the `/App_Data/ExtensionPackages/` folder.&lt;/code&gt;
+        &lt;p&gt;If one or more errors are found, a listing of each errored file will be shown, including the messages below.&lt;/p&gt;
+        &lt;code class="block"&gt;Error Deleting;  (file name here)&lt;/code&gt;
+        &lt;code class="block"&gt;Successfully deleted 38 of 41 files in the `/App_Data/ExtensionPackages/` folder.&lt;/code&gt;
+        &lt;p&gt;The example above assumes that 3 files were unable to be deleted. When this happens, sometimes the file is locked and the command can simply be run again.&lt;/p&gt;
     &lt;/div&gt;</value>
   </data>
   <data name="Prompt_ImpersonateFlagsInvalid.Text" xml:space="preserve">
@@ -284,7 +309,7 @@
     <value>No matches were found for your query.</value>
   </data>
   <data name="RecordsSome.Text" xml:space="preserve">
-    <value>Maches were found for your query.</value>
+    <value>Matches were found for your query.</value>
   </data>
   <data name="ScopeAll.Text" xml:space="preserve">
     <value>all sites</value>

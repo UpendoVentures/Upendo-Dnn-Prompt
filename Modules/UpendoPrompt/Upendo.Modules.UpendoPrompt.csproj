@@ -85,6 +85,7 @@
     <Compile Include="Commands\Deprecated\PopupMode.cs" />
     <Compile Include="Commands\Deprecated\ThemesUsed.cs" />
     <Compile Include="Commands\Impersonate.cs" />
+    <Compile Include="Commands\DeletePackages .cs" />
     <Compile Include="Commands\ListPackages.cs" />
     <Compile Include="Commands\ThemesUsed.cs" />
     <Compile Include="Commands\DebugInfo.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Components\ModuleBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Components\PackagesController.cs" />
     <Compile Include="Components\PromptBase.cs" />
     <Compile Include="Data\DataAccess.cs" />
     <Compile Include="Entities\Interfaces\IPromptMessage.cs" />

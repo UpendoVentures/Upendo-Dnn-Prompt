@@ -40,10 +40,10 @@ using Constants = Upendo.Modules.UpendoPrompt.Components.Constants;
 
 namespace Upendo.Modules.UpendoPrompt.Commands
 {
-    [ConsoleCommand("list-packages", Constants.PromptCategory, "PromptListPackages")]
-    public class ListPackages : PromptBase, IConsoleCommand
+    [ConsoleCommand("delete-packages", Constants.PromptCategory, "PromptDeletePackages")]
+    public class DeletePackages : PromptBase, IConsoleCommand
     {
-        private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(ListPackages));
+        private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(DeletePackages));
         
         #region Implementation
 
@@ -61,31 +61,50 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                 var folderPath = ctlPackages.GetPackageBackupPath();
                 string[] filePaths = Directory.GetFiles(folderPath, Constants.FOLDER_EXTENSIONPACKAGES, SearchOption.TopDirectoryOnly);
 
+                recordCount = filePaths.Length;
+
+                var processCount = 0; 
+
                 var messages = new List<PromptMessage>();
                 foreach (string filePath in filePaths.OrderBy(f => f).ToList())
                 {
-                    messages.Add(new PromptMessage
+                    try
                     {
-                        Message = filePath.Replace(folderPath, string.Empty)
-                    });
+                        File.Delete(filePath);
+                        processCount++;
+                    }
+                    catch (Exception e)
+                    {
+                        messages.Add(new PromptMessage
+                        {
+                            Message = string.Format(Constants.LocalizationKeys.PackageDeletionErrorFormat, filePath)
+                        });
+                        LogError(e);
+                    }
                 }
 
-                recordCount = messages.Count;
-
                 var output = string.Empty;
-                output = LocalizeString(recordCount > 0 ? Constants.LocalizationKeys.RECORDS_SOME : Constants.LocalizationKeys.RECORDS_NONE);
+                output = string.Format(LocalizeString(Constants.LocalizationKeys.PackageDeletionSuccess), processCount, recordCount);
 
-                if (recordCount > 0)
+                if (messages.Count > 0)
                 {
+                    // on or more errors have occurred 
+                    messages.Add(new PromptMessage
+                    {
+                        Message = Constants.LocalizationKeys.ErrorOccurred
+                    });
+
                     return new ConsoleResultModel
                     {
                         Records = recordCount,
                         Data = messages,
-                        Output = output
+                        Output = output, 
+                        IsError = true
                     };
                 }
                 else
                 {
+                    // Success!  
                     return new ConsoleResultModel
                     {
                         Records = recordCount,
