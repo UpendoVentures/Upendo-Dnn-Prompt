@@ -88,6 +88,9 @@ namespace Upendo.Modules.UpendoPrompt.Components
             public const string ImpersonateNoUserFound = "Prompt_ImpersonateNoUserFound";
             public const string ImpersonateNotAuthorized = "Prompt_ImpersonateNotAuthorized";
             public const string ImpersonateSuccess = "Prompt_ImpersonateSuccess";
+
+            public const string PackageDeletionErrorFormat = "PackageDeletionErrorFormat";
+            public const string PackageDeletionSuccess = "PackageDeletionSuccess";
         }
 
         public static class Procedures

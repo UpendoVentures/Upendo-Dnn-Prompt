@@ -10,6 +10,7 @@
 	<ul>
 		<li>Added `impersonate` as a new command. This allows authorized end-users to impersonate other user accounts.</li>
 		<li>Added `list-packages` as a new command. This allows you to see what extension packages are saved in the `/App_Data/ExtensionPackages/` folder.</li>
+		<li>Added `delete-packages` as a new command. This allows you to delete all of the saved extension packages in the `/App_Data/ExtensionPackages/` folder.</li>
 	</ul>
 
 	<h2>Version 01.03.01</h2>
