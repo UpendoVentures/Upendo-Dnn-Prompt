@@ -80,6 +80,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\DeleteTempFolder.cs" />
     <Compile Include="Commands\Deprecated\DebugInfo.cs" />
     <Compile Include="Commands\Deprecated\DebugMode.cs" />
     <Compile Include="Commands\Deprecated\PopupMode.cs" />
@@ -92,12 +93,15 @@
     <Compile Include="Commands\DebugMode.cs" />
     <Compile Include="Commands\PopupMode.cs" />
     <Compile Include="Components\Constants.cs" />
+    <Compile Include="Components\ExtFileSize.cs" />
     <Compile Include="Components\FeatureController.cs" />
+    <Compile Include="Components\FoldersController.cs" />
     <Compile Include="Components\ModuleBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Components\PackagesController.cs" />
     <Compile Include="Components\PromptBase.cs" />
+    <Compile Include="Components\TempFolderController.cs" />
     <Compile Include="Data\DataAccess.cs" />
     <Compile Include="Entities\Interfaces\IPromptMessage.cs" />
     <Compile Include="Entities\Interfaces\IThemeItem.cs" />

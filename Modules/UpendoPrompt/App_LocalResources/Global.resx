@@ -230,6 +230,19 @@
         &lt;p&gt;The example above assumes that 3 files were unable to be deleted. When this happens, sometimes the file is locked and the command can simply be run again.&lt;/p&gt;
     &lt;/div&gt;</value>
   </data>
+  <data name="Prompt_DeleteTempFolder_ResultHtml.Text" xml:space="preserve">
+    <value>&lt;div&gt;
+        &lt;p&gt;Everytime you install/upgrade an extension in DNN, a temporary folder is created in the `/Install/Temp/` directory in your website. This command allows you to quickly delete that folder and everything to help you keep your DNN instance clean.&lt;/p&gt;
+        &lt;h4&gt;Using delete-tempfolder&lt;/h4&gt;
+        &lt;code class="block"&gt;delete-tempfolder&lt;/code&gt;
+        &lt;p&gt;This command does not have any flags&lt;/p&gt;
+        &lt;code class="block"&gt;delete-tempfolder&lt;/code&gt;
+        &lt;h4&gt;Output&lt;/p&gt;
+        &lt;p&gt;If completely successful, you will see a single message similar to that seen below.&lt;/p&gt;
+        &lt;code class="block"&gt;The files and folders in the installation temporary folder have been deleted.&lt;/code&gt;
+        &lt;p&gt;If one or more errors are found, a listing of each errored file will be shown, including the messages below.&lt;/p&gt;
+    &lt;/div&gt;</value>
+  </data>
   <data name="Prompt_ImpersonateFlagsInvalid.Text" xml:space="preserve">
     <value>You must either specify a valid UserID -OR- Username value to impersonate another user account. Both were empty. Please only specify one.</value>
   </data>
@@ -322,6 +335,9 @@
   </data>
   <data name="ScopeCurrent.Text" xml:space="preserve">
     <value>the current site only</value>
+  </data>
+  <data name="TempFolderFilesDeleteSuccess.Text" xml:space="preserve">
+    <value>The files and folders in the installation temporary folder have been deleted. </value>
   </data>
   <data name="Welcome.Text" xml:space="preserve">
     <value>Thank you for using Upendo Prompt. There is no reason to place this module on a page at this time, but it may be necessary in the future.</value>

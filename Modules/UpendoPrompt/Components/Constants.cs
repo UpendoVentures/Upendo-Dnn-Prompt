@@ -93,6 +93,8 @@ namespace Upendo.Modules.UpendoPrompt.Components
             public const string PackageDeletionSuccess = "PackageDeletionSuccess";
 
             public const string FileSizeMessage = "FileSizeMessage";
+
+            public const string TempFolderFilesDeleteSuccess = "TempFolderFilesDeleteSuccess";
         }
 
         public static class Procedures
