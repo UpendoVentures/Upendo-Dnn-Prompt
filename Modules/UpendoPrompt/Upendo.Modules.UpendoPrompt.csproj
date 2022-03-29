@@ -87,6 +87,7 @@
     <Compile Include="Commands\Deprecated\ThemesUsed.cs" />
     <Compile Include="Commands\Impersonate.cs" />
     <Compile Include="Commands\DeletePackages .cs" />
+    <Compile Include="Commands\ListAvailablePackages.cs" />
     <Compile Include="Commands\ListPackages.cs" />
     <Compile Include="Commands\ThemesUsed.cs" />
     <Compile Include="Commands\DebugInfo.cs" />
@@ -102,9 +103,14 @@
     <Compile Include="Components\PackagesController.cs" />
     <Compile Include="Components\PromptBase.cs" />
     <Compile Include="Components\TempFolderController.cs" />
+    <Compile Include="Controllers\ExtensionsController.cs" />
     <Compile Include="Data\DataAccess.cs" />
+    <Compile Include="Entities\AvailablePackagesDto.cs" />
+    <Compile Include="Entities\Interfaces\IAvailablePackagesDto.cs" />
     <Compile Include="Entities\Interfaces\IPromptMessage.cs" />
     <Compile Include="Entities\Interfaces\IThemeItem.cs" />
+    <Compile Include="Entities\Interfaces\PackageTypes.cs" />
+    <Compile Include="Entities\PackageInfoSlimDto.cs" />
     <Compile Include="Entities\PromptMessage.cs" />
     <Compile Include="Entities\ThemeItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -158,9 +164,7 @@
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="App_LocalResources\Global.resx">
       <SubType>Designer</SubType>

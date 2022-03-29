@@ -95,11 +95,33 @@ namespace Upendo.Modules.UpendoPrompt.Components
             public const string FileSizeMessage = "FileSizeMessage";
 
             public const string TempFolderFilesDeleteSuccess = "TempFolderFilesDeleteSuccess";
+
+            public const string PackageFoundMessage = "PackageFoundMessage";
+            public const string PackageAuthentication = "PackageAuthentication";
+            public const string PackageContainer = "PackageContainer";
+            public const string PackageModule = "PackageModule";
+            public const string PackageLibrary = "PackageLibrary";
+            public const string PackageSkin = "PackageSkin";
+            public const string PackageLanguage = "PackageLanguage";
+            public const string PackageProvider = "PackageProvider";
+            public const string PackageJsLibrary = "PackageJsLibrary";
         }
 
         public static class Procedures
         {
             public const string ThemesUsed = "uvm_Prompt_GetThemesUsed";
+        }
+
+        public static class PackageType
+        {
+            public const string Auth_System = "AuthSystem";
+            public const string Container = "Container";
+            public const string JavaScriptLibrary = "JavaScriptLibrary";
+            public const string Language = "Language";
+            public const string Library = "Library";
+            public const string Module = "Module";
+            public const string Provider = "Provider";
+            public const string Skin = "Skin";
         }
     }
 }

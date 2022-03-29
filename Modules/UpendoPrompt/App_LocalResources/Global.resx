@@ -159,11 +159,38 @@
   <data name="ModuleHelp.Text" xml:space="preserve">
     <value>&lt;p&gt;No information at this time.&lt;/p&gt;</value>
   </data>
+  <data name="PackageAuthentication.Text" xml:space="preserve">
+    <value>Authentication System</value>
+  </data>
+  <data name="PackageContainer.Text" xml:space="preserve">
+    <value>Container</value>
+  </data>
   <data name="PackageDeletionErrorFormat.Text" xml:space="preserve">
     <value>Error Deleting: {0}</value>
   </data>
   <data name="PackageDeletionSuccess.Text" xml:space="preserve">
     <value>Successfully deleted {0} of {1} files in the `/App_Data/ExtensionPackages/` folder.</value>
+  </data>
+  <data name="PackageFoundMessage.Text" xml:space="preserve">
+    <value>{0} has one or more available packages to review: {1}</value>
+  </data>
+  <data name="PackageJsLibrary.Text" xml:space="preserve">
+    <value>JavaScript Library</value>
+  </data>
+  <data name="PackageLanguage.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="PackageLibrary.Text" xml:space="preserve">
+    <value>Library</value>
+  </data>
+  <data name="PackageModule.Text" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="PackageProvider.Text" xml:space="preserve">
+    <value>Provider</value>
+  </data>
+  <data name="PackageSkin.Text" xml:space="preserve">
+    <value>Theme</value>
   </data>
   <data name="PopupDisabled.Text" xml:space="preserve">
     <value>Popups have been disabled for {0}.</value>
@@ -183,6 +210,9 @@
   <data name="PromptDeleteTempFolder.Text" xml:space="preserve">
     <value>Running this command will delete the `/Install/Temp/` folder in your DNN website. This can help diagnose/prevent extension installation issues in some cases.</value>
   </data>
+  <data name="PromptListAvailablePackages.Text" xml:space="preserve">
+    <value>When you use this command, you will be shown a listing of all of the available packages that could be installed directly from the website itself. </value>
+  </data>
   <data name="PromptListPackages.Text" xml:space="preserve">
     <value>This command allows you to list and see the extension packages that have been saved in the `/App_Data/ExtensionPackages/` folder.</value>
   </data>
@@ -194,54 +224,66 @@
   </data>
   <data name="Prompt_DebugInfo_ResultHtml.Text" xml:space="preserve">
     <value>&lt;div&gt;
-        &lt;p&gt;Helps you see and know where debugging might already be turned on. This is helpful when you're not sure or have multiple people working on a site.&lt;/p&gt;
-        &lt;h4&gt;Toggle whether the site is in debug mode, or running normally&lt;/h4&gt;
-        &lt;code class="block"&gt;list-debug&lt;/code&gt;
-        &lt;p&gt;This command does not have any options.&lt;/p&gt;
-        &lt;p&gt;If you find that one or more areas have debug turned on, you should use the command below to disable debug mode. You may need to run it twice.&lt;/p&gt;
-        &lt;code class="block"&gt;set-debug&lt;/code&gt;
-    &lt;/div&gt;</value>
+    &lt;p&gt;Helps you see and know where debugging might already be turned on. This is helpful when you're not sure or
+        have multiple people working on a site.&lt;/p&gt;
+    &lt;h4&gt;Toggle whether the site is in debug mode, or running normally&lt;/h4&gt;
+    &lt;code class="block"&gt;list-debug&lt;/code&gt;
+    &lt;p&gt;This command does not have any options.&lt;/p&gt;
+    &lt;p&gt;If you find that one or more areas have debug turned on, you should use the command below to disable debug
+        mode. You may need to run it twice.&lt;/p&gt;
+    &lt;code class="block"&gt;set-debug&lt;/code&gt;
+&lt;/div&gt;</value>
   </data>
   <data name="Prompt_DebugMode_ResultHtml.Text" xml:space="preserve">
     <value>&lt;div&gt;
-        &lt;p&gt;When you need more information to help diagnose and resolve an error, this command can help you get more verbose and detailed information.&lt;/p&gt;
-        &lt;p&gt;&lt;strong&gt;WARNING!&lt;/strong&gt; When used, this command will RESTART your website. Page loads for the next few moments after running this command will be slower.&lt;/p&gt;
-        &lt;h4&gt;Using set-debug&lt;/h4&gt;
-        &lt;code class="block"&gt;set-debug&lt;/code&gt;
-        &lt;p&gt;This command does not have any options.&lt;/p&gt;
-        &lt;p&gt;When you run this command, debug mode is toggled in the superuser settings, web.config, and the DotNetNuke.log4net.config files.&lt;/p&gt;
-        &lt;p&gt;If you're unsure if you need to run this command, first try running the command below.&lt;/p&gt;
-        &lt;code class="block"&gt;list-debug&lt;/code&gt;
-    &lt;/div&gt;</value>
+    &lt;p&gt;When you need more information to help diagnose and resolve an error, this command can help you get more
+        verbose and detailed information.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;WARNING!&lt;/strong&gt; When used, this command will RESTART your website. Page loads for the next few
+        moments after running this command will be slower.&lt;/p&gt;
+    &lt;h4&gt;Using set-debug&lt;/h4&gt;
+    &lt;code class="block"&gt;set-debug&lt;/code&gt;
+    &lt;p&gt;This command does not have any options.&lt;/p&gt;
+    &lt;p&gt;When you run this command, debug mode is toggled in the superuser settings, web.config, and the
+        DotNetNuke.log4net.config files.&lt;/p&gt;
+    &lt;p&gt;If you're unsure if you need to run this command, first try running the command below.&lt;/p&gt;
+    &lt;code class="block"&gt;list-debug&lt;/code&gt;
+&lt;/div&gt;</value>
   </data>
   <data name="Prompt_DeletePackages_ResultHtml.Text" xml:space="preserve">
     <value>&lt;div&gt;
-        &lt;p&gt;Newer versions of DNN saves any installed extension into the `/App_Data/ExtensionPackages/` folder. This command allows you to delete those files to save disk space.&lt;/p&gt;
-        &lt;h4&gt;Using delete-packages&lt;/h4&gt;
-        &lt;code class="block"&gt;delete-packages&lt;/code&gt;
-        &lt;p&gt;This command does not have any flags&lt;/p&gt;
-        &lt;code class="block"&gt;delete-packages&lt;/code&gt;
-        &lt;h4&gt;Output&lt;/p&gt;
-        &lt;p&gt;If completely successful, you will see a single message similar to that seen below (the numbers will be different for everyone).&lt;/p&gt;
-        &lt;code class="block"&gt;Successfully deleted 41 of 41 files in the `/App_Data/ExtensionPackages/` folder.&lt;/code&gt;
-        &lt;p&gt;If one or more errors are found, a listing of each errored file will be shown, including the messages below.&lt;/p&gt;
-        &lt;code class="block"&gt;Error Deleting;  (file name here)&lt;/code&gt;
-        &lt;code class="block"&gt;Successfully deleted 38 of 41 files in the `/App_Data/ExtensionPackages/` folder.&lt;/code&gt;
-        &lt;p&gt;The example above assumes that 3 files were unable to be deleted. When this happens, sometimes the file is locked and the command can simply be run again.&lt;/p&gt;
-    &lt;/div&gt;</value>
+    &lt;p&gt;Newer versions of DNN saves any installed extension into the `/App_Data/ExtensionPackages/` folder. This
+        command allows you to delete those files to save disk space.&lt;/p&gt;
+    &lt;h4&gt;Using delete-packages&lt;/h4&gt;
+    &lt;code class="block"&gt;delete-packages&lt;/code&gt;
+    &lt;p&gt;This command does not have any flags&lt;/p&gt;
+    &lt;code class="block"&gt;delete-packages&lt;/code&gt;
+    &lt;h4&gt;Output&lt;/h4&gt;
+    &lt;p&gt;If completely successful, you will see a single message similar to that seen below (the numbers will be
+        different for everyone).&lt;/p&gt;
+    &lt;code class="block"&gt;Successfully deleted 41 of 41 files in the `/App_Data/ExtensionPackages/` folder.&lt;/code&gt;
+    &lt;p&gt;If one or more errors are found, a listing of each errored file will be shown, including the messages below.
+    &lt;/p&gt;
+    &lt;code class="block"&gt;Error Deleting;  (file name here)&lt;/code&gt;
+    &lt;code class="block"&gt;Successfully deleted 38 of 41 files in the `/App_Data/ExtensionPackages/` folder.&lt;/code&gt;
+    &lt;p&gt;The example above assumes that 3 files were unable to be deleted. When this happens, sometimes the file is
+        locked and the command can simply be run again.&lt;/p&gt;
+&lt;/div&gt;</value>
   </data>
   <data name="Prompt_DeleteTempFolder_ResultHtml.Text" xml:space="preserve">
     <value>&lt;div&gt;
-        &lt;p&gt;Everytime you install/upgrade an extension in DNN, a temporary folder is created in the `/Install/Temp/` directory in your website. This command allows you to quickly delete that folder and everything to help you keep your DNN instance clean.&lt;/p&gt;
-        &lt;h4&gt;Using delete-tempfolder&lt;/h4&gt;
-        &lt;code class="block"&gt;delete-tempfolder&lt;/code&gt;
-        &lt;p&gt;This command does not have any flags&lt;/p&gt;
-        &lt;code class="block"&gt;delete-tempfolder&lt;/code&gt;
-        &lt;h4&gt;Output&lt;/p&gt;
-        &lt;p&gt;If completely successful, you will see a single message similar to that seen below.&lt;/p&gt;
-        &lt;code class="block"&gt;The files and folders in the installation temporary folder have been deleted.&lt;/code&gt;
-        &lt;p&gt;If one or more errors are found, a listing of each errored file will be shown, including the messages below.&lt;/p&gt;
-    &lt;/div&gt;</value>
+    &lt;p&gt;Everytime you install/upgrade an extension in DNN, a temporary folder is created in the `/Install/Temp/`
+        directory in your website. This command allows you to quickly delete that folder and everything to help you
+        keep your DNN instance clean.&lt;/p&gt;
+    &lt;h4&gt;Using delete-tempfolder&lt;/h4&gt;
+    &lt;code class="block"&gt;delete-tempfolder&lt;/code&gt;
+    &lt;p&gt;This command does not have any flags&lt;/p&gt;
+    &lt;code class="block"&gt;delete-tempfolder&lt;/code&gt;
+    &lt;h4&gt;Output&lt;/h4&gt;
+    &lt;p&gt;If completely successful, you will see a single message similar to that seen below.&lt;/p&gt;
+    &lt;code class="block"&gt;The files and folders in the installation temporary folder have been deleted.&lt;/code&gt;
+    &lt;p&gt;If one or more errors are found, a listing of each errored file will be shown, including the messages below.
+    &lt;/p&gt;
+&lt;/div&gt;</value>
   </data>
   <data name="Prompt_ImpersonateFlagsInvalid.Text" xml:space="preserve">
     <value>You must either specify a valid UserID -OR- Username value to impersonate another user account. Both were empty. Please only specify one.</value>
@@ -263,33 +305,68 @@
   </data>
   <data name="Prompt_Impersonate_ResultHtml.Text" xml:space="preserve">
     <value>&lt;div&gt;
-        &lt;p&gt;Impersonation is a userful tool to use to help diagnose and troubleshoot issues on a website. This command allows you to do this. After running this command, you will be redirected to the website homepage, but logged in as the user account you specified. This may or may not work with non-DNN authentication providers.&lt;/p&gt;
-        &lt;h4&gt;Using impersonate&lt;/h4&gt;
-        &lt;code class="block"&gt;impersonate&lt;/code&gt;
-        &lt;p&gt;This command has two flags that you need to be aware of. The `username` must be a string value that exactly matches a valid username on the same site (portal).  The `userid` must also be a valid UserID, on the same site (portal).&lt;/p&gt;
-        &lt;p&gt;Example using the `username` flag:&lt;/p&gt;
-        &lt;code class="block"&gt;impersonate --username supersecretusername&lt;/code&gt;
-        &lt;p&gt;Example using the `userid` flag:&lt;/p&gt;
-        &lt;code class="block"&gt;impersonate --userid 1234&lt;/code&gt;
-        &lt;h4&gt;Output&lt;/p&gt;
-        &lt;p&gt;If successful, you will see the message below and a log entry will be added to the event log (a.k.a., Admin Logs).&lt;/p&gt;
-        &lt;code class="block"&gt;Impersonation was successful. Please refresh the page.&lt;/code&gt;
-    &lt;/div&gt;</value>
+    &lt;p&gt;Impersonation is a userful tool to use to help diagnose and troubleshoot issues on a website. This command
+        allows you to do this. After running this command, you will be redirected to the website homepage, but
+        logged in as the user account you specified. This may or may not work with non-DNN authentication providers.
+    &lt;/p&gt;
+    &lt;h4&gt;Using impersonate&lt;/h4&gt;
+    &lt;code class="block"&gt;impersonate&lt;/code&gt;
+    &lt;p&gt;This command has two flags that you need to be aware of. The `username` must be a string value that exactly
+        matches a valid username on the same site (portal). The `userid` must also be a valid UserID, on the same
+        site (portal).&lt;/p&gt;
+    &lt;p&gt;Example using the `username` flag:&lt;/p&gt;
+    &lt;code class="block"&gt;impersonate --username supersecretusername&lt;/code&gt;
+    &lt;p&gt;Example using the `userid` flag:&lt;/p&gt;
+    &lt;code class="block"&gt;impersonate --userid 1234&lt;/code&gt;
+    &lt;h4&gt;Output&lt;/h4&gt;
+    &lt;p&gt;If successful, you will see the message below and a log entry will be added to the event log (a.k.a.,
+        Admin Logs).&lt;/p&gt;
+    &lt;code class="block"&gt;Impersonation was successful. Please refresh the page.&lt;/code&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="Prompt_ListAvailablePackages_ResultHtml.Text" xml:space="preserve">
+    <value>&lt;div&gt;
+    &lt;p&gt;Some DNN websites may have extension packages sitting in the `/Install/` folders, waiting to be installed.
+        This can greatly impact any DNN upgrade, if you're not aware of the packages. This command allows you to see
+        if this is the case on your instance, and where they are.&lt;/p&gt;
+    &lt;p&gt;This routine ignores any packages that won't automatically install. For example, it looks for installation
+        packages ending with .zip and not .resources.&lt;/p&gt;
+    &lt;h4&gt;Using list-availablepackages&lt;/h4&gt;
+    &lt;code class="block"&gt;list-availablepackages&lt;/code&gt;
+    &lt;p&gt;This command does not have any flags&lt;/p&gt;
+    &lt;code class="block"&gt;list-availablepackages&lt;/code&gt;
+    &lt;h4&gt;Output&lt;/h4&gt;
+    &lt;p&gt;If successful, you will see an alphabetized listing of the available packages found in that folder, along
+        with a message stating that there were records found or not.&lt;/p&gt;
+    &lt;p&gt;Records Found:&lt;/p&gt;
+    &lt;table class="command-result-tbl"&gt;
+        &lt;tr&gt;&lt;td&gt;Library has one or more available packages to review: C:\Work\Platform\platform9102\Website\Install\Library  &lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;Module has one or more available packages to review: C:\Work\Platform\platform9102\Website\Install\Module  &lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;code class="block"&gt;
+        Maches were found for your query.
+    &lt;/code&gt;
+    &lt;p&gt;No Records Found:&lt;/p&gt;
+    &lt;code class="block"&gt;No matches were found for your query.&lt;/code&gt;
+&lt;/div&gt;</value>
   </data>
   <data name="Prompt_ListPackages_ResultHtml.Text" xml:space="preserve">
     <value>&lt;div&gt;
-        &lt;p&gt;Newer versions of DNN saves any installed extension into the `/App_Data/ExtensionPackages/` folder. This is meant to be used with the site import/export feature. Using this command will allow you to view the files in that folder in alphabetical order.&lt;/p&gt;
-        &lt;h4&gt;Using list-packages&lt;/h4&gt;
-        &lt;code class="block"&gt;list-packages&lt;/code&gt;
-        &lt;p&gt;This command does not have any flags&lt;/p&gt;
-        &lt;code class="block"&gt;list-packages&lt;/code&gt;
-        &lt;h4&gt;Output&lt;/p&gt;
-        &lt;p&gt;If successful, you will see an alphabetized listing of the packages found in that folder, along with a message stating that there were records found or not.&lt;/p&gt;
-        &lt;p&gt;Records Found:&lt;/p&gt;
-        &lt;code class="block"&gt;Maches were found for your query.&lt;/code&gt;
-        &lt;p&gt;No Records Found:&lt;/p&gt;
-        &lt;code class="block"&gt;No matches were found for your query.&lt;/code&gt;
-    &lt;/div&gt;</value>
+    &lt;p&gt;Newer versions of DNN saves any installed extension into the `/App_Data/ExtensionPackages/` folder. This is
+        meant to be used with the site import/export feature. Using this command will allow you to view the files in
+        that folder in alphabetical order.&lt;/p&gt;
+    &lt;h4&gt;Using list-packages&lt;/h4&gt;
+    &lt;code class="block"&gt;list-packages&lt;/code&gt;
+    &lt;p&gt;This command does not have any flags&lt;/p&gt;
+    &lt;code class="block"&gt;list-packages&lt;/code&gt;
+    &lt;h4&gt;Output&lt;/h4&gt;
+    &lt;p&gt;If successful, you will see an alphabetized listing of the packages found in that folder, along with a
+        message stating that there were records found or not.&lt;/p&gt;
+    &lt;p&gt;Records Found:&lt;/p&gt;
+    &lt;code class="block"&gt;Maches were found for your query.&lt;/code&gt;
+    &lt;p&gt;No Records Found:&lt;/p&gt;
+    &lt;code class="block"&gt;No matches were found for your query.&lt;/code&gt;
+&lt;/div&gt;</value>
   </data>
   <data name="Prompt_ModeInvalid.Text" xml:space="preserve">
     <value>The mode can only be 'enable' or 'disable'. The default is 'disable'.</value>
@@ -302,11 +379,10 @@
   </data>
   <data name="Prompt_PopupMode_ResultHtml.Text" xml:space="preserve">
     <value>&lt;div&gt;
-	&lt;h4&gt;Enable or disable popups on the current or all sites&lt;/h4&gt;
-	
-	&lt;code class="block"&gt;set-popups [--mode &amp;lt;enable|disable&amp;gt;] [--scope &amp;lt;current|all&amp;gt;]&lt;/code&gt;
-	&lt;p&gt;Popups have been [enabled/disabled] for [this site/all sites].&lt;/p&gt;
-	&lt;p&gt;Note:  If you don't enter any command arguments, you'll simply disable popups on the current website only.&lt;/p&gt;
+    &lt;h4&gt;Enable or disable popups on the current or all sites&lt;/h4&gt;
+    &lt;code class="block"&gt;set-popups [--mode &amp;lt;enable|disable&amp;gt;] [--scope &amp;lt;current|all&amp;gt;]&lt;/code&gt;
+    &lt;p&gt;Popups have been [enabled/disabled] for [this site/all sites].&lt;/p&gt;
+    &lt;p&gt;Note: If you don't enter any command arguments, you'll simply disable popups on the current website only.&lt;/p&gt;
 &lt;/div&gt;</value>
   </data>
   <data name="Prompt_ScopeInvalid.Text" xml:space="preserve">
@@ -314,12 +390,13 @@
   </data>
   <data name="Prompt_ThemesUsed_ResultHtml.Text" xml:space="preserve">
     <value>&lt;div&gt;
-        &lt;p&gt;Ideally, this list should be as short as possible on most websites.&lt;/p&gt;
-        &lt;p&gt;View all of the theme settings used on the entire DNN instance&lt;/p&gt;
-        &lt;h4&gt;Using list-themes&lt;/h4&gt;
-        &lt;code class="block"&gt;list-themes&lt;/code&gt;
-        &lt;p&gt;A listing of all of the themes that have been specified in the superuser settings, site settings, pages, and modules will be listed.&lt;/p&gt;
-    &lt;/div&gt;</value>
+    &lt;p&gt;Ideally, this list should be as short as possible on most websites.&lt;/p&gt;
+    &lt;p&gt;View all of the theme settings used on the entire DNN instance&lt;/p&gt;
+    &lt;h4&gt;Using list-themes&lt;/h4&gt;
+    &lt;code class="block"&gt;list-themes&lt;/code&gt;
+    &lt;p&gt;A listing of all of the themes that have been specified in the superuser settings, site settings, pages, and
+        modules will be listed.&lt;/p&gt;
+&lt;/div&gt;</value>
   </data>
   <data name="Prompt_UserImpersonated.Text" xml:space="preserve">
     <value>{0} has chosen to impersonate {1}.</value>
