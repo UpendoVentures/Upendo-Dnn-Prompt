@@ -77,6 +77,13 @@ namespace Upendo.Modules.UpendoPrompt.Commands
 
                 if (recordCount > 0)
                 {
+                    // get the size of the files/folders
+                    var ctlFolder = new FoldersController();
+                    var folderSize = FoldersController.GetDirectorySize(folderPath, "*.resources");
+
+                    output = string.Concat(output,
+                        string.Format(LocalizeString(Constants.LocalizationKeys.FileSizeMessage), folderSize));
+
                     return new ConsoleResultModel
                     {
                         Records = recordCount,

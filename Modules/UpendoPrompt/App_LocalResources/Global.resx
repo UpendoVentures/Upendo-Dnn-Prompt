@@ -150,6 +150,9 @@
   <data name="ErrorOccurred.Text" xml:space="preserve">
     <value>An error occurred. Please check the log files to find and resolve the issue.</value>
   </data>
+  <data name="FileSizeMessage.Text" xml:space="preserve">
+    <value>The files/folder queried has approximately {0} MB of files.</value>
+  </data>
   <data name="Impersonate.Text" xml:space="preserve">
     <value>Allows you as a superuser to impersonate another user account by either Username or UserID.</value>
   </data>
@@ -176,6 +179,9 @@
   </data>
   <data name="PromptDeletePackages.Text" xml:space="preserve">
     <value>This prompt command will allow you to delete all of the saved packages in the `/App_Code/ExtensionPackages/` folder. This should only be done with websites that do not have any plans of using the website import/export features.</value>
+  </data>
+  <data name="PromptDeleteTempFolder.Text" xml:space="preserve">
+    <value>Running this command will delete the `/Install/Temp/` folder in your DNN website. This can help diagnose/prevent extension installation issues in some cases.</value>
   </data>
   <data name="PromptListPackages.Text" xml:space="preserve">
     <value>This command allows you to list and see the extension packages that have been saved in the `/App_Data/ExtensionPackages/` folder.</value>
@@ -306,10 +312,10 @@
     <value>{0} has chosen to impersonate {1}.</value>
   </data>
   <data name="RecordsNone.Text" xml:space="preserve">
-    <value>No matches were found for your query.</value>
+    <value>No matches were found for your query. </value>
   </data>
   <data name="RecordsSome.Text" xml:space="preserve">
-    <value>Matches were found for your query.</value>
+    <value>Matches were found for your query. </value>
   </data>
   <data name="ScopeAll.Text" xml:space="preserve">
     <value>all sites</value>
