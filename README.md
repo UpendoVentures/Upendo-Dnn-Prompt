@@ -3,6 +3,7 @@ This is a [DNN CMS](https://dnncommunity.org) extension that installs prompts to
 
 This project was originally created by [Upendo Ventures](https://upendoventures.com/What/CMS/DNN) for the [DNN Summit 2022](https://dnnsummit.org) conference, and was used to present how to create prompts in DNN for the built-in command line interface used by superusers.  
 
+* [Demonstration Video](https://www.youtube.com/watch?v=ToEBjbpoFSE&list=PLojRGd54eWTiK-0y8o5EBYVcCY2yzhTZk)  
 * [Documentation](https://github.com/UpendoVentures/Upendo-Dnn-Prompt/wiki)  
 * [Download the Latest Release](https://github.com/UpendoVentures/Upendo-Dnn-Prompt/releases/latest)  
 
@@ -17,7 +18,7 @@ The previous version was not adhering to known best practices and as a result, i
 ## Solution  
 The solution currently expects to be in the following environment, but you can update that to be any version you'd like, provided all extensions will be compatible:  
 
-- DNN:  09.04.04  
+- DNN:  09.07.00  
 - SQL:  2017+  
 
 You should build and develop in a development environment that's separate from the local environment where you'd be testing.  The examples below help to illustrate this...  
