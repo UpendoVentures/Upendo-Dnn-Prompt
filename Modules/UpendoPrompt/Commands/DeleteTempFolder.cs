@@ -40,10 +40,10 @@ using Constants = Upendo.Modules.UpendoPrompt.Components.Constants;
 
 namespace Upendo.Modules.UpendoPrompt.Commands
 {
-    [ConsoleCommand("list-packages", Constants.PromptCategory, "PromptListPackages")]
-    public class ListPackages : PromptBase, IConsoleCommand
+    [ConsoleCommand("delete-tempfolder", Constants.PromptCategory, "PromptDeleteTempFolder")]
+    public class DeleteTempFolder : PromptBase, IConsoleCommand
     {
-        private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(ListPackages));
+        private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(DeleteTempFolder));
         
         #region Implementation
 
@@ -57,48 +57,19 @@ namespace Upendo.Modules.UpendoPrompt.Commands
             try
             {
                 var recordCount = 0;
-                var ctlPackages = new PackagesController();
-                var folderPath = ctlPackages.GetPackageBackupPath();
-                string[] filePaths = Directory.GetFiles(folderPath, Constants.FOLDER_EXTENSIONPACKAGES, SearchOption.TopDirectoryOnly);
+                var folderPath = TempFolderController.GetTempFolderPath();
 
-                var messages = new List<PromptMessage>();
-                foreach (string filePath in filePaths.OrderBy(f => f).ToList())
-                {
-                    messages.Add(new PromptMessage
-                    {
-                        Message = filePath.Replace(folderPath, string.Empty)
-                    });
-                }
-
-                recordCount = messages.Count;
+                Directory.Delete(folderPath, true);
 
                 var output = string.Empty;
-                output = LocalizeString(recordCount > 0 ? Constants.LocalizationKeys.RECORDS_SOME : Constants.LocalizationKeys.RECORDS_NONE);
-
-                if (recordCount > 0)
-                {
-                    // get the size of the files/folders
-                    var ctlFolder = new FoldersController();
-                    var folderSize = FoldersController.GetDirectorySize(folderPath, "*.resources");
-
-                    output = string.Concat(output,
-                        string.Format(LocalizeString(Constants.LocalizationKeys.FileSizeMessage), folderSize));
-
+                output = LocalizeString(Constants.LocalizationKeys.TempFolderFilesDeleteSuccess);
+                
                     return new ConsoleResultModel
                     {
                         Records = recordCount,
-                        Data = messages,
-                        Output = output
+                        Output = output, 
+                        IsError = false
                     };
-                }
-                else
-                {
-                    return new ConsoleResultModel
-                    {
-                        Records = recordCount,
-                        Output = output
-                    };
-                }
             }
             catch (Exception e)
             {
