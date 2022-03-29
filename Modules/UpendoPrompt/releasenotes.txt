@@ -8,6 +8,7 @@
 
 	<h2>Version 01.04.00</h2>
 	<ul>
+		<li>Lowered the supported version of DNN Platform to 09.07.00 and higher.</li>
 		<li>Added `impersonate` as a new command. This allows authorized end-users to impersonate other user accounts.</li>
 		<li>Added `list-availablepackages` as a new command. This allows you to review to see if there are any extension packages waiting to be installed.</li>
 		<li>Added `list-packages` as a new command. This allows you to see what extension packages are saved in the `/App_Data/ExtensionPackages/` folder.</li>
