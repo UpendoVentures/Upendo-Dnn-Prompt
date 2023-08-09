@@ -5,9 +5,9 @@ This project was originally created by [Upendo Ventures](https://upendoventures.
 
 * [Demonstration Video](https://www.youtube.com/watch?v=ToEBjbpoFSE&list=PLojRGd54eWTiK-0y8o5EBYVcCY2yzhTZk)  
 * [Documentation](https://github.com/UpendoVentures/Upendo-Dnn-Prompt/wiki)  
-* [Download the Latest Release](https://github.com/UpendoVentures/Upendo-Dnn-Prompt/releases/latest)
+* [Download the Latest Release](https://github.com/UpendoVentures/Upendo-Dnn-Prompt/releases/latest)  
 
-* <hr />  
+<hr />  
 
 ## `Sponsors == (typeOf superHuman) Awesome;`  
 
