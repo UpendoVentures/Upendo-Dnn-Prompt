@@ -1,58 +1,113 @@
 <style>
 	div.uv-install-wrapper h3, div.uv-install-wrapper h4, div.uv-install-wrapper p, div.uv-install-wrapper hr, div.uv-install-wrapper ul { margin-bottom: 0.5em; }
 	div.uv-install-wrapper ul { padding-left: 2em; }
+	.muy-importante { color:red;font-weight:bold; }
 </style>
 <div class="uv-install-wrapper">
+	<h2>UpendoPrompt Modules Extension for DNN</h2>
+	<hr />
 
-	<h1>UpendoPrompt Modules Extension for DNN</h1>
+	<div class="dnnClear">
+		<p class="muy-importante">The release notes continue after the Sponsors and Contributors below.</p>
+	
+		<h3>Sponsors</h3>
+		<p>Open-source is not free. We're so GRATEFUL for the following people/organizations for <a href="https://github.com/sponsors/UpendoVentures" target="_blank">sponsoring developers</a> to work on this release!</p>
+		<p>Sponsorship is <em>Powered by GitHub Sponsors</em> and ensures that this project lives and thrives. <a href="https://github.com/sponsors/UpendoVentures" target="_blank">Please consider contributing</a> any amount.</p>
+		<p>THANK YOU to the following rockstars!</p>
+		<ul>
+			<li>David Poindexter, <a href="https://nvisionative.com/" target="_blank">nvisionative</a></li>
+			<li>Dan Rice, <a href="https://www.puresystems.co.uk/" target="_blank">Pure Systems</a></li>
+			<li>Matt Rutledge, <a href="https://beleivekids.com/" target="_blank">Believe Kids</a></li>
+			<li>Adam Bernstein, <a href="https://practicewise.com/" target="_blank">PracticeWise</a></li>
+		</ul>
+	
+		<h3>Contributors</h3>
+		<p>THANK YOU to the following community members for participating in this release!</p>
+		<ul>
+			<li>Will Strohl, <a href="https://upendoventures.com/How/People/Will-Strohl" target="_blank">Upendo Ventures</a></li>
+			<li>Ariel Blanco, <a href="https://upendoventures.com/What/CMS/DNN/Extensions" target="_blank">Upendo Ventures</a></li>
+		</ul>
+	
+		<h3><strong>Release Note Prefixes</strong></h3>
+		<p>The following prefixes are defined as:</p>
+		<ul>
+			<li><strong>SI:</strong> Support Inquiry - This issue was reported by a <a href="https://upendoventures.com/Support" target="_blank">support customer</a> and, as such, was prioritized above all other tasks.</li>
+			<li><strong>CI:</strong> Community Inquiry - This issue was reported by a community member in the <a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues" target="_blanK">GitHub issues (or elsewhere)</a>.</li>
+		</ul>
+		<hr />
 
-	<h2>Version 01.04.00</h2>
-	<ul>
-		<li>Lowered the supported version of DNN Platform to 09.07.00 and higher.</li>
-		<li>Added `impersonate` as a new command. This allows authorized end-users to impersonate other user accounts.</li>
-		<li>Added `list-availablepackages` as a new command. This allows you to review to see if there are any extension packages waiting to be installed.</li>
-		<li>Added `list-packages` as a new command. This allows you to see what extension packages are saved in the `/App_Data/ExtensionPackages/` folder.</li>
-		<li>Added `delete-packages` as a new command. This allows you to delete all of the saved extension packages in the `/App_Data/ExtensionPackages/` folder.</li>
-		<li>Added `delete-tempfolder` as a new command. This allows you to delete the temporary install/upgrade folder and all all of its contents.</li>
-	</ul>
+		<h3>Version 01.05.00</h3>
+		<h4>Enhancements</h4>
+		<ul>
+			<li>CI: Added `set-captcha` as a new command. This allows authorized end-users toggle the login CAPTCHA on and off. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/39" target="_blank">Issue 39</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<!--
+			<li>SI:  (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
+			-->
+		</ul>
+		<h4>Maintenence &amp Bug Fixes</h4>
+		<ul>
+			<li>Raised the minimum DNN version to 09.10.00 (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/38" target="_blank">Issue 38</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<!--
+			<li> (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
+			-->
+		</ul>
+		<hr />
 
-	<h2>Version 01.03.01</h2>
-	<ul>
-		<li>Renamed `debug-info` to `list-debug`. The deprecated `debug-info` command will be removed in version 1.5.0 or newer.</li>
-		<li>Renamed `debug-mode` to `set-debug`. The deprecated `debug-mode` command will be removed in version 1.5.0 or newer.</li>
-		<li>Renamed `popups-mode` to `set-popups`. The deprecated `popup-mode` command will be removed in version 1.5.0 or newer.</li>
-		<li>Renamed `themes-used` to `list-themes`. The deprecated `themes-used` command will be removed in version 1.5.0 or newer.</li>
-	</ul>
+		<h3>Version 01.04.00</h3>
+		<ul>
+			<li>Lowered the supported version of DNN Platform to 09.07.00 and higher.</li>
+			<li>Added `impersonate` as a new command. This allows authorized end-users to impersonate other user accounts.</li>
+			<li>Added `list-availablepackages` as a new command. This allows you to review to see if there are any extension packages waiting to be installed.</li>
+			<li>Added `list-packages` as a new command. This allows you to see what extension packages are saved in the `/App_Data/ExtensionPackages/` folder.</li>
+			<li>Added `delete-packages` as a new command. This allows you to delete all of the saved extension packages in the `/App_Data/ExtensionPackages/` folder.</li>
+			<li>Added `delete-tempfolder` as a new command. This allows you to delete the temporary install/upgrade folder and all all of its contents.</li>
+		</ul>
+		<hr />
 
-	<h2>Version 01.03.00</h2>
-	<ul>
-		<li>`themes-used`: A new command is available that lists the themes used throughout the DNN instance.</li>
-		<li>Updated the help text for `debug-info` and `debug-mode`.</li>
-	</ul>
+		<h3>Version 01.03.01</h3>
+		<ul>
+			<li>Renamed `debug-info` to `list-debug`. The deprecated `debug-info` command will be removed in version 1.5.0 or newer.</li>
+			<li>Renamed `debug-mode` to `set-debug`. The deprecated `debug-mode` command will be removed in version 1.5.0 or newer.</li>
+			<li>Renamed `popups-mode` to `set-popups`. The deprecated `popup-mode` command will be removed in version 1.5.0 or newer.</li>
+			<li>Renamed `themes-used` to `list-themes`. The deprecated `themes-used` command will be removed in version 1.5.0 or newer.</li>
+		</ul>
+		<hr />
 
-	<h2>Version 01.02.00</h2>
-	<ul>
-		<li>`debug-info`: A new command is available that lists the debug mode for the major 3 debug areas.</li>
-		<li>Some minor refactoring was necessary to add the new prompt.</li>
-	</ul>
+		<h3>Version 01.03.00</h3>
+		<ul>
+			<li>`themes-used`: A new command is available that lists the themes used throughout the DNN instance.</li>
+			<li>Updated the help text for `debug-info` and `debug-mode`.</li>
+		</ul>
+		<hr />
 
-	<h2>Version 01.01.01</h2>
-	<ul>
-		<li>`debug-mode`: Removes a redundant call to save the configuration update.</li>
-	</ul>
+		<h3>Version 01.02.00</h3>
+		<ul>
+			<li>`debug-info`: A new command is available that lists the debug mode for the major 3 debug areas.</li>
+			<li>Some minor refactoring was necessary to add the new prompt.</li>
+		</ul>
+		<hr />
 
-	<h2>Version 01.01.00</h2>
-	<ul>
-		<li>Includes a prompt for: `debug-mode`</li>
-		<li>Resolves localization fixes for the 'popup-mode' prompt.</li>
-		<li>Cleaned up a minor typo in the solution project file.</li>
-		<li>Updated build process to include .resource files when in a Config folder.</li>
-	</ul>
+		<h3>Version 01.01.01</h3>
+		<ul>
+			<li>`debug-mode`: Removes a redundant call to save the configuration update.</li>
+		</ul>
+		<hr />
 
-	<h2>Version 01.00.00</h2>
-	<ul>
-		<li>Initial release.</li>
-		<li>Includes a prompt for: `popup-mode`</li>
-	</ul>
+		<h3>Version 01.01.00</h3>
+		<ul>
+			<li>Includes a prompt for: `debug-mode`</li>
+			<li>Resolves localization fixes for the 'popup-mode' prompt.</li>
+			<li>Cleaned up a minor typo in the solution project file.</li>
+			<li>Updated build process to include .resource files when in a Config folder.</li>
+		</ul>
+		<hr />
 
+		<h3>Version 01.00.00</h3>
+		<ul>
+			<li>Initial release.</li>
+			<li>Includes a prompt for: `popup-mode`</li>
+		</ul>
+		<hr />
+
+	</div>
 </div>

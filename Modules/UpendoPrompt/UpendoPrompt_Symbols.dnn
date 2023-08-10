@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dotnetnuke type="Package" version="6.0">
   <packages>
-    <package name="Upendo.Modules.UpendoPrompt_Symbols" type="Library" version="01.04.00">
+    <package name="Upendo.Modules.UpendoPrompt_Symbols" type="Library" version="01.05.00">
       <friendlyName>UpendoPrompt Module Symbols</friendlyName>
       <description><![CDATA[This extension adds some prompt commands that might help your management of DNN be easier from time to time. ]]></description>
       <owner>
         <name>Will Strohl</name>
         <organization>Upendo Ventures, LLC</organization>
-        <url>https://upendoventures.com</url>
-        <email>solutions@upendoventures.com</email>
+        <url><![CDATA[<a href="https://upendoventures.com/What/CMS/DNN" target="_blank">https://upendoventures.com</a>]]></url>
+        <email><![CDATA[<a href="mailto:solutions@upendoventures.com" target="_blank">solutions@upendoventures.com</a>]]></email>
       </owner>
       <license src="License.txt" />
       <releaseNotes src="ReleaseNotes.txt" />
       <azureCompatible>True</azureCompatible>
       <dependencies>
-        <dependency type="managedPackage" version="1.4.0">Upendo.Modules.UpendoPrompt</dependency>
+        <dependency type="managedPackage" version="1.5.0">Upendo.Modules.UpendoPrompt</dependency>
       </dependencies>
 
       <components>
