@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CaptchaModeToggled.Text" xml:space="preserve">
+    <value>CAPTCHA has been toggled {0} on this website. </value>
+  </data>
   <data name="DebugDisabled.Text" xml:space="preserve">
     <value>Debugging is disabled throughout the site. </value>
   </data>
@@ -198,6 +201,9 @@
   <data name="PopupEnabled.Text" xml:space="preserve">
     <value>Popups have been enabled for {0}.</value>
   </data>
+  <data name="PromptCaptchaMode.Text" xml:space="preserve">
+    <value>Allows you to toggle the CAPTCHA setting on and off on the login.  </value>
+  </data>
   <data name="PromptDebugInfo.Text" xml:space="preserve">
     <value>Displays the debug details for the primary 3 debugging locations. </value>
   </data>
@@ -221,6 +227,16 @@
   </data>
   <data name="PromptThemeseUsed.Text" xml:space="preserve">
     <value>This command allows you to see all of the themes that currently are used by one or more pages, modules, and other settings.</value>
+  </data>
+  <data name="Prompt_CaptchaMode_ResultHtml.Text" xml:space="preserve">
+    <value>&lt;div&gt;
+    &lt;p&gt;This command makes it super-simple to toggle the login CAPTCHA setting on and off.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;WARNING!&lt;/strong&gt; When used, this command will clear the data cache on your website. Though, most people will likely not notice, some page loads may be a bit slower for the next few moments.&lt;/p&gt;
+    &lt;h4&gt;Using set-captcha&lt;/h4&gt;
+    &lt;code class="block"&gt;set-captcha&lt;/code&gt;
+    &lt;p&gt;This command does not have any options.&lt;/p&gt;
+    &lt;p&gt;When you run this command, CAPTCHA mode is toggled in the Site Settings. If the setting doesn't already exist, it creates it.&lt;/p&gt;
+&lt;/div&gt;</value>
   </data>
   <data name="Prompt_DebugInfo_ResultHtml.Text" xml:space="preserve">
     <value>&lt;div&gt;
@@ -412,6 +428,12 @@
   </data>
   <data name="ScopeCurrent.Text" xml:space="preserve">
     <value>the current site only</value>
+  </data>
+  <data name="StateOff.Text" xml:space="preserve">
+    <value>OFF</value>
+  </data>
+  <data name="StateOn.Text" xml:space="preserve">
+    <value>ON</value>
   </data>
   <data name="TempFolderFilesDeleteSuccess.Text" xml:space="preserve">
     <value>The files and folders in the installation temporary folder have been deleted. </value>

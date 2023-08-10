@@ -48,6 +48,7 @@ namespace Upendo.Modules.UpendoPrompt.Components
         {
             public const string HostSetting_DebugMode = "DebugMode";
             public const string PortalSetting_Popup = "EnablePopUps";
+            public const string PortalSettings_UseCaptcha = "DNN_UseCaptcha";
         }
 
         public static class LocalizationKeys
@@ -105,6 +106,11 @@ namespace Upendo.Modules.UpendoPrompt.Components
             public const string PackageLanguage = "PackageLanguage";
             public const string PackageProvider = "PackageProvider";
             public const string PackageJsLibrary = "PackageJsLibrary";
+
+            public const string CaptchaResult = "CaptchaModeToggled";
+
+            public const string State_On = "StateOn";
+            public const string State_Off = "StateOff";
         }
 
         public static class Procedures
