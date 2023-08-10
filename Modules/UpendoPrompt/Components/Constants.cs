@@ -31,7 +31,7 @@ namespace Upendo.Modules.UpendoPrompt.Components
         public const string Namespace = "uvm";
         public const string PromptCategory = "Upendo Ventures";
         public const string OutputPrefix = "Upendo Prompt";
-        
+
         public const string CONFIG_EXT = ".config";
         public const string LOG4NET_CONFIG = "DotNetNuke.log4net.config";
 
@@ -79,7 +79,7 @@ namespace Upendo.Modules.UpendoPrompt.Components
             public const string RECORDS_NONE = "RecordsNone";
             public const string RECORDS_SOME = "RecordsSome";
 
-            public const string DEPRECATED= "Deprecated";
+            public const string DEPRECATED = "Deprecated";
 
             public const string FlagUsername = "Prompt_Impersonate_FlagUsername";
             public const string FlagUserId = "Prompt_Impersonate_FlagUserID";

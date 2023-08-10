@@ -50,6 +50,9 @@ using Constants = Upendo.Modules.UpendoPrompt.Components.Constants;
 
 namespace Upendo.Modules.UpendoPrompt.Commands.Deprecated
 {
+    /// <summary>
+    /// DebugInfo class
+    /// </summary>
     [Obsolete("Please use 'list-debug' instead. Will be removed in version 1.5.0 or higher.")]
     [ConsoleCommand("debug-info", Constants.PromptCategory, "PromptDebugInfo")]
     public class DebugInfo : PromptBase, IConsoleCommand

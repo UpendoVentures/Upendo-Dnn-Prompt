@@ -91,6 +91,10 @@ namespace Upendo.Modules.UpendoPrompt.Commands.Deprecated
             }
         }
 
+        /// <summary>
+        /// Run method
+        /// </summary>
+        /// <returns></returns>
         public override ConsoleResultModel Run()
         {
             try

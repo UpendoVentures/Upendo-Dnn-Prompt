@@ -81,6 +81,10 @@ namespace Upendo.Modules.UpendoPrompt.Commands.Deprecated
 
         #region Helpers
 
+        /// <summary>
+        /// LogError 
+        /// </summary>
+        /// <param name="ex"></param>
         protected override void LogError(Exception ex)
         {
             if (ex != null)

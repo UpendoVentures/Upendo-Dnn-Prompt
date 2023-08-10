@@ -41,7 +41,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
     public class ThemesUsed : PromptBase, IConsoleCommand
     {
         private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(ThemesUsed));
-        
+
         #region Implementation
 
         public override void Init(string[] args, PortalSettings portalSettings, UserInfo userInfo, int activeTabId)
@@ -64,7 +64,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                 {
                     Records = recordCount,
                     Data = themesUsed,
-                    IsError = false, 
+                    IsError = false,
                     Output = output
                 };
             }
