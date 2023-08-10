@@ -44,6 +44,9 @@ using Constants = Upendo.Modules.UpendoPrompt.Components.Constants;
 
 namespace Upendo.Modules.UpendoPrompt.Commands.Deprecated
 {
+    /// <summary>
+    /// DebugMode class
+    /// </summary>
     [Obsolete("Please use 'debug-mode' instead. Will be removed in version 1.5.0 or higher.")]
     [ConsoleCommand("debug-mode", Constants.PromptCategory, "PromptDebugMode")]
     public class DebugMode : PromptBase, IConsoleCommand

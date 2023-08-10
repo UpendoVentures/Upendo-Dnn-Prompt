@@ -31,7 +31,7 @@ namespace Upendo.Modules.UpendoPrompt.Components
         public const string Namespace = "uvm";
         public const string PromptCategory = "Upendo Ventures";
         public const string OutputPrefix = "Upendo Prompt";
-        
+
         public const string CONFIG_EXT = ".config";
         public const string LOG4NET_CONFIG = "DotNetNuke.log4net.config";
 
@@ -48,6 +48,7 @@ namespace Upendo.Modules.UpendoPrompt.Components
         {
             public const string HostSetting_DebugMode = "DebugMode";
             public const string PortalSetting_Popup = "EnablePopUps";
+            public const string PortalSettings_UseCaptcha = "DNN_UseCaptcha";
         }
 
         public static class LocalizationKeys
@@ -79,7 +80,7 @@ namespace Upendo.Modules.UpendoPrompt.Components
             public const string RECORDS_NONE = "RecordsNone";
             public const string RECORDS_SOME = "RecordsSome";
 
-            public const string DEPRECATED= "Deprecated";
+            public const string DEPRECATED = "Deprecated";
 
             public const string FlagUsername = "Prompt_Impersonate_FlagUsername";
             public const string FlagUserId = "Prompt_Impersonate_FlagUserID";
@@ -105,6 +106,11 @@ namespace Upendo.Modules.UpendoPrompt.Components
             public const string PackageLanguage = "PackageLanguage";
             public const string PackageProvider = "PackageProvider";
             public const string PackageJsLibrary = "PackageJsLibrary";
+
+            public const string CaptchaResult = "CaptchaModeToggled";
+
+            public const string State_On = "StateOn";
+            public const string State_Off = "StateOff";
         }
 
         public static class Procedures
