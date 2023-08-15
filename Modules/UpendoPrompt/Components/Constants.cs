@@ -111,6 +111,14 @@ namespace Upendo.Modules.UpendoPrompt.Components
 
             public const string State_On = "StateOn";
             public const string State_Off = "StateOff";
+
+            public const string DemoUsersAdded = "DemoUserAccountsAdded";
+            public const string CreateUserSuccess = "CreateUserSuccess";
+            public const string CreateUserFailure = "CreateUserFailure";
+            public const string CreateUserExists = "CreateUserExists";
+            public const string DeleteUserSuccess = "DeleteUserSuccess";
+            public const string DeleteUserNotNeeded = "DeleteUserNotNeeded";
+            public const string DemoUsersDeleted = "DemoUsersDeleted";
         }
 
         public static class Procedures

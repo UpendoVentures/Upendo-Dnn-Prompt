@@ -120,6 +120,15 @@
   <data name="CaptchaModeToggled.Text" xml:space="preserve">
     <value>CAPTCHA has been toggled {0} on this website. </value>
   </data>
+  <data name="CreateUserExists.Text" xml:space="preserve">
+    <value>User already exists, not created: {0} ({1}).</value>
+  </data>
+  <data name="CreateUserFailure.Text" xml:space="preserve">
+    <value>Error creating user: {0} ({1}).</value>
+  </data>
+  <data name="CreateUserSuccess.Text" xml:space="preserve">
+    <value>Successfully created user: {0} ({1}).</value>
+  </data>
   <data name="DebugDisabled.Text" xml:space="preserve">
     <value>Debugging is disabled throughout the site. </value>
   </data>
@@ -140,6 +149,24 @@
   </data>
   <data name="DebugStatusWebConfig.Text" xml:space="preserve">
     <value>Debugging in the web.config is {0}.</value>
+  </data>
+  <data name="DeleteDemoUsers.Text" xml:space="preserve">
+    <value>Allows you to delete the user accounts created using the `set-demousers` command, in bulk.</value>
+  </data>
+  <data name="DeleteUserNotNeeded.Text" xml:space="preserve">
+    <value>User account does not exist, not deleted:  {0} {1} ({2}).</value>
+  </data>
+  <data name="DeleteUserSuccess.Text" xml:space="preserve">
+    <value>Successfully deleted user account:  {0} {1} ({2}).</value>
+  </data>
+  <data name="DemoUserAccountsAdded.Text" xml:space="preserve">
+    <value>Successfully added demo user accounts... We saved some time together. Yay!  :)</value>
+  </data>
+  <data name="DemoUsers.Text" xml:space="preserve">
+    <value>Helps when developing or building out demos, by automatically adding a bunch of fun user accounts to play with.</value>
+  </data>
+  <data name="DemoUsersDeleted.Text" xml:space="preserve">
+    <value>Successfully deleted demo user accounts... We saved some time together. Yay!  :)</value>
   </data>
   <data name="Deprecated.Text" xml:space="preserve">
     <value>This command has been deprecated. Please use '{0}' instead. This command will be removed in a future release.</value>
@@ -265,6 +292,21 @@
     &lt;code class="block"&gt;list-debug&lt;/code&gt;
 &lt;/div&gt;</value>
   </data>
+  <data name="Prompt_DeleteDemoUsers_ResultHtml.Text" xml:space="preserve">
+    <value>&lt;div&gt;
+        &lt;p&gt;This is a companion command for the `set-demousers` command. This version of the command will permanently delete the users accounts created by that command.&lt;/p&gt;
+        &lt;h4&gt;Using delete-demousers&lt;/h4&gt;
+        &lt;code class="block"&gt;delete-demousers&lt;/code&gt;
+        &lt;p&gt;This command does not have any flags&lt;/p&gt;
+        &lt;code class="block"&gt;delete-demousers&lt;/code&gt;
+        &lt;h4&gt;Output&lt;/h4&gt;
+        &lt;p&gt;If successful, you should see a message for each demo user deleted, stating the result of the deletion of the account.&lt;/p&gt;
+        &lt;p&gt;User Deleted:&lt;/p&gt;
+        &lt;code class="block"&gt;Successfully deleted user account: Jane Doe ({jdoe@example.com}).&lt;/code&gt;
+        &lt;p&gt;User Doesn't Exist:&lt;/p&gt;
+        &lt;code class="block"&gt;User account does not exist, not deleted: Jane Doe ({jdoe@example.com}).&lt;/code&gt;
+    &lt;/div&gt;</value>
+  </data>
   <data name="Prompt_DeletePackages_ResultHtml.Text" xml:space="preserve">
     <value>&lt;div&gt;
     &lt;p&gt;Newer versions of DNN saves any installed extension into the `/App_Data/ExtensionPackages/` folder. This
@@ -300,6 +342,24 @@
     &lt;p&gt;If one or more errors are found, a listing of each errored file will be shown, including the messages below.
     &lt;/p&gt;
 &lt;/div&gt;</value>
+  </data>
+  <data name="Prompt_DemoUsers_ResultHtml.Text" xml:space="preserve">
+    <value>&lt;div&gt;
+        &lt;p&gt;When working on building a website or extension, you often need some demo users to use for your work. This command adds a handful of test user accounts for you.&lt;/p&gt;
+        &lt;h4&gt;Using set-demousers&lt;/h4&gt;
+        &lt;code class="block"&gt;set-demousers&lt;/code&gt;
+        &lt;p&gt;This command does not have any flags&lt;/p&gt;
+        &lt;code class="block"&gt;set-demousers&lt;/code&gt;
+        &lt;h4&gt;Output&lt;/h4&gt;
+        &lt;p&gt;If successful, you should see a message for each demo user, stating the result of the creation of the account.&lt;/p&gt;
+        &lt;p&gt;User Created:&lt;/p&gt;
+        &lt;code class="block"&gt;Successfully created user: Jane Doe ({jdoe@example.com}).&lt;/code&gt;
+        &lt;p&gt;User Exists:&lt;/p&gt;
+        &lt;code class="block"&gt;User already exists, not created: Jane Doe ({jdoe@example.com}).&lt;/code&gt;
+        &lt;p&gt;Error Creating User:&lt;/p&gt;
+        &lt;code class="block"&gt;Error creating user: Jane Doe ({jdoe@example.com}).&lt;/code&gt;
+        &lt;p&gt;(&lt;em&gt;if this happens, check the Admin Log to see why, or run `set-debug` and then check the Log4NET log file for more details.&lt;/em&gt;)&lt;/p&gt;
+    &lt;/div&gt;</value>
   </data>
   <data name="Prompt_ImpersonateFlagsInvalid.Text" xml:space="preserve">
     <value>You must either specify a valid UserID -OR- Username value to impersonate another user account. Both were empty. Please only specify one.</value>
