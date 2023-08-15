@@ -36,20 +36,32 @@
 		</ul>
 		<hr />
 
-		<h3>Version 01.05.00</h3>
+		<h3>Version 01.06.00</h3>
 		<h4>Enhancements</h4>
 		<ul>
-			<li>CI: Added `set-captcha` as a new command. This allows authorized end-users toggle the login CAPTCHA on and off. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/39" target="_blank">Issue 39</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>Added `set-demousers` as a new command. This allows authorized end-users to create a small number of user accounts for testing, demo, etc. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/45" target="_blank">Issue 45</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>Added `delete-demousers` as a new command. This allows authorized end-users to permanently delete user accounts created by `set-demousers`. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/45" target="_blank">Issue 45</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
 			<!--
 			<li>SI:  (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
 			-->
 		</ul>
 		<h4>Maintenence &amp Bug Fixes</h4>
 		<ul>
-			<li>Raised the minimum DNN version to 09.10.00 (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/38" target="_blank">Issue 38</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>None at this time.</li>
 			<!--
 			<li> (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
 			-->
+		</ul>
+		<hr />
+
+		<h3>Version 01.05.00</h3>
+		<h4>Enhancements</h4>
+		<ul>
+			<li>CI: Added `set-captcha` as a new command. This allows authorized end-users toggle the login CAPTCHA on and off. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/39" target="_blank">Issue 39</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+		</ul>
+		<h4>Maintenence &amp Bug Fixes</h4>
+		<ul>
+			<li>Raised the minimum DNN version to 09.10.00 (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/38" target="_blank">Issue 38</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
 		</ul>
 		<hr />
 
