@@ -41,8 +41,6 @@ using Dnn.PersonaBar.Library.Prompt.Models;
 using DotNetNuke.Common.Utilities; // added for the commented-out clearing of cache below
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.Entities.Users;
-using DotNetNuke.Security;
-using DotNetNuke.Services.Log.EventLog;
 using Upendo.Modules.UpendoPrompt.Entities;
 
 namespace Upendo.Modules.UpendoPrompt.Commands
