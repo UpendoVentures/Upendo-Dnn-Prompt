@@ -119,6 +119,11 @@ namespace Upendo.Modules.UpendoPrompt.Components
             public const string DeleteUserSuccess = "DeleteUserSuccess";
             public const string DeleteUserNotNeeded = "DeleteUserNotNeeded";
             public const string DemoUsersDeleted = "DemoUsersDeleted";
+
+            public const string TestUserAdded = "TestUserAccountsAdded";
+            public const string TestUsersDeleted = "TestUsersDeleted";
+            public const string HowManyNegative = "HowManyNegative";
+
         }
 
         public static class Procedures
