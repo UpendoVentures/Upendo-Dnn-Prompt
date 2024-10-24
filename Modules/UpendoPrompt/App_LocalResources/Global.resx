@@ -153,6 +153,9 @@
   <data name="DeleteDemoUsers.Text" xml:space="preserve">
     <value>Allows you to delete the user accounts created using the `set-demousers` command, in bulk.</value>
   </data>
+  <data name="DeleteTestUsers.Text" xml:space="preserve">
+    <value>Allows you to delete the user accounts created using the `set-testusers` command, in bulk.</value>
+  </data>
   <data name="DeleteUserNotNeeded.Text" xml:space="preserve">
     <value>User account does not exist, not deleted:  {0} {1} ({2}).</value>
   </data>
@@ -182,6 +185,12 @@
   </data>
   <data name="FileSizeMessage.Text" xml:space="preserve">
     <value>The files/folder queried has approximately {0} MB of files.</value>
+  </data>
+  <data name="HowManyFlagsInvalid.Text" xml:space="preserve">
+    <value>Invalid</value>
+  </data>
+  <data name="HowManyNegative.Text" xml:space="preserve">
+    <value>--howmany must be a positive integer.</value>
   </data>
   <data name="Impersonate.Text" xml:space="preserve">
     <value>Allows you as a superuser to impersonate another user account by either Username or UserID.</value>
@@ -497,6 +506,15 @@
   </data>
   <data name="TempFolderFilesDeleteSuccess.Text" xml:space="preserve">
     <value>The files and folders in the installation temporary folder have been deleted. </value>
+  </data>
+  <data name="TestUserAccountsAdded.Text" xml:space="preserve">
+    <value>Successfully added test user accounts... We saved some time together. Yay!  :)</value>
+  </data>
+  <data name="TestUsers.Text" xml:space="preserve">
+    <value>Helps you develop or create demos by automatically adding a bunch of fun user accounts to play with. You can add the --howmany parameter to define how many users you want to create, otherwise 100 will be created by default.</value>
+  </data>
+  <data name="TestUsersDeleted.Text" xml:space="preserve">
+    <value>Successfully deleted test user accounts... We saved some time together. Yay!  :)</value>
   </data>
   <data name="Welcome.Text" xml:space="preserve">
     <value>Thank you for using Upendo Prompt. There is no reason to place this module on a page at this time, but it may be necessary in the future.</value>
