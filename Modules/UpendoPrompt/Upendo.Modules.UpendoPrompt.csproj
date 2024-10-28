@@ -83,8 +83,10 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\DeleteTestUsers.cs" />
     <Compile Include="Commands\DeleteTempFolder.cs" />
     <Compile Include="Commands\DeleteDemoUsers.cs" />
+    <Compile Include="Commands\TestUsers.cs" />
     <Compile Include="Commands\Deprecated\DebugInfo.cs" />
     <Compile Include="Commands\Deprecated\DebugMode.cs" />
     <Compile Include="Commands\Deprecated\PopupMode.cs" />
@@ -112,6 +114,8 @@
     <Compile Include="Controllers\ExtensionsController.cs" />
     <Compile Include="Data\DataAccess.cs" />
     <Compile Include="Entities\AvailablePackagesDto.cs" />
+    <Compile Include="Entities\Interfaces\ITestUser.cs" />
+    <Compile Include="Entities\TestUser.cs" />
     <Compile Include="Entities\DemoUser.cs" />
     <Compile Include="Entities\Interfaces\IDemoUser.cs" />
     <Compile Include="Entities\Interfaces\IAvailablePackagesDto.cs" />
