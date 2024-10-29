@@ -61,13 +61,13 @@
 		</ul>
 		<h4>Maintenence &amp Bug Fixes</h4>
 		<ul>
-			<li>Raised the minimum DNN version to 09.10.00 (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/38" target="_blank">Issue 38</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>Raised the minimum DNN version to 09.11.00 (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/38" target="_blank">Issue 38</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
 		</ul>
 		<hr />
 
 		<h3>Version 01.04.00</h3>
 		<ul>
-			<li>Lowered the supported version of DNN Platform to 09.07.00 and higher.</li>
+			<li>Lowered the supported version of DNN Platform to 09.11.00 and higher.</li>
 			<li>Added `impersonate` as a new command. This allows authorized end-users to impersonate other user accounts.</li>
 			<li>Added `list-availablepackages` as a new command. This allows you to review to see if there are any extension packages waiting to be installed.</li>
 			<li>Added `list-packages` as a new command. This allows you to see what extension packages are saved in the `/App_Data/ExtensionPackages/` folder.</li>
