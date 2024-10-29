@@ -37,7 +37,7 @@ The previous version was not adhering to known best practices and as a result, i
 ## Solution  
 The solution currently expects to be in the following environment, but you can update that to be any version you'd like, provided all extensions will be compatible:  
 
-- DNN:  09.07.00  
+- DNN:  09.11.00  
 - SQL:  2017+  
 
 You should build and develop in a development environment that's separate from the local environment where you'd be testing.  The examples below help to illustrate this...  
