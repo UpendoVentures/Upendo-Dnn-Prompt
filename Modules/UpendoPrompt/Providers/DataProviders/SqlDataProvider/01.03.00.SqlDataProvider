@@ -1,66 +1,57 @@
 ﻿/*
-
 INSTALL/UPGRADE SQL PROVIDER SCRIPT
 
 Prompt Extension Suite for DNN by Upendo Ventures, LLC
-
 */
 
 IF EXISTS (SELECT * FROM sys.objects WHERE type = N'P' AND OBJECT_ID = OBJECT_ID(N'{databaseOwner}[{objectQualifier}uvm_Prompt_GetThemesUsed]'))
    DROP PROCEDURE {databaseOwner}[{objectQualifier}uvm_Prompt_GetThemesUsed];
 GO
 
-CREATE PROCEDURE [uvm_Prompt_GetThemesUsed] 
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}uvm_Prompt_GetThemesUsed]
 AS
 BEGIN
-	CREATE TABLE #ThemesUsed (
-		[Source] NVARCHAR(50) NOT NULL, 
-		[ThemePath] NVARCHAR (200) NOT NULL, 
-		[PortalId] INT, 
-		[TabId] INT,
-		[ModuleId] INT
-	);
+    CREATE TABLE #ThemesUsed (
+        [Source] NVARCHAR(50) NOT NULL, 
+        [ThemePath] NVARCHAR(200) NOT NULL, 
+        [PortalId] INT, 
+        [TabId] INT,
+        [ModuleId] INT
+    );
 
-	INSERT INTO #ThemesUsed ([Source], [ThemePath], [PortalId], [TabId], [ModuleId]) 
-		SELECT N'HostSettings' AS [Source],hs.[SettingValue] AS [ThemePath],-1 AS [PortalId],-1 AS [TabId],-1 AS [ModuleId] 
-			FROM {databaseOwner}[{objectQualifier}HostSettings] hs 
-			WHERE hs.[SettingName] LIKE N'%Container' OR hs.[SettingName] LIKE N'%Skin'
-			ORDER BY hs.[SettingValue];
+    INSERT INTO #ThemesUsed ([Source], [ThemePath], [PortalId], [TabId], [ModuleId]) 
+        SELECT N'HostSettings' AS [Source], hs.[SettingValue] AS [ThemePath], -1 AS [PortalId], -1 AS [TabId], -1 AS [ModuleId] 
+        FROM {databaseOwner}[{objectQualifier}HostSettings] hs 
+        WHERE hs.[SettingName] LIKE N'%Container' OR hs.[SettingName] LIKE N'%Skin';
 
-	INSERT INTO #ThemesUsed ([Source], [ThemePath], [PortalId], [TabId], [ModuleId]) 
-		SELECT N'PortalSettings' AS [Source],ps.[SettingValue] AS [ThemePath],ps.[PortalID],-1 AS [TabId],-1 AS [ModuleId] 
-			FROM {databaseOwner}[{objectQualifier}PortalSettings] ps 
-			WHERE ps.[SettingName] LIKE N'%Container' OR ps.[SettingName] LIKE N'%Skin'
-			ORDER BY ps.[SettingValue];
+    INSERT INTO #ThemesUsed ([Source], [ThemePath], [PortalId], [TabId], [ModuleId]) 
+        SELECT N'PortalSettings' AS [Source], ps.[SettingValue] AS [ThemePath], ps.[PortalID], -1 AS [TabId], -1 AS [ModuleId] 
+        FROM {databaseOwner}[{objectQualifier}PortalSettings] ps 
+        WHERE ps.[SettingName] LIKE N'%Container' OR ps.[SettingName] LIKE N'%Skin';
 
-	INSERT INTO #ThemesUsed ([Source], [ThemePath], [PortalId], [TabId], [ModuleId]) 
-		SELECT N'Page' AS [Source],t.[SkinSrc] AS [ThemePath],t.[PortalID],t.[TabID],-1 AS [ModuleId] 
-			FROM {databaseOwner}[{objectQualifier}Tabs] t 
-			WHERE NOT t.[SkinSrc] IS NULL 
-			ORDER BY t.[SkinSrc];
+    INSERT INTO #ThemesUsed ([Source], [ThemePath], [PortalId], [TabId], [ModuleId]) 
+        SELECT N'Page' AS [Source], t.[SkinSrc] AS [ThemePath], t.[PortalID], t.[TabID], -1 AS [ModuleId] 
+        FROM {databaseOwner}[{objectQualifier}Tabs] t 
+        WHERE t.[SkinSrc] IS NOT NULL;
 
-	INSERT INTO #ThemesUsed ([Source], [ThemePath], [PortalId], [TabId], [ModuleId]) 
-		SELECT N'Page' AS [Source],t.[ContainerSrc] AS [ThemePath],t.[PortalID],t.[TabID],-1 AS [ModuleId] 
-			FROM {databaseOwner}[{objectQualifier}Tabs] t 
-			WHERE NOT t.[ContainerSrc] IS NULL 
-			ORDER BY t.[ContainerSrc];
+    INSERT INTO #ThemesUsed ([Source], [ThemePath], [PortalId], [TabId], [ModuleId]) 
+        SELECT N'Page' AS [Source], t.[ContainerSrc] AS [ThemePath], t.[PortalID], t.[TabID], -1 AS [ModuleId] 
+        FROM {databaseOwner}[{objectQualifier}Tabs] t 
+        WHERE t.[ContainerSrc] IS NOT NULL;
 
-	INSERT INTO #ThemesUsed ([Source], [ThemePath], [PortalId], [TabId], [ModuleId]) 
-		SELECT N'Module' AS [Source],tm.[ContainerSrc] AS [ThemePath],-1 AS [PortalId],tm.[TabID],tm.[ModuleID] 
-			FROM {databaseOwner}[{objectQualifier}TabModules] tm 
-			WHERE NOT tm.[ContainerSrc] IS NULL
-			ORDER BY tm.[ContainerSrc];
+    INSERT INTO #ThemesUsed ([Source], [ThemePath], [PortalId], [TabId], [ModuleId]) 
+        SELECT N'Module' AS [Source], tm.[ContainerSrc] AS [ThemePath], -1 AS [PortalId], tm.[TabID], tm.[ModuleID] 
+        FROM {databaseOwner}[{objectQualifier}TabModules] tm 
+        WHERE tm.[ContainerSrc] IS NOT NULL;
 
-	SELECT tu.[Source], tu.[ThemePath], tu.[PortalId], tu.[TabId], tu.[ModuleId] 
-		FROM #ThemesUsed tu 
-		ORDER BY tu.[Source], tu.[ThemePath], tu.[PortalId], tu.[TabId], tu.[ModuleId]; 
+    SELECT tu.[Source], tu.[ThemePath], tu.[PortalId], tu.[TabId], tu.[ModuleId] 
+    FROM #ThemesUsed tu 
+    ORDER BY tu.[Source], tu.[ThemePath], tu.[PortalId], tu.[TabId], tu.[ModuleId]; 
 
-	DROP TABLE #ThemesUsed;
+    DROP TABLE #ThemesUsed;
 END
 GO
 
 /*
-
 END OF FILE
-
 */
