@@ -42,6 +42,8 @@ using DotNetNuke.Common.Utilities; // added for the commented-out clearing of ca
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.Entities.Users;
 using Upendo.Modules.UpendoPrompt.Entities;
+using System.Web.Security;
+using System.Text;
 
 namespace Upendo.Modules.UpendoPrompt.Commands
 {
@@ -133,6 +135,8 @@ namespace Upendo.Modules.UpendoPrompt.Commands
         {
             var OUser = DotNetNuke.Entities.Users.UserController.GetUserByName(this.PortalId, newUser.Username);
             var blnExists = (OUser != null);
+            MembershipProvider provider = Membership.Provider;
+            int minLength = provider.MinRequiredPasswordLength;
 
             var user = new UserInfo
             {
@@ -145,7 +149,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                 PortalID = this.PortalId,
                 Membership = new UserMembership()
                 {
-                    Password = GenericAuthValue
+                    Password = minLength > 7 ? GetPassword(minLength) : GenericAuthValue
                 }
             };
 
@@ -181,6 +185,46 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                     Logger.Error(ex.InnerException.Message, ex.InnerException);
                 }
             }
+        }
+
+        private static string GeneratePassword(int minLength)
+        {
+            string basePassword = GenericAuthValue;
+            string passwordWithoutSymbol = basePassword.Split('!')[0];
+            int baseLength = passwordWithoutSymbol.Length + 1; 
+
+            if (minLength <= baseLength)
+            {
+                return basePassword.Substring(0, minLength);
+            }
+
+            int additionalLength = minLength - baseLength;
+            string additionalDigits = GenerateSequentialDigits(additionalLength);
+
+            return passwordWithoutSymbol + additionalDigits + "!";
+        }
+
+        private static string GenerateSequentialDigits(int length)
+        {
+            StringBuilder sb = new StringBuilder();
+            int currentDigit = 1;
+
+            for (int i = 0; i < length; i++)
+            {
+                sb.Append(currentDigit);
+                currentDigit++;
+
+                if (currentDigit == 10)
+                {
+                    currentDigit = 1;
+                }
+            }
+
+            return sb.ToString();
+        }
+        public static string GetPassword(int minRequiredPasswordLength)
+        {
+            return GeneratePassword(minRequiredPasswordLength);
         }
         #endregion
     }
