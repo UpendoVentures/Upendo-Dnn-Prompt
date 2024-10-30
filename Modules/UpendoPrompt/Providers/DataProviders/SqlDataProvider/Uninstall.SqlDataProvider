@@ -8,6 +8,10 @@ IF EXISTS (SELECT * FROM sys.objects WHERE type = N'P' AND OBJECT_ID = OBJECT_ID
    DROP PROCEDURE {databaseOwner}[{objectQualifier}uvm_Prompt_GetThemesUsed];
 GO
 
+IF EXISTS (SELECT * FROM sys.procedures WHERE name = 'uvm_Prompt_GetThemesUsed')
+    DROP PROCEDURE uvm_Prompt_GetThemesUsed;
+GO
+
 /*
 END OF FILE
 */
