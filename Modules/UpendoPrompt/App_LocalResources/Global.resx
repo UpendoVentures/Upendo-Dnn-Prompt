@@ -127,7 +127,7 @@
     <value>Error creating user: {0} ({1}).</value>
   </data>
   <data name="CreateUserSuccess.Text" xml:space="preserve">
-    <value>Successfully created user: {0} ({1}).</value>
+    <value>Successfully created user: {0} ({1}) (Password: {2}).</value>
   </data>
   <data name="DebugDisabled.Text" xml:space="preserve">
     <value>Debugging is disabled throughout the site. </value>
@@ -508,7 +508,7 @@
     <value>The files and folders in the installation temporary folder have been deleted. </value>
   </data>
   <data name="TestUserAccountsAdded.Text" xml:space="preserve">
-    <value>Successfully added test user accounts... We saved some time together. Yay!  :)</value>
+    <value>Successfully added test user accounts with password: {0}... We saved some time together. Yay!  :)</value>
   </data>
   <data name="TestUsers.Text" xml:space="preserve">
     <value>Helps you develop or create demos by automatically adding a bunch of fun user accounts to play with. You can add the --howmany parameter to define how many users you want to create, otherwise 100 will be created by default.</value>

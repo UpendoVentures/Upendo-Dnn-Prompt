@@ -42,6 +42,8 @@ using DotNetNuke.Common.Utilities; // added for the commented-out clearing of ca
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.Entities.Users;
 using Upendo.Modules.UpendoPrompt.Entities;
+using System.Web.Security;
+using System.Text;
 
 namespace Upendo.Modules.UpendoPrompt.Commands
 {
@@ -50,7 +52,6 @@ namespace Upendo.Modules.UpendoPrompt.Commands
     {
         private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(DemoUsers));
 
-        private const string GenericAuthValue = "Dnn2002!";
 
         #region Implementation
 
@@ -63,47 +64,52 @@ namespace Upendo.Modules.UpendoPrompt.Commands
         {
             try
             {
+                MembershipProvider provider = Membership.Provider;
+                int minLength = provider.MinRequiredPasswordLength;
+
+                string passwordGenerator = Utility.PasswordGenerator.GeneratePassword(minLength);
+
                 var messages = new List<PromptMessage>();
 
                 messages.Add(CreateUserAccount(new DemoUser
                 {
-                    FirstName = "Tony", LastName = "Stark", Email = "edith@example.com", Username = "tstark"
+                    FirstName = "Tony", LastName = "Stark", Email = "edith@example.com", Username = "tstark", Password = passwordGenerator
                 }));
                 messages.Add(CreateUserAccount(new DemoUser
                 {
-                    FirstName = "Diana", LastName = "Prince", Email = "dembootstho@example.com", Username = "dprince"
+                    FirstName = "Diana", LastName = "Prince", Email = "dembootstho@example.com", Username = "dprince", Password = passwordGenerator
                 }));
                 messages.Add(CreateUserAccount(new DemoUser
                 {
-                    FirstName = "Peter", LastName = "Quill", Email = "gamoralover@example.com", Username = "pquill"
+                    FirstName = "Peter", LastName = "Quill", Email = "gamoralover@example.com", Username = "pquill", Password = passwordGenerator
                 }));
                 messages.Add(CreateUserAccount(new DemoUser
                 {
-                    FirstName = "Rey", LastName = "Skywalker", Email = "sithlight@example.com", Username = "rskywalker"
+                    FirstName = "Rey", LastName = "Skywalker", Email = "sithlight@example.com", Username = "rskywalker", Password = passwordGenerator
                 }));
                 messages.Add(CreateUserAccount(new DemoUser
                 {
-                    FirstName = "Ethan", LastName = "Hunt", Email = "possible@example.com", Username = "ehunt"
+                    FirstName = "Ethan", LastName = "Hunt", Email = "possible@example.com", Username = "ehunt", Password = passwordGenerator
                 }));
                 messages.Add(CreateUserAccount(new DemoUser
                 {
-                    FirstName = "Wade", LastName = "Wilson", Email = "newguy@example.com", Username = "wwilson"
+                    FirstName = "Wade", LastName = "Wilson", Email = "newguy@example.com", Username = "wwilson", Password = passwordGenerator
                 }));
                 messages.Add(CreateUserAccount(new DemoUser
                 {
-                    FirstName = "Natasha", LastName = "Romanov", Email = "boss@example.com", Username = "nromanov"
+                    FirstName = "Natasha", LastName = "Romanov", Email = "boss@example.com", Username = "nromanov", Password = passwordGenerator
                 }));
                 messages.Add(CreateUserAccount(new DemoUser
                 {
-                    FirstName = "Hermione", LastName = "Granger", Email = "wanded@example.com", Username = "hgranger"
+                    FirstName = "Hermione", LastName = "Granger", Email = "wanded@example.com", Username = "hgranger", Password = passwordGenerator
                 }));
                 messages.Add(CreateUserAccount(new DemoUser
                 {
-                    FirstName = "John", LastName = "Wick", Email = "ripmrwick@example.com", Username = "jwick"
+                    FirstName = "John", LastName = "Wick", Email = "ripmrwick@example.com", Username = "jwick", Password = passwordGenerator
                 }));
                 messages.Add(CreateUserAccount(new DemoUser
                 {
-                    FirstName = "Eggsy", LastName = "Unwin", Email = "gentleman@example.com", Username = "eunwin"
+                    FirstName = "Eggsy", LastName = "Unwin", Email = "gentleman@example.com", Username = "eunwin", Password = passwordGenerator
                 }));
 
                 var output = this.LocalizeString(Constants.LocalizationKeys.DemoUsersAdded);
@@ -133,7 +139,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
         {
             var OUser = DotNetNuke.Entities.Users.UserController.GetUserByName(this.PortalId, newUser.Username);
             var blnExists = (OUser != null);
-
+          
             var user = new UserInfo
             {
                 FirstName = newUser.FirstName,
@@ -145,7 +151,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                 PortalID = this.PortalId,
                 Membership = new UserMembership()
                 {
-                    Password = GenericAuthValue
+                    Password = newUser.Password
                 }
             };
 
@@ -160,9 +166,9 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                 // creates the user account 
                 var status = UserController.CreateUser(ref user);
 
-                Logger.Debug($"User Creation Status for '{user.DisplayName} ({user.Email})' was {status}."); // just in case we need to troubleshoot something 
+                Logger.Debug($"User Creation Status for '{user.DisplayName} ({user.Email}) (Password: {newUser.Password})' was {status}."); // just in case we need to troubleshoot something 
 
-                return new PromptMessage(string.Format(this.LocalizeString(Constants.LocalizationKeys.CreateUserSuccess), user.DisplayName, user.Email));
+                return new PromptMessage(string.Format(this.LocalizeString(Constants.LocalizationKeys.CreateUserSuccess), user.DisplayName, user.Email, newUser.Password));
             }
             catch (Exception e)
             {

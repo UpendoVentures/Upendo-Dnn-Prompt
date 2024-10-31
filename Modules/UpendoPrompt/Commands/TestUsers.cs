@@ -42,6 +42,8 @@ using DotNetNuke.Common.Utilities; // added for the commented-out clearing of ca
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.Entities.Users;
 using Upendo.Modules.UpendoPrompt.Entities;
+using System.Web.Security;
+using DotNetNuke.UI.UserControls;
 
 namespace Upendo.Modules.UpendoPrompt.Commands
 {
@@ -51,7 +53,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
         private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(DemoUsers));
 
         private const string HowManyFlag = "howmany";
-        private const string GenericUserNameValue = "testuser-";
+        private const string GenericUserNameValue = "testuser";
         private const string GenericPasswordValue = "UpendoRocks!";
         private const string GenericEmailDomainValue = "@example.com";
         private const int HowManyDefault = 100;
@@ -82,7 +84,11 @@ namespace Upendo.Modules.UpendoPrompt.Commands
 
             try
             {
+                MembershipProvider provider = Membership.Provider;
+                int minLength = provider.MinRequiredPasswordLength;
 
+                string passwordGenerator = Utility.PasswordGenerator.GeneratePassword(minLength);
+               
                 var messages = new List<PromptMessage>();
                 for (int i = 1; i <= howmanyValue; i++)
                 {
@@ -91,12 +97,13 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                         FirstName = $"{GenericUserNameValue}{i}-name",
                         LastName = $"{GenericUserNameValue}{i}-lastname",
                         Email = $"{GenericUserNameValue}{i}{GenericEmailDomainValue}",
-                        Username = $"{GenericUserNameValue}{i}"
+                        Username = $"{GenericUserNameValue}{i}",
+                        Password = passwordGenerator
                     }));
                 }
-               
 
-                var output = this.LocalizeString(Constants.LocalizationKeys.TestUserAdded);
+
+                var output = (string.Format(this.LocalizeString(Constants.LocalizationKeys.TestUserAdded), passwordGenerator));
 
                 // clear DNN cache 
                 //DataCache.ClearCache();
@@ -135,7 +142,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                 PortalID = this.PortalId,
                 Membership = new UserMembership()
                 {
-                    Password = GenericPasswordValue
+                    Password = newUser.Password
                 }
             };
 
@@ -150,9 +157,9 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                 // creates the user account 
                 var status = UserController.CreateUser(ref user);
 
-                Logger.Debug($"User Creation Status for '{user.DisplayName} ({user.Email})' was {status}."); // just in case we need to troubleshoot something 
+                Logger.Debug($"User Creation Status for '{user.DisplayName} ({user.Email}) (Password: {newUser.Password})' was {status}."); // just in case we need to troubleshoot something 
 
-                return new PromptMessage(string.Format(this.LocalizeString(Constants.LocalizationKeys.CreateUserSuccess), user.Username, user.Email));
+                return new PromptMessage(string.Format(this.LocalizeString(Constants.LocalizationKeys.CreateUserSuccess), user.Username, user.Email, newUser.Password));
             }
             catch (Exception e)
             {

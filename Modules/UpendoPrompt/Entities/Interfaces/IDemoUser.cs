@@ -31,5 +31,6 @@ namespace Upendo.Modules.UpendoPrompt.Entities.Interfaces
         string LastName { get; set; }
         string Email { get; set; }
         string Username { get; set; }
+        string Password { get; set; }
     }
 }

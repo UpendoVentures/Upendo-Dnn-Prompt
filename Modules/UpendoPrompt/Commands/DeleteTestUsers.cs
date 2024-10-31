@@ -48,9 +48,9 @@ namespace Upendo.Modules.UpendoPrompt.Commands
     [ConsoleCommand("delete-testusers", Constants.PromptCategory, "DeleteTestUsers")]
     public class DeleteTestUsers : PromptBase, IConsoleCommand
     {
-        private const string GenericUserNameValue = "testuser-";
+        private const string GenericUserNameValue = "testuser";
         private const string GenericEmailDomainValue = "@example.com";
-        private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(DeleteDemoUsers));
+        private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(DeleteTestUsers));
 
         #region Implementation
 
