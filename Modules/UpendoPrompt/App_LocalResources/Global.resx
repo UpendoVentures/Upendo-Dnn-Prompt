@@ -127,7 +127,7 @@
     <value>Error creating user: {0} ({1}).</value>
   </data>
   <data name="CreateUserSuccess.Text" xml:space="preserve">
-    <value>Successfully created user: {0} ({1}).</value>
+    <value>Successfully created user: {0} ({1}) (Password: {2}).</value>
   </data>
   <data name="DebugDisabled.Text" xml:space="preserve">
     <value>Debugging is disabled throughout the site. </value>
