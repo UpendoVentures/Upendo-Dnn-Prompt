@@ -137,8 +137,9 @@
   <ItemGroup>
     <Content Include="NuGet.config" />
     <None Include="packages.config" />
-    <Content Include="Providers\DataProviders\SqlDataProvider\01.03.00.SqlDataProvider" />
+    <Content Include="Providers\DataProviders\SqlDataProvider\01.07.00.SqlDataProvider" />
     <Content Include="Providers\DataProviders\SqlDataProvider\Uninstall.SqlDataProvider" />
+    <Content Include="Providers\DataProviders\SqlDataProvider\01.03.00.SqlDataProvider" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="DotNetNuke" />
