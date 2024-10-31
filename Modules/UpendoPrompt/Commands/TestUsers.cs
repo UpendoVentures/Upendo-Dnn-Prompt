@@ -43,6 +43,7 @@ using DotNetNuke.Entities.Portals;
 using DotNetNuke.Entities.Users;
 using Upendo.Modules.UpendoPrompt.Entities;
 using System.Web.Security;
+using DotNetNuke.UI.UserControls;
 
 namespace Upendo.Modules.UpendoPrompt.Commands
 {
@@ -102,7 +103,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                 }
 
 
-                var output = this.LocalizeString(Constants.LocalizationKeys.TestUserAdded);
+                var output = (string.Format(this.LocalizeString(Constants.LocalizationKeys.TestUserAdded), passwordGenerator));
 
                 // clear DNN cache 
                 //DataCache.ClearCache();
