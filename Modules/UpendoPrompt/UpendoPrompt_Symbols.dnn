@@ -14,7 +14,7 @@
       <releaseNotes src="ReleaseNotes.txt" />
       <azureCompatible>True</azureCompatible>
       <dependencies>
-        <dependency type="managedPackage" version="1.6.0">Upendo.Modules.UpendoPrompt</dependency>
+        <dependency type="managedPackage" version="1.7.0">Upendo.Modules.UpendoPrompt</dependency>
       </dependencies>
 
       <components>

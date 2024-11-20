@@ -1,4 +1,4 @@
-﻿#region License
+#region License
 
 // Distributed under the MIT License
 // ============================================================
@@ -84,6 +84,7 @@ namespace Upendo.Modules.UpendoPrompt.Components
 
             public const string FlagUsername = "Prompt_Impersonate_FlagUsername";
             public const string FlagUserId = "Prompt_Impersonate_FlagUserID";
+            public const string FlagPortalId = "Prompt_Impersonate_FlagPortalID";
 
             public const string ImpersonateFlagsInvalid = "Prompt_ImpersonateFlagsInvalid";
             public const string ImpersonateNoUserFound = "Prompt_ImpersonateNoUserFound";
@@ -124,6 +125,14 @@ namespace Upendo.Modules.UpendoPrompt.Components
             public const string TestUsersDeleted = "TestUsersDeleted";
             public const string HowManyNegative = "HowManyNegative";
 
+
+            public const string ResetPasswordFlagsInvalid = "ResetPasswordFlagsInvalid";
+            public const string ResetPasswordNotAuthorized = "Prompt_ResetPasswordNotAuthorized";
+            public const string ResetPasswordSuccess = "ResetPasswordSuccess";
+            public const string PasswordsResetted = "Prompt_PasswordsResetted";
+            public const string PasswordResetNoUserFound = "Prompt_PasswordResetNoUserFound";
+            public const string PasswordResetNoRoleFound = "Prompt_PasswordResetNoRoleFound";
+            public const string PasswordResetNoPortalFound = "Prompt_PasswordResetNoPortalFound";
         }
 
         public static class Procedures

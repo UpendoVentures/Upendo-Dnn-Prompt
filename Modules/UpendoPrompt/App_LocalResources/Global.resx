@@ -382,8 +382,11 @@
   <data name="Prompt_ImpersonateSuccess.Text" xml:space="preserve">
     <value>Impersonation was successful. Please refresh the page. </value>
   </data>
+  <data name="Prompt_Impersonate_FlagPortalID.Text" xml:space="preserve">
+    <value>The `portalid` flag allows you to target a single website by entering the correct PortalID value (Site ID number).  This flag should be used by itself.</value>
+  </data>
   <data name="Prompt_Impersonate_FlagUserID.Text" xml:space="preserve">
-    <value>The `userid` flag allows you to specify a user account to impersonate by entering their UserID.  This flag should be used by itself. </value>
+    <value>The `userid` flag allows you to target a user account by entering a valid UserID.  This flag should be used by itself. </value>
   </data>
   <data name="Prompt_Impersonate_FlagUsername.Text" xml:space="preserve">
     <value>The `username` flag allows you to specify a user account to impersonate by entering their username. This flag should be used by itself. </value>
@@ -456,11 +459,23 @@
   <data name="Prompt_ModeInvalid.Text" xml:space="preserve">
     <value>The mode can only be 'enable' or 'disable'. The default is 'disable'.</value>
   </data>
+  <data name="Prompt_PasswordResetNoPortalFound.Text" xml:space="preserve">
+    <value>No website was found matching your query. Please check the PortalID entered for accuracy and try again.</value>
+  </data>
+  <data name="Prompt_PasswordResetNoRoleFound.Text" xml:space="preserve">
+    <value>No security role was found matching your query. Please check the RoleID entered for accuracy and try again.</value>
+  </data>
+  <data name="Prompt_PasswordResetNoUserFound.Text" xml:space="preserve">
+    <value>No user account was found matching your query. Please check the UserID entered for accuracy and try again.</value>
+  </data>
+  <data name="Prompt_PasswordsResetted.Text" xml:space="preserve">
+    <value>{0} has chosen to require changed password(s) for: Scopt ({1}), UserID ({2}), RoleID ({3}), PortalID ({4}).</value>
+  </data>
   <data name="Prompt_PopupMode_FlagMode.Text" xml:space="preserve">
     <value>Specify whether you want to enable or disable the popups on the specified site(s). Acceptable values include 'enable' and 'disable'.  </value>
   </data>
   <data name="Prompt_PopupMode_FlagScope.Text" xml:space="preserve">
-    <value>Specify whether you want to apply this to only the current site, or all sites. The accepted values include 'current' and 'all'.</value>
+    <value>Specify whether you want to apply this action to only the current site, or all sites. The accepted values include 'current' and 'all'.</value>
   </data>
   <data name="Prompt_PopupMode_ResultHtml.Text" xml:space="preserve">
     <value>&lt;div&gt;
@@ -469,6 +484,12 @@
     &lt;p&gt;Popups have been [enabled/disabled] for [this site/all sites].&lt;/p&gt;
     &lt;p&gt;Note: If you don't enter any command arguments, you'll simply disable popups on the current website only.&lt;/p&gt;
 &lt;/div&gt;</value>
+  </data>
+  <data name="Prompt_ResetPasswordNotAuthorized.Text" xml:space="preserve">
+    <value>This user account is not authorized to perform this action.</value>
+  </data>
+  <data name="Prompt_ResetPassword_ResultHtml.Text" xml:space="preserve">
+    <value>&lt;div&gt;REPLACE ME 001&lt;/div&gt;</value>
   </data>
   <data name="Prompt_ScopeInvalid.Text" xml:space="preserve">
     <value>The scope can only be 'all' or 'current'. Omitting it will default to 'current'.</value>
@@ -491,6 +512,15 @@
   </data>
   <data name="RecordsSome.Text" xml:space="preserve">
     <value>Matches were found for your query. </value>
+  </data>
+  <data name="ResetPassword.Text" xml:space="preserve">
+    <value>Allows authorized user accounts to reset the password for one or many user accounts on the DNN instance.</value>
+  </data>
+  <data name="ResetPasswordFlagsInvalid.Text" xml:space="preserve">
+    <value>The scope can only be 'all' or 'current'. If you want to use the other parameters, please choose only one to use at a time (e.g., UserID, RoleID, PortalID). </value>
+  </data>
+  <data name="ResetPasswordSuccess.Text" xml:space="preserve">
+    <value>Your request to reset the password for the specified user accounts was successful. Each user account will be prompted to change their password the next time they log in. </value>
   </data>
   <data name="ScopeAll.Text" xml:space="preserve">
     <value>all sites</value>
