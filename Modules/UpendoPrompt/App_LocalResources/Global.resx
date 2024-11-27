@@ -352,6 +352,21 @@
     &lt;/p&gt;
 &lt;/div&gt;</value>
   </data>
+  <data name="Prompt_DeleteTestUsers_ResultHtml.Text" xml:space="preserve">
+    <value>&lt;div&gt;
+        &lt;p&gt;This is a companion command for the `set-testusers` command. This version of the command will permanently delete the users accounts created by that command.&lt;/p&gt;
+        &lt;h4&gt;Using delete-testusers&lt;/h4&gt;
+        &lt;code class="block"&gt;delete-testusers&lt;/code&gt;
+        &lt;p&gt;This command does not have any flags&lt;/p&gt;
+        &lt;code class="block"&gt;delete-testusers&lt;/code&gt;
+        &lt;h4&gt;Output&lt;/h4&gt;
+        &lt;p&gt;If successful, you should see a message for each test user deleted, stating the result of the deletion of the account.&lt;/p&gt;
+        &lt;p&gt;User Deleted:&lt;/p&gt;
+        &lt;code class="block"&gt;Successfully deleted user account: testuser-1 ({testuser-1@example.com}).&lt;/code&gt;
+        &lt;p&gt;User Doesn't Exist:&lt;/p&gt;
+        &lt;code class="block"&gt;User account does not exist, not deleted: testuser-1 ({testuser-1@example.com}).&lt;/code&gt;
+    &lt;/div&gt;</value>
+  </data>
   <data name="Prompt_DemoUsers_ResultHtml.Text" xml:space="preserve">
     <value>&lt;div&gt;
         &lt;p&gt;When working on building a website or extension, you often need some demo users to use for your work. This command adds a handful of test user accounts for you.&lt;/p&gt;
@@ -471,9 +486,6 @@
   <data name="Prompt_PasswordsResetted.Text" xml:space="preserve">
     <value>{0} has chosen to require changed password(s) for: Scopt ({1}), UserID ({2}), RoleID ({3}), PortalID ({4}).</value>
   </data>
-  <data name="Prompt_PopupMode_FlagMode.Text" xml:space="preserve">
-    <value>Specify whether you want to enable or disable the popups on the specified site(s). Acceptable values include 'enable' and 'disable'.  </value>
-  </data>
   <data name="Prompt_PopupMode_FlagScope.Text" xml:space="preserve">
     <value>Specify whether you want to apply this action to only the current site, or all sites. The accepted values include 'current' and 'all'.</value>
   </data>
@@ -493,6 +505,24 @@
   </data>
   <data name="Prompt_ScopeInvalid.Text" xml:space="preserve">
     <value>The scope can only be 'all' or 'current'. Omitting it will default to 'current'.</value>
+  </data>
+  <data name="Prompt_TestUsers_ResultHtml.Text" xml:space="preserve">
+    <value>&lt;div&gt;
+        &lt;p&gt;When working on building a website or extension, you often need some test users to use for your work. This command adds a handful of test user accounts for you.&lt;/p&gt;
+        &lt;h4&gt;Help_Options&lt;/h4&gt;
+        &lt;div&gt;&lt;table class="table"&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Flag&lt;/th&gt;&lt;th&gt;Type&lt;/th&gt;&lt;th&gt;Required&lt;/th&gt;&lt;th&gt;Default&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class="mono"&gt;--howmany&lt;/td&gt;&lt;td&gt;Integer&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;td&gt;The --howmany flag is to define how many users you want to create, otherwise 100 will be created by default.&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
+        &lt;h4&gt;Using set-testusers&lt;/h4&gt;
+        &lt;code class="block"&gt;set-testusers&lt;/code&gt;
+        &lt;h4&gt;Output&lt;/h4&gt;
+        &lt;p&gt;If successful, you should see a message for each test user, stating the result of the creation of the account.&lt;/p&gt;
+        &lt;p&gt;User Created:&lt;/p&gt;
+        &lt;code class="block"&gt;Successfully created user: testuser-1 ({testuser-1@example.com}).&lt;/code&gt;
+        &lt;p&gt;User Exists:&lt;/p&gt;
+        &lt;code class="block"&gt;User already exists, not created: testuser-1 ({testuser-1@example.com}).&lt;/code&gt;
+        &lt;p&gt;Error Creating User:&lt;/p&gt;
+        &lt;code class="block"&gt;Error creating user: testuser-1 ({testuser-1@example.com}).&lt;/code&gt;
+        &lt;p&gt;(&lt;em&gt;if this happens, check the Admin Log to see why, or run `set-debug` and then check the Log4NET log file for more details.&lt;/em&gt;)&lt;/p&gt;
+    &lt;/div&gt;</value>
   </data>
   <data name="Prompt_ThemesUsed_ResultHtml.Text" xml:space="preserve">
     <value>&lt;div&gt;
