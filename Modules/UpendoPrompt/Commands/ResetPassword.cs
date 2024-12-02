@@ -81,7 +81,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                 WHERE [IsSuperUser] = 0 AND [UserID] IN 
                 (SELECT ur.[UserID] FROM {databaseOwner}[{objectQualifier}UserRoles] ur WHERE ur.[RoleID] = @RoleID);";
 
-        private const string QueryGetRolePortalID = @"SELECT [PortalID] FROM {databaseOwner}[{objectQualifier}Roles] WHERE [RoleId] = @@RoleId;";
+        private const string QueryGetRolePortalID = @"SELECT [PortalID] FROM {databaseOwner}[{objectQualifier}Roles] WHERE [RoleId] = @RoleId;";
 
         #endregion
 
@@ -170,7 +170,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
 
                         RoleInfo role = null;
 
-                        role = RoleController.Instance.GetRoleById(rolePortalID, this.ParamUserID); 
+                        role = RoleController.Instance.GetRoleById(rolePortalID, this.ParamRoleID); 
 
                         if (role == null || role.RoleID == Null.NullInteger)
                         {
@@ -319,51 +319,59 @@ namespace Upendo.Modules.UpendoPrompt.Commands
 
         public void UpdateAllUsers()
         {
-            var dataContext = DataContext.Instance();
 
-            var sql = QueryAllUsers; 
+            var sql = QueryAllUsers;
 
-            dataContext.Execute(CommandType.Text, sql);
+            using (var dataContext = DataContext.Instance())
+            {
+                dataContext.Execute(CommandType.Text, sql);
+            }
         }
 
         public void UpdateAllUsersByPortal()
         {
-            var dataContext = DataContext.Instance();
+            var sql = QueryUsersByPortal;
 
-            var sql = QueryUsersByPortal; 
-
-            dataContext.Execute(CommandType.Text, sql, this.ParamPortalID);
+            using (var dataContext = DataContext.Instance())
+            {
+                dataContext.Execute(CommandType.Text, sql, new { PortalID = this.ParamPortalID });
+            }
         }
 
         public void UpdateSingleUser()
         {
-            var dataContext = DataContext.Instance();
 
             var sql = QuerySingleUser;
 
-            dataContext.Execute(CommandType.Text, sql, this.ParamUserID);
+            using (var dataContext = DataContext.Instance())
+            {
+                dataContext.Execute(CommandType.Text, sql, new { UserID = this.ParamUserID });
+            }
         }
 
         public void UpdateUsersForRole()
         {
-            var dataContext = DataContext.Instance();
-
             var sql = QueryUsersByRole;
-
-            dataContext.Execute(CommandType.Text, sql, this.ParamRoleID);
+            
+            using (var dataContext = DataContext.Instance())
+            {
+                dataContext.Execute(CommandType.Text, sql, new { RoleID = this.ParamRoleID });
+            }
         }
 
         public int GetPortalIdForRole()
         {
-            var dataContext = DataContext.Instance();
-
             var sql = QueryGetRolePortalID;
 
-            //return dataContext.ExecuteScalar<int>(CommandType.Text, sql, new SqlParameter{ DbType = DbType.Int32, ParameterName = "RoleId", Value = this.ParamRoleID});
-            //return dataContext.ExecuteScalar<int>(CommandType.Text, sql, new SqlParameter { Value = this.RoleID });
-            return dataContext.ExecuteSingleOrDefault<int>(CommandType.Text, sql, new SqlParameter { Value = this.RoleID });
+            using (var dataContext = DataContext.Instance())
+            {
+                return dataContext.ExecuteSingleOrDefault<int>(
+                    CommandType.Text,
+                    sql,
+                    new { RoleId = this.ParamRoleID } // Objeto anónimo con el parámetro
+                );
+            }
         }
-
         private bool ValidateFlags()
         {
             if (!string.IsNullOrEmpty(ParamScope))
@@ -379,6 +387,8 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                 {
                     return false;
                 }
+
+                return true;
             }
             else
             {
