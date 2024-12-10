@@ -62,6 +62,11 @@
             <basePath>DesktopModules\UpendoPrompt</basePath>
             <script type="Install">
               <path>Providers\DataProviders\SqlDataProvider</path>
+              <name>01.03.00.SqlDataProvider</name>
+              <version>01.03.00</version>
+            </script>
+            <script type="Install">
+              <path>Providers\DataProviders\SqlDataProvider</path>
               <name>01.07.00.SqlDataProvider</name>
               <version>01.07.00</version>
             </script>
