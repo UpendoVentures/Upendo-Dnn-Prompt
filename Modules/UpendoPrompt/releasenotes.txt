@@ -52,6 +52,8 @@
 		<ul>
 			<li>SI: Command `set-demousers` Not Working if Membership Rules are Are Not Met (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/47" target="_blank">Issue 47</a>, thanks <a href="https://github.com/alejoroman0605" target="_blank">@alejoroman0605</a>!)</li>
 			<li>Uninstall Script Doesn't Remove `uvm_Prompt_GetThemesUsed` Stored Procedure (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/43" target="_blank">Issue 43</a>, thanks <a href="https://github.com/alejoroman0605" target="_blank">@alejoroman0605</a>!)</li>
+			<li>Updated to Build Against .NET 4.8 (No Issue. Thanks, <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>Added a Missing Reference for an Earlier SqlDataProvider file (No Issue. Thanks, <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
 			<!--
 			<li>None at this time.</li>
 			<li> (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
