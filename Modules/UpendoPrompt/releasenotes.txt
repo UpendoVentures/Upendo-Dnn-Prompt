@@ -40,17 +40,17 @@
 		<h3>Version 01.07.00</h3>
 		<h4>Enhancements</h4>
 		<ul>
-			<li>Increased minimum DNN support to 09.11.00. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/52" target="_blank">Issue 52</a>, thanks <a href="https://github.com/alejoroman0605" target="_blank">@alejoroman0605</a>!)</li>
+			<li>SI: Added `password-reset` as a new command. You can choose to flag which account(s) to specify for reset using multiple flags. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/pulls/56" target="_blank">No Issue</a>, thanks <a href="https://github.com/ArielBlanco1990" target="_blank">@ArielBlanco1990</a>!)</li>
 			<li>Added `set-testusers` &amp; `delete-testusers` as new commands. This helps to create test environments during development. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/45" target="_blank">Issue 45</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
 			<li>Added `delete-demousers` as a new command. This allows authorized end-users to permanently delete user accounts created by `set-demousers`. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/45" target="_blank">Issue 45</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
-			<li>Added `delete-demousers` as a new command. This allows authorized end-users to permanently delete user accounts created by `set-demousers`. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/45" target="_blank">Issue 45</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>Increased minimum DNN support to 09.11.00. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/52" target="_blank">Issue 52</a>, thanks <a href="https://github.com/alejoroman0605" target="_blank">@alejoroman0605</a>!)</li>
 			<!--
 			<li>SI:  (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
 			-->
 		</ul>
 		<h4>Maintenence &amp Bug Fixes</h4>
 		<ul>
-			<li>SI: Command `set-demousers` Not Working if Membership Rules are Are Not Met (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/47" target="_blank">Issue 47</a>, thanks <a href="https://github.com/alejoroman0605" target="_blank">@alejoroman0605</a>!)</li>
+			<li>SI: Command `set-demousers` Not Working if Membership Rules are Not Met (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/47" target="_blank">Issue 47</a>, thanks <a href="https://github.com/alejoroman0605" target="_blank">@alejoroman0605</a>!)</li>
 			<li>Uninstall Script Doesn't Remove `uvm_Prompt_GetThemesUsed` Stored Procedure (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/43" target="_blank">Issue 43</a>, thanks <a href="https://github.com/alejoroman0605" target="_blank">@alejoroman0605</a>!)</li>
 			<li>Updated to Build Against .NET 4.8 (No Issue. Thanks, <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
 			<li>Added a Missing Reference for an Earlier SqlDataProvider file (No Issue. Thanks, <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
