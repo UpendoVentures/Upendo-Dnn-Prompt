@@ -484,7 +484,7 @@
     <value>No user account was found matching your query. Please check the UserID entered for accuracy and try again.</value>
   </data>
   <data name="Prompt_PasswordsResetted.Text" xml:space="preserve">
-    <value>{0} has chosen to require changed password(s) for: Scopt ({1}), UserID ({2}), RoleID ({3}), PortalID ({4}).</value>
+    <value>{0} has chosen to require changed password(s) for: Scope ({1}), UserID ({2}), RoleID ({3}), PortalID ({4}).</value>
   </data>
   <data name="Prompt_PopupMode_FlagScope.Text" xml:space="preserve">
     <value>Specify whether you want to apply this action to only the current site, or all sites. The accepted values include 'current' and 'all'.</value>
@@ -501,7 +501,11 @@
     <value>This user account is not authorized to perform this action.</value>
   </data>
   <data name="Prompt_ResetPassword_ResultHtml.Text" xml:space="preserve">
-    <value>&lt;div&gt;REPLACE ME 001&lt;/div&gt;</value>
+    <value>&lt;div&gt;
+        &lt;h4&gt;Resets the Password for One or Many User Accounts&lt;/h4&gt;
+        &lt;code class="block"&gt;password-reset [--scope &amp;lt;current|all&amp;gt;] [--userid &amp;lt;integer&amp;gt;] [--roleid &amp;lt;integer&amp;gt;] [--portalid &amp;lt;integer&amp;gt;]&lt;/code&gt;
+        &lt;p&gt;Your request to reset the password for the specified user accounts was successful. Each user account will be prompted to change their password the next time they log in. &lt;/p&gt;
+&lt;/div&gt;</value>
   </data>
   <data name="Prompt_ScopeInvalid.Text" xml:space="preserve">
     <value>The scope can only be 'all' or 'current'. Omitting it will default to 'current'.</value>
