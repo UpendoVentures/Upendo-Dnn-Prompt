@@ -133,6 +133,11 @@ namespace Upendo.Modules.UpendoPrompt.Components
             public const string PasswordResetNoUserFound = "Prompt_PasswordResetNoUserFound";
             public const string PasswordResetNoRoleFound = "Prompt_PasswordResetNoRoleFound";
             public const string PasswordResetNoPortalFound = "Prompt_PasswordResetNoPortalFound";
+
+            public const string AddRoleSuccess = "Prompt_AddRoleSuccess";
+            public const string AddRoleFailure = "Prompt_AddRoleFailure";
+            public const string AddRolePortalNotFound = "Prompt_AddRolePortalNotFound"; 
+            public const string AddRolePortalIdNegative = "Prompt_AddRolePortalIdNegative";
         }
 
         public static class Procedures
