@@ -83,6 +83,7 @@
     <Compile Include="Commands\DeleteTestUsers.cs" />
     <Compile Include="Commands\DeleteTempFolder.cs" />
     <Compile Include="Commands\DeleteDemoUsers.cs" />
+    <Compile Include="Commands\ApplyRoles.cs" />
     <Compile Include="Commands\TestUsers.cs" />
     <Compile Include="Commands\Deprecated\DebugInfo.cs" />
     <Compile Include="Commands\Deprecated\DebugMode.cs" />
