@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ApplyRoles.Text" xml:space="preserve">
+    <value>Helps you quickly apply "Edit" and "View" permissions to all pages in a specific portal for a given role. You can use the --portalId and --roleName parameters to define the portal and role, ensuring consistent role assignments across all pages. If any parameters are missing, defaults will be applied based on the portal configuration.</value>
+  </data>
   <data name="CaptchaModeToggled.Text" xml:space="preserve">
     <value>CAPTCHA has been toggled {0} on this website. </value>
   </data>
@@ -263,6 +266,61 @@
   </data>
   <data name="PromptThemeseUsed.Text" xml:space="preserve">
     <value>This command allows you to see all of the themes that currently are used by one or more pages, modules, and other settings.</value>
+  </data>
+  <data name="Prompt_AddRoleFailure.Text" xml:space="preserve">
+    <value>There was an error adding the role: {0} in Portal {1}.</value>
+  </data>
+  <data name="Prompt_AddRolePortalIdNegative.Text" xml:space="preserve">
+    <value>The portal ID cannot be negative. Please provide a valid portal ID.</value>
+  </data>
+  <data name="Prompt_AddRolePortalNotFound" xml:space="preserve">
+    <value>The portal {0} could not be found. Please make sure the portal ID is correct.</value>
+  </data>
+  <data name="Prompt_AddRoleSuccess.Text" xml:space="preserve">
+    <value>Successfully role: {0} added to all tabs in Portal {1}.</value>
+  </data>
+  <data name="Prompt_ApplyRoles_ResultHtml.Text" xml:space="preserve">
+    <value>&lt;div&gt;
+    &lt;p&gt;This command is used to assign "Edit" and "View" permissions to all pages in a specified portal for a given role. It's useful for ensuring consistent permissions across all pages of the portal.&lt;/p&gt;
+    &lt;h4&gt;Help_Options&lt;/h4&gt;
+    &lt;div&gt;
+        &lt;table class="table"&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Flag&lt;/th&gt;
+                    &lt;th&gt;Type&lt;/th&gt;
+                    &lt;th&gt;Required&lt;/th&gt;
+                    &lt;th&gt;Default&lt;/th&gt;
+                    &lt;th&gt;Description&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;td class="mono"&gt;--portalId&lt;/td&gt;
+                    &lt;td&gt;Integer&lt;/td&gt;
+                    &lt;td&gt;Yes&lt;/td&gt;
+                    &lt;td&gt;0&lt;/td&gt;
+                    &lt;td&gt;The --portalId flag specifies the portal ID where the roles will be applied.&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td class="mono"&gt;--roleName&lt;/td&gt;
+                    &lt;td&gt;String&lt;/td&gt;
+                    &lt;td&gt;Yes&lt;/td&gt;
+                    &lt;td&gt;Site Admin&lt;/td&gt;
+                    &lt;td&gt;The --roleName flag specifies the name of the role to which permissions will be applied.&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+    &lt;h4&gt;Using apply-roles&lt;/h4&gt;
+    &lt;code class="block"&gt;apply-roles --portalId 1 --roleName "Site Admin"&lt;/code&gt;
+    &lt;h4&gt;Output&lt;/h4&gt;
+    &lt;p&gt;If successful, you will see a confirmation message for each page, indicating that the permissions were applied correctly.&lt;/p&gt;
+    &lt;p&gt;Role Applied:&lt;/p&gt;
+    &lt;code class="block"&gt;Successfully applied "Site Admin" role  to all pages in portal 1.&lt;/code&gt;
+    &lt;p&gt;Error Applying Role:&lt;/p&gt;
+    &lt;code class="block"&gt;Error applying role "Site Admin" in portal 1. &lt;/code&gt;
+&lt;/div&gt;</value>
   </data>
   <data name="Prompt_CaptchaMode_ResultHtml.Text" xml:space="preserve">
     <value>&lt;div&gt;
