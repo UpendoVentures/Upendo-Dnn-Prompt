@@ -138,6 +138,11 @@ namespace Upendo.Modules.UpendoPrompt.Components
             public const string AddRoleFailure = "Prompt_AddRoleFailure";
             public const string AddRolePortalNotFound = "Prompt_AddRolePortalNotFound"; 
             public const string AddRolePortalIdNegative = "Prompt_AddRolePortalIdNegative";
+
+            public const string CompressLogFilesRunnerSuccess = "Prompt_CompressLogFilesRunnerSuccess"; 
+            public const string CreatingClearLogsScheduler = "Creating ClearLogs scheduler..."; 
+            public const string CompressLogFilesRunnerFailure = "CompressLogFilesRunnerFailure"; 
+
         }
 
         public static class Procedures
