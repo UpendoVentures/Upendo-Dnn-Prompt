@@ -35,6 +35,24 @@
 		</ul>
 		<hr />
 
+		<h3>Version 01.09.00</h3>
+		<h4>Enhancements</h4>
+		<ul>
+			<li>SI: Added `compress-log-files` as a new command. This allows you to archive the physical log files from the past month, automatically or on-demand. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/65" target="_blank">Issue 65</a>, thanks <a href="https://github.com/ArielBlanco1990" target="_blank">@ArielBlanco1990</a>!)</li>
+			<!--
+			<li>SI:  (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
+			-->
+		</ul>
+		<h4>Maintenence &amp Bug Fixes</h4>
+		<ul>
+			<li>None at this time.</li>
+			<!--
+			<li>None at this time.</li>
+			<li> (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
+			-->
+		</ul>
+		<hr />
+
 		<h3>Version 01.08.00</h3>
 		<h4>Enhancements</h4>
 		<ul>
