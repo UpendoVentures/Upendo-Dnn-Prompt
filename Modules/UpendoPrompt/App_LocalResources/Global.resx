@@ -123,6 +123,12 @@
   <data name="CaptchaModeToggled.Text" xml:space="preserve">
     <value>CAPTCHA has been toggled {0} on this website. </value>
   </data>
+  <data name="CompressLogFiles.Text" xml:space="preserve">
+    <value>This command compresses and archives log files from the previous month in the /Portals/_default/Logs/ directory. The logs are saved in a zip file named Logs-YYYYmm.zip, where YYYY is the year and mm is the month. It only includes logs from the current and previous month. It also includes complementary logs, like installation and failure logs, and deletes the failure logs after archiving them.</value>
+  </data>
+  <data name="CompressLogFilesRunnerFailure.Text" xml:space="preserve">
+    <value>Compress Log Files Runner Failure</value>
+  </data>
   <data name="CreateUserExists.Text" xml:space="preserve">
     <value>User already exists, not created: {0} ({1}).</value>
   </data>
@@ -331,6 +337,9 @@
     &lt;p&gt;This command does not have any options.&lt;/p&gt;
     &lt;p&gt;When you run this command, CAPTCHA mode is toggled in the Site Settings. If the setting doesn't already exist, it creates it.&lt;/p&gt;
 &lt;/div&gt;</value>
+  </data>
+  <data name="Prompt_CompressLogFilesRunnerSuccess.Text" xml:space="preserve">
+    <value>Log compression job executed successfully.</value>
   </data>
   <data name="Prompt_DebugInfo_ResultHtml.Text" xml:space="preserve">
     <value>&lt;div&gt;
