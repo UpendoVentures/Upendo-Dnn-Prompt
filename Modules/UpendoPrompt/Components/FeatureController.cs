@@ -35,7 +35,7 @@ namespace Upendo.Modules.UpendoPrompt.Components
 
                 switch (Version)
                 {
-                    case "01.08.00":
+                    case "01.09.00":
                         Logger.Info(Constants.LocalizationKeys.CreatingClearLogsScheduler);
                         CreateClearLogsScheduler();
                         break;
