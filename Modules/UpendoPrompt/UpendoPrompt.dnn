@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <dotnetnuke type="Package" version="6.0">
   <packages>
-    <package name="Upendo.Modules.UpendoPrompt" type="Module" version="01.08.00">
+    <package name="Upendo.Modules.UpendoPrompt" type="Module" version="01.09.00">
       <friendlyName>UpendoPrompt</friendlyName>
       <description>
         <![CDATA[<p>This extension adds some prompt commands that might help your management of DNN be easier from time to time. </p>]]>
@@ -73,7 +73,7 @@
             <script type="UnInstall">
               <path>Providers\DataProviders\SqlDataProvider</path>
               <name>Uninstall.SqlDataProvider</name>
-              <version>01.08.00</version>
+              <version>01.09.00</version>
             </script>
           </scripts>
         </component>
@@ -83,7 +83,7 @@
             <assembly>
               <name>Upendo.Modules.UpendoPrompt.dll</name>
               <path>bin</path>
-              <version>01.08.00</version>
+              <version>01.09.00</version>
             </assembly>
           </assemblies>
         </component>
