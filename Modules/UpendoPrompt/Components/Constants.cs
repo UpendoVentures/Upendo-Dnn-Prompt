@@ -141,7 +141,10 @@ namespace Upendo.Modules.UpendoPrompt.Components
 
             public const string CompressLogFilesRunnerSuccess = "Prompt_CompressLogFilesRunnerSuccess"; 
             public const string CreatingClearLogsScheduler = "Creating ClearLogs scheduler..."; 
-            public const string CompressLogFilesRunnerFailure = "CompressLogFilesRunnerFailure"; 
+            public const string CompressLogFilesRunnerFailure = "CompressLogFilesRunnerFailure";
+            public const string SchedulerEnabled = "Prompt_SchedulerEnabled";
+            public const string SchedulerDisabled = "Prompt_SchedulerDisabled";
+            public const string SchedulerNotFound = "Prompt_SchedulerNotFound";
 
         }
 
