@@ -52,7 +52,7 @@
             <attributes>
               <businessControllerClass>Upendo.Modules.UpendoPrompt.Components.FeatureController, Upendo.Modules.UpendoPrompt</businessControllerClass>
               <desktopModuleID>[DESKTOPMODULEID]</desktopModuleID>
-              <upgradeVersionsList>01.00.00,01.01.00,01.01.01,01.02.00,01.03.00,01.03.01,01.04.00,01.05.00,01.06.00,01.07.00,01.08.00</upgradeVersionsList>
+              <upgradeVersionsList>01.00.00,01.01.00,01.01.01,01.02.00,01.03.00,01.03.01,01.04.00,01.05.00,01.06.00,01.07.00,01.08.00,01.09.00</upgradeVersionsList>
             </attributes>
           </eventMessage>
         </component>

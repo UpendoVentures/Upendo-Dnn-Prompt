@@ -124,7 +124,12 @@
     <value>CAPTCHA has been toggled {0} on this website. </value>
   </data>
   <data name="CompressLogFiles.Text" xml:space="preserve">
-    <value>This command compresses and archives log files from the previous month in the /Portals/_default/Logs/ directory. The logs are saved in a zip file named Logs-YYYYmm.zip, where YYYY is the year and mm is the month. It only includes logs from the current and previous month. It also includes complementary logs, like installation and failure logs, and deletes the failure logs after archiving them.</value>
+    <value>This command compresses and archives log files from the previous month in the /Portals/_default/Logs/ directory. The logs are saved in a zip file named Logs-YYYYmm.zip, where YYYY is the year and mm is the month. It only includes logs from the current and previous month. It also includes complementary logs, like installation and failure logs, and deletes the failure logs after archiving them.
+
+Additionally, the command supports the -scheduler option to manage the scheduled job execution:
+
+enable: Checks if the scheduled job exists. If not, it creates and enables it.
+disable: Disables the scheduled job if it exists. If it doesn’t exist, it creates it but keeps it disabled.</value>
   </data>
   <data name="CompressLogFilesRunnerFailure.Text" xml:space="preserve">
     <value>Compress Log Files Runner Failure</value>
@@ -340,6 +345,52 @@
   </data>
   <data name="Prompt_CompressLogFilesRunnerSuccess.Text" xml:space="preserve">
     <value>Log compression job executed successfully.</value>
+  </data>
+  <data name="Prompt_CompressLogFiles_ResultHtml.Text" xml:space="preserve">
+    <value>&lt;div&gt;
+    &lt;h4&gt;Help_Options&lt;/h4&gt;
+    &lt;div&gt;
+        &lt;table class="table"&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Flag&lt;/th&gt;
+                    &lt;th&gt;Type&lt;/th&gt;
+                    &lt;th&gt;Required&lt;/th&gt;
+                    &lt;th&gt;Default&lt;/th&gt;
+                    &lt;th&gt;Description&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;td class="mono"&gt;--scheduler&lt;/td&gt;
+                    &lt;td&gt;String&lt;/td&gt;
+                    &lt;td&gt;No&lt;/td&gt;
+                    &lt;td&gt;None&lt;/td&gt;
+                    &lt;td&gt;
+                        Manages the scheduled job execution. Accepts the following values:
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;strong&gt;enable&lt;/strong&gt; - Checks if the scheduled job exists. If not, it creates and enables it.&lt;/li&gt;
+                            &lt;li&gt;&lt;strong&gt;disable&lt;/strong&gt; - Disables the scheduled job if it exists. If it doesn’t exist, it creates it but keeps it disabled.&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+    &lt;h4&gt;Using compress-log-files&lt;/h4&gt;
+    &lt;code class="block"&gt;compress-log-files&lt;/code&gt;
+    &lt;code class="block"&gt;compress-log-files --scheduler enable&lt;/code&gt;
+    &lt;code class="block"&gt;compress-log-files --scheduler disable&lt;/code&gt;
+
+    &lt;h4&gt;Output&lt;/h4&gt;
+    &lt;p&gt;If successful, you will see a confirmation message indicating that the logs have been compressed and archived.&lt;/p&gt;
+    &lt;p&gt;Compression Successful:&lt;/p&gt;
+    &lt;code class="block"&gt;Logs for the previous month have been compressed and saved in Logs-YYYYmm.zip.&lt;/code&gt;
+    &lt;p&gt;Scheduler Enabled:&lt;/p&gt;
+    &lt;code class="block"&gt;Scheduled job successfully enabled.&lt;/code&gt;
+    &lt;p&gt;Scheduler Disabled:&lt;/p&gt;
+    &lt;code class="block"&gt;Scheduled job successfully disabled.&lt;/code&gt;
+&lt;/div&gt;</value>
   </data>
   <data name="Prompt_DebugInfo_ResultHtml.Text" xml:space="preserve">
     <value>&lt;div&gt;
@@ -573,6 +624,15 @@
         &lt;code class="block"&gt;password-reset [--scope &amp;lt;current|all&amp;gt;] [--userid &amp;lt;integer&amp;gt;] [--roleid &amp;lt;integer&amp;gt;] [--portalid &amp;lt;integer&amp;gt;]&lt;/code&gt;
         &lt;p&gt;Your request to reset the password for the specified user accounts was successful. Each user account will be prompted to change their password the next time they log in. &lt;/p&gt;
 &lt;/div&gt;</value>
+  </data>
+  <data name="Prompt_SchedulerDisabled.Text" xml:space="preserve">
+    <value>Scheduler disabled successfully.</value>
+  </data>
+  <data name="Prompt_SchedulerEnabled.Text" xml:space="preserve">
+    <value>Scheduler enabled successfully.</value>
+  </data>
+  <data name="Prompt_SchedulerNotFound.Text" xml:space="preserve">
+    <value>Scheduler not found.</value>
   </data>
   <data name="Prompt_ScopeInvalid.Text" xml:space="preserve">
     <value>The scope can only be 'all' or 'current'. Omitting it will default to 'current'.</value>
