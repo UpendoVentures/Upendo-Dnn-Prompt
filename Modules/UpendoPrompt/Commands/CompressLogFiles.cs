@@ -18,6 +18,7 @@ using DotNetNuke.UI.UserControls;
 using DotNetNuke.Services.Scheduling;
 using Upendo.Modules.UpendoPrompt.ScheduledJobs.ClearLogsJob;
 using Upendo.Modules.UpendoPrompt.Utility;
+using System.Linq;
 
 namespace Upendo.Modules.UpendoPrompt.Commands
 {
@@ -26,17 +27,32 @@ namespace Upendo.Modules.UpendoPrompt.Commands
     {
         private static readonly ILog Logger = LoggerSource.Instance.GetLogger(typeof(CompressLogFiles));
 
-        #region Properties
-        #endregion
+        private const string SchedulerFlag = "scheduler";
 
-        #region Implementation
+        #region Properties
+        private string Scheduler { get; set; }
+        public override void Init(string[] args, PortalSettings portalSettings, UserInfo userInfo, int activeTabId)
+        {
+            this.Scheduler = this.GetFlagValue<string>(SchedulerFlag, $"{SchedulerFlag}", Null.NullString, false);
+        }
 
         public override ConsoleResultModel Run()
         {
             try
             {
+                string schedulerMessage = string.Empty;
+                if (!string.IsNullOrEmpty(Scheduler))
+                {
+                    schedulerMessage = ManageScheduler(Scheduler);
+                }
+
                 RunClearLogsJob();
-                var output = (string.Format(this.LocalizeString(Constants.LocalizationKeys.CompressLogFilesRunnerSuccess)));
+                var output = string.Format(this.LocalizeString(Constants.LocalizationKeys.CompressLogFilesRunnerSuccess));
+                if (!string.IsNullOrEmpty(schedulerMessage))
+                {
+                    output += Environment.NewLine + schedulerMessage;
+                }
+
                 return new ConsoleResultModel
                 {
                     Output = output,
@@ -72,6 +88,31 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                     Logger.Error(ex.InnerException.Message, ex.InnerException);
                 }
             }
+        }
+
+        private string ManageScheduler(string schedulerOption)
+        {
+            var scheduleController = SchedulingProvider.Instance();
+            var scheduleItem = scheduleController.GetSchedule().OfType<ScheduleItem>()
+                .FirstOrDefault(s => s.TypeFullName == "Upendo.Modules.UpendoPrompt.ScheduledJobs.ClearLogsJob, Upendo.Modules.UpendoPrompt");
+
+            if (scheduleItem == null)
+            {
+                var featureController = new FeatureController();
+                featureController.CreateClearLogsScheduler();
+                scheduleItem = scheduleController.GetSchedule().OfType<ScheduleItem>()
+                    .FirstOrDefault(s => s.TypeFullName == "Upendo.Modules.UpendoPrompt.ScheduledJobs.ClearLogsJob, Upendo.Modules.UpendoPrompt");
+            }
+
+            if (scheduleItem != null)
+            {
+                bool enable = schedulerOption.Equals("enable", StringComparison.OrdinalIgnoreCase);
+                scheduleItem.Enabled = enable;
+                scheduleController.UpdateSchedule(scheduleItem);
+                return enable ? this.LocalizeString(Constants.LocalizationKeys.SchedulerEnabled) : this.LocalizeString(Constants.LocalizationKeys.SchedulerDisabled);
+            }
+
+            return this.LocalizeString(Constants.LocalizationKeys.SchedulerNotFound);
         }
         #endregion
     }
