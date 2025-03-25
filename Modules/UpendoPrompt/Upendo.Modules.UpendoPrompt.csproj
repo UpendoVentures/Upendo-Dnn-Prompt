@@ -114,6 +114,7 @@
     <Compile Include="Components\PromptBase.cs" />
     <Compile Include="Components\TempFolderController.cs" />
     <Compile Include="Controllers\ExtensionsController.cs" />
+    <Compile Include="Custom\CustomConsoleResultModel.cs" />
     <Compile Include="Data\DataAccess.cs" />
     <Compile Include="Entities\AvailablePackagesDto.cs" />
     <Compile Include="Entities\Interfaces\ITestUser.cs" />
