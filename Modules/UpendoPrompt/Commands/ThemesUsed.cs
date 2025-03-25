@@ -32,6 +32,7 @@ using DotNetNuke.Entities.Portals;
 using DotNetNuke.Entities.Users;
 using DotNetNuke.Instrumentation;
 using Upendo.Modules.UpendoPrompt.Components;
+using Upendo.Modules.UpendoPrompt.Custom;
 using Upendo.Modules.UpendoPrompt.Data;
 using Constants = Upendo.Modules.UpendoPrompt.Components.Constants;
 
@@ -60,7 +61,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                 var output = string.Empty;
                 output = LocalizeString(recordCount > 0 ? Constants.LocalizationKeys.RECORDS_SOME : Constants.LocalizationKeys.RECORDS_NONE);
 
-                return new ConsoleResultModel
+                return new CustomConsoleResultModel
                 {
                     Records = recordCount,
                     Data = themesUsed,
