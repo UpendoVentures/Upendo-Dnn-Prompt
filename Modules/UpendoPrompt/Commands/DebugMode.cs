@@ -35,6 +35,7 @@ using DotNetNuke.Entities.Portals;
 using DotNetNuke.Entities.Users;
 using DotNetNuke.Instrumentation;
 using Upendo.Modules.UpendoPrompt.Components;
+using Upendo.Modules.UpendoPrompt.Custom;
 using Constants = Upendo.Modules.UpendoPrompt.Components.Constants;
 
 namespace Upendo.Modules.UpendoPrompt.Commands
@@ -88,7 +89,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                     output = this.LocalizeString(Constants.LocalizationKeys.DebugOff);
                 }
                 
-                return new ConsoleResultModel
+                return new CustomConsoleResultModel
                 {
                     Output = output,
                     IsError = false
