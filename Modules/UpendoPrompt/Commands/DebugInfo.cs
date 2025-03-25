@@ -34,6 +34,7 @@ using DotNetNuke.Entities.Portals;
 using DotNetNuke.Entities.Users;
 using DotNetNuke.Instrumentation;
 using Upendo.Modules.UpendoPrompt.Components;
+using Upendo.Modules.UpendoPrompt.Custom;
 using Upendo.Modules.UpendoPrompt.Entities;
 using Constants = Upendo.Modules.UpendoPrompt.Components.Constants;
 
@@ -93,7 +94,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                     output = LocalizeString(Constants.LocalizationKeys.DebugDisabled);
                 }
 
-                return new ConsoleResultModel
+                return new CustomConsoleResultModel
                 { 
                     Records = messages.Count,
                     Data = messages,

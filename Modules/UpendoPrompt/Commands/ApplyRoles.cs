@@ -49,6 +49,7 @@ using DotNetNuke.Security.Permissions;
 using DotNetNuke.Security.Roles;
 using System.Linq;
 using System.Collections;
+using Upendo.Modules.UpendoPrompt.Custom;
 
 namespace Upendo.Modules.UpendoPrompt.Commands
 {
@@ -109,7 +110,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
 
                     var output = (string.Format(this.LocalizeString(Constants.LocalizationKeys.AddRoleSuccess), roleNameValue, portalIdValue));
 
-                    return new ConsoleResultModel
+                    return new CustomConsoleResultModel
                     {
                         Output = output,
                         IsError = false

@@ -37,6 +37,7 @@ using Dnn.PersonaBar.Library.Prompt.Models;
 using DotNetNuke.Common.Utilities; // added for the commented-out clearing of cache below
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.Entities.Users;
+using Upendo.Modules.UpendoPrompt.Custom;
 
 namespace Upendo.Modules.UpendoPrompt.Commands.Deprecated
 {
@@ -101,7 +102,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands.Deprecated
             {
                 var output = string.Format(LocalizeString(Constants.LocalizationKeys.DEPRECATED), "set-popups");
 
-                return new ConsoleResultModel
+                return new CustomConsoleResultModel
                 {
                     Output = output,
                     IsError = false

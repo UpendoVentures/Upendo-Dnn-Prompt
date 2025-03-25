@@ -34,6 +34,7 @@ using DotNetNuke.Entities.Portals;
 using DotNetNuke.Entities.Users;
 using DotNetNuke.Instrumentation;
 using Upendo.Modules.UpendoPrompt.Components;
+using Upendo.Modules.UpendoPrompt.Custom;
 using Upendo.Modules.UpendoPrompt.Data;
 using Upendo.Modules.UpendoPrompt.Entities;
 using Constants = Upendo.Modules.UpendoPrompt.Components.Constants;
@@ -84,7 +85,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                     output = string.Concat(output,
                         string.Format(LocalizeString(Constants.LocalizationKeys.FileSizeMessage), folderSize));
 
-                    return new ConsoleResultModel
+                    return new CustomConsoleResultModel
                     {
                         Records = recordCount,
                         Data = messages,
@@ -93,7 +94,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                 }
                 else
                 {
-                    return new ConsoleResultModel
+                    return new CustomConsoleResultModel
                     {
                         Records = recordCount,
                         Output = output

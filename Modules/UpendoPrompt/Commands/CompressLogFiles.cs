@@ -19,6 +19,7 @@ using DotNetNuke.Services.Scheduling;
 using Upendo.Modules.UpendoPrompt.ScheduledJobs.ClearLogsJob;
 using Upendo.Modules.UpendoPrompt.Utility;
 using System.Linq;
+using Upendo.Modules.UpendoPrompt.Custom;
 
 namespace Upendo.Modules.UpendoPrompt.Commands
 {
@@ -53,7 +54,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                     output += Environment.NewLine + schedulerMessage;
                 }
 
-                return new ConsoleResultModel
+                return new CustomConsoleResultModel
                 {
                     Output = output,
                     Data = new List<PromptMessage>(),

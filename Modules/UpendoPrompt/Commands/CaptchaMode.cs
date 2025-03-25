@@ -36,6 +36,7 @@ using Dnn.PersonaBar.Library.Prompt.Models;
 using DotNetNuke.Common.Utilities;
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.Entities.Users;
+using Upendo.Modules.UpendoPrompt.Custom;
 
 namespace Upendo.Modules.UpendoPrompt.Commands
 {
@@ -99,7 +100,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                 // clear DNN cache 
                 DataCache.ClearCache();
 
-                return new ConsoleResultModel
+                return new CustomConsoleResultModel
                 {
                     Output = output,
                     IsError = false

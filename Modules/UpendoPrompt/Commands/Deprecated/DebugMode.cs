@@ -40,6 +40,7 @@ using DotNetNuke.Entities.Profile;
 using DotNetNuke.Entities.Users;
 using DotNetNuke.Instrumentation;
 using Upendo.Modules.UpendoPrompt.Components;
+using Upendo.Modules.UpendoPrompt.Custom;
 using Constants = Upendo.Modules.UpendoPrompt.Components.Constants;
 
 namespace Upendo.Modules.UpendoPrompt.Commands.Deprecated
@@ -66,7 +67,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands.Deprecated
             {
                 var output = string.Format(LocalizeString(Constants.LocalizationKeys.DEPRECATED), "set-debug");
                 
-                return new ConsoleResultModel
+                return new CustomConsoleResultModel
                 {
                     Output = output,
                     IsError = false

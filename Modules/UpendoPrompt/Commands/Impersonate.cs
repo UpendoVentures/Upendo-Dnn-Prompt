@@ -40,6 +40,7 @@ using DotNetNuke.Entities.Portals;
 using DotNetNuke.Entities.Users;
 using DotNetNuke.Security;
 using DotNetNuke.Services.Log.EventLog;
+using Upendo.Modules.UpendoPrompt.Custom;
 
 namespace Upendo.Modules.UpendoPrompt.Commands
 {
@@ -112,7 +113,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                     // no user was found 
                     output = this.LocalizeString(Constants.LocalizationKeys.ImpersonateNoUserFound);
 
-                    return new ConsoleResultModel
+                    return new CustomConsoleResultModel
                     {
                         Output = output,
                         IsError = true
@@ -125,7 +126,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                 {
                     output = this.LocalizeString(Constants.LocalizationKeys.ImpersonateNotAuthorized);
 
-                    return new ConsoleResultModel
+                    return new CustomConsoleResultModel
                     {
                         Output = output,
                         IsError = true
@@ -136,7 +137,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
 
                 output = this.LocalizeString(Constants.LocalizationKeys.ImpersonateSuccess);
 
-                return new ConsoleResultModel
+                return new CustomConsoleResultModel
                 {
                     Output = output,
                     IsError = false
