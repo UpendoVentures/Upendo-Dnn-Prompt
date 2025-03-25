@@ -35,6 +35,24 @@
 		</ul>
 		<hr />
 
+		<h3>Version 01.09.01</h3>
+		<h4>Enhancements</h4>
+		<ul>
+			<li>SI: Added `-scheduler` switch to the `compress-log-files` command. This allows you to enable/disable the underlying scheduled job. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/69" target="_blank">Issue 69</a>, thanks <a href="https://github.com/ArielBlanco1990" target="_blank">@ArielBlanco1990</a>!)</li>
+			<!--
+			<li>SI:  (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
+			-->
+		</ul>
+		<h4>Maintenence &amp Bug Fixes</h4>
+		<ul>
+			<li>Release prep for 01.09.01. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/71" target="_blank">Issue 71</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<!--
+			<li>None at this time.</li>
+			<li> (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
+			-->
+		</ul>
+		<hr />
+
 		<h3>Version 01.09.00</h3>
 		<h4>Enhancements</h4>
 		<ul>
