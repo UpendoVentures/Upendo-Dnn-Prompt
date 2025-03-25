@@ -44,6 +44,7 @@ using DotNetNuke.Entities.Users;
 using DotNetNuke.Security;
 using DotNetNuke.Security.Roles;
 using DotNetNuke.Services.Log.EventLog;
+using Upendo.Modules.UpendoPrompt.Custom;
 
 namespace Upendo.Modules.UpendoPrompt.Commands
 {
@@ -155,7 +156,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                             // no user was found 
                             output = this.LocalizeString(Constants.LocalizationKeys.PasswordResetNoUserFound);
 
-                            return new ConsoleResultModel
+                            return new CustomConsoleResultModel
                             {
                                 Output = output,
                                 IsError = true
@@ -177,7 +178,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                             // no role was found 
                             output = this.LocalizeString(Constants.LocalizationKeys.PasswordResetNoRoleFound);
 
-                            return new ConsoleResultModel
+                            return new CustomConsoleResultModel
                             {
                                 Output = output,
                                 IsError = true
@@ -197,7 +198,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                             // no portal was found 
                             output = this.LocalizeString(Constants.LocalizationKeys.PasswordResetNoPortalFound);
 
-                            return new ConsoleResultModel
+                            return new CustomConsoleResultModel
                             {
                                 Output = output,
                                 IsError = true
@@ -216,7 +217,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                 {
                     output = this.LocalizeString(Constants.LocalizationKeys.ResetPasswordNotAuthorized);
 
-                    return new ConsoleResultModel
+                    return new CustomConsoleResultModel
                     {
                         Output = output,
                         IsError = true
@@ -235,7 +236,7 @@ namespace Upendo.Modules.UpendoPrompt.Commands
 
                 output = this.LocalizeString(Constants.LocalizationKeys.ResetPasswordSuccess);
 
-                return new ConsoleResultModel
+                return new CustomConsoleResultModel
                 {
                     Output = output,
                     IsError = false
