@@ -22,8 +22,6 @@ namespace Upendo.Modules.UpendoPrompt.Commands
         {
             try
             {
-                DataCache.ClearCache();
-
                 // Get the list of all modules in the portal
                 var modules = ModuleController.Instance.GetModules(this.PortalId);
                 int updatedCount = 0;
