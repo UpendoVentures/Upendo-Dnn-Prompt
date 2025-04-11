@@ -717,7 +717,7 @@ disable: Disables the scheduled job if it exists. If it doesn’t exist, it crea
     <value>&lt;br&gt;&lt;br&gt;&lt;hr&gt;&lt;br&gt;
 &lt;p style="color: white;"&gt;This Prompt command is maintained by Upendo Ventures. If you haven’t already, please consider becoming a sponsor to help us maintain this project, and others.&lt;/p&gt;
 &lt;br&gt;
-&lt;p style="color: white;"&gt;Sponsor Now:  &lt;a href="https://github.com/sponsors/UpendoVentures" target="_blank" rel="noopener noreferrer" style="color: yellow;"&gt;Upendo Ventures&lt;/a&gt;&lt;/p&gt;</value>
+&lt;p style="color: white;"&gt;Sponsor Now:  &lt;a href="https://github.com/sponsors/UpendoVentures" target="_blank" rel="noopener noreferrer" style="color: #AAA;"&gt;Upendo Ventures&lt;/a&gt;&lt;/p&gt;</value>
   </data>
   <data name="DisableAdminMessageResult.Text" xml:space="preserve">
     <value>Successfully updated {0} modules to hide the admin message.</value>
