@@ -668,6 +668,21 @@ disable: Disables the scheduled job if it exists. If it doesn’t exist, it crea
         modules will be listed.&lt;/p&gt;
 &lt;/div&gt;</value>
   </data>
+	<data name="Prompt_DisableAdminMessage_ResultHtml.Text" xml:space="preserve">
+    <value>&lt;div&gt;
+    &lt;p&gt;The `disable-adminmessage` command allows you to disable the DNN admin message feature across all modules of the site. This is particularly useful for developers and testers who want to avoid distractions caused by admin messages.&lt;/p&gt;
+    &lt;h4&gt;Using disable-adminmessage&lt;/h4&gt;
+    &lt;code class="block"&gt;disable-adminmessage&lt;/code&gt;
+    &lt;p&gt;This command does not require any flags or parameters.&lt;/p&gt;
+    &lt;h4&gt;Output&lt;/h4&gt;
+    &lt;p&gt;If completely successful, you will see a message similar to the one below, indicating how many modules were updated:&lt;/p&gt;
+    &lt;code class="block"&gt;Successfully updated 100 modules to hide the admin message.&lt;/code&gt;
+    &lt;p&gt;If no updates were needed, you will see the following message:&lt;/p&gt;
+    &lt;code class="block"&gt;Successfully updated 0 modules to hide the admin message.&lt;/code&gt;
+    &lt;p&gt;This command works by checking each module for the presence of the `hideadminborder` setting in `ModuleSettings`. If the setting is not present or is not set to `True`, it will update the module with the correct value.&lt;/p&gt;
+    &lt;/div&gt;
+    </value>
+</data>
   <data name="Prompt_UserImpersonated.Text" xml:space="preserve">
     <value>{0} has chosen to impersonate {1}.</value>
   </data>
