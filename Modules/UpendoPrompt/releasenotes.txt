@@ -35,6 +35,25 @@
 		</ul>
 		<hr />
 
+		<h3>Version 01.10.01</h3>
+		<h4>Enhancements</h4>
+		<ul>
+			<li>None at this time.</li>
+			<!--
+			<li>SI:  (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
+			-->
+		</ul>
+		<h4>Maintenence &amp Bug Fixes</h4>
+		<ul>
+			<li>Added a missing localization value to the new `disable-adminmessage` command. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/pulls/77" target="_blank">Pull 77</a>, thanks <a href="https://github.com/alejoroman0605" target="_blank">@alejoroman0605</a>!)</li>
+			<li>Release prep for 01.10.01. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/76" target="_blank">Issue 76</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<!--
+			<li>None at this time.</li>
+			<li> (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
+			-->
+		</ul>
+		<hr />
+
 		<h3>Version 01.10.00</h3>
 		<h4>Enhancements</h4>
 		<ul>
