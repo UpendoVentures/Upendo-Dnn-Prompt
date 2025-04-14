@@ -147,6 +147,8 @@ namespace Upendo.Modules.UpendoPrompt.Components
             public const string SchedulerNotFound = "Prompt_SchedulerNotFound";
 
             public const string UpendoSponsorMessage = "UpendoSponsorMessage";
+
+            public const string DisableAdminMessageResult = "DisableAdminMessageResult";
         }
 
         public static class Procedures
