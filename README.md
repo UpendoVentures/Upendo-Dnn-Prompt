@@ -1,7 +1,59 @@
-# Upendo Prompt  
+# ⚡ Upendo DNN Prompt  
+### Supercharge Your Site Admins with Command-Line Control for DNN  
+
 This is a [DNN CMS](https://dnncommunity.org) extension that installs prompts to help you perform repetitive tasks.  
 
 This project was originally created by [Upendo Ventures](https://upendoventures.com/What/CMS/DNN) for the [DNN Summit 2022](https://dnnsummit.org) conference, and was used to present how to create prompts in DNN for the built-in command line interface used by superusers.  
+
+> ⚡ Power, Speed, Simplicity — Promptly.
+>
+> No more fumbling through the UI.
+
+**Upendo DNN Prompt** empowers developers, admins, and power users to get things done — fast.
+
+---
+
+## ✨ What Is It?
+
+**Upendo DNN Prompt** extends the built-in DNN Prompt system, adding powerful new commands that make administration and debugging a breeze.
+
+Whether you're managing users, testing functionality, or preparing environments — you’ll do it faster here.
+
+---
+
+## 🚀 Core Features
+
+- 🛠️ **Nearly 20 Custom Prompt Commands**
+- ⚙️ Administer settings with a few keystrokes
+- 🧪 Validate users, roles, portals, and more
+- 🔐 Enforce best practices without touching the UI
+- 💡 Easily extendable & community-powered
+
+---
+
+## 💡 Real Examples from the Project
+
+Each feature is documented in PRs and commits, with screenshots, test logs, and explanations:
+
+- `compress-log-files` → Automatically zips and archives server logs monthly
+- `set-testusers` → Instantly generate test accounts with validation
+- `apply-roles` → Assigns roles across portals with intelligent defaults
+- `disable-adminmessage` → Silences noisy admin borders across the site
+
+> “The `set-captcha` command was introduced after community requests and now saves hours of manual work.”  
+> “`debug-mode` and `themes-used` commands streamline troubleshooting with zero clicks.”
+
+---
+
+## 👤 Who Should Use It?
+
+- **DNN site admins** looking for faster workflows  
+- **Developers** needing command-line automation  
+- **Hosting providers** managing multiple clients  
+- **QA teams** prepping test users or data  
+- **Nonprofits and startups** that need simplicity
+
+---
 
 * [Demonstration Video](https://www.youtube.com/watch?v=ToEBjbpoFSE&list=PLojRGd54eWTiK-0y8o5EBYVcCY2yzhTZk)  
 * [Documentation](https://github.com/UpendoVentures/Upendo-Dnn-Prompt/wiki)  
