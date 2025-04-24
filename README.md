@@ -40,7 +40,7 @@ Each feature is documented in PRs and commits, with screenshots, test logs, and 
 - `apply-roles` → Assigns roles across portals with intelligent defaults
 - `disable-adminmessage` → Silences noisy admin borders across the site
 
-> “The `set-captcha` command was introduced after community requests and now saves hours of manual work.”  
+> “The `set-captcha` command was introduced after community requests.”  
 > “`debug-mode` and `themes-used` commands streamline troubleshooting with zero clicks.”
 
 ---
