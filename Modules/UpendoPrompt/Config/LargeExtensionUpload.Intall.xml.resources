@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <nodes configfile="web.config">
+    <node path="/configuration/system.web/httpRuntime" action="updateattribute" name="maxRequestLength" value="153600" />
+    <node path="/configuration/system.webServer/security/requestFiltering/requestLimits" action="updateattribute" name="maxAllowedContentLength" value="157286400" />
+  </nodes>
+</configuration>

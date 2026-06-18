@@ -269,6 +269,12 @@ disable: Disables the scheduled job if it exists. If it doesn’t exist, it crea
   <data name="PromptDeleteTempFolder.Text" xml:space="preserve">
     <value>Running this command will delete the `/Install/Temp/` folder in your DNN website. This can help diagnose/prevent extension installation issues in some cases.</value>
   </data>
+  <data name="PromptLargeFileUpload.Text" xml:space="preserve">
+    <value>Toggles the web.config values required to install larger extension packages. If large uploads are already supported, this command restores the default upload limits.</value>
+  </data>
+  <data name="PromptLargeFileUpload" xml:space="preserve">
+    <value>Allows you to toggle support for installing larger extension packages by applying the matching XML merge file in the module Config folder.</value>
+  </data>
   <data name="PromptListAvailablePackages.Text" xml:space="preserve">
     <value>When you use this command, you will be shown a listing of all of the available packages that could be installed directly from the website itself. </value>
   </data>
@@ -548,6 +554,26 @@ disable: Disables the scheduled job if it exists. If it doesn’t exist, it crea
     &lt;code class="block"&gt;Impersonation was successful. Please refresh the page.&lt;/code&gt;
 &lt;/div&gt;</value>
   </data>
+  <data name="Prompt_LargeFileUpload_ResultHtml.Text" xml:space="preserve">
+    <value>&lt;div&gt;
+    &lt;p&gt;This command toggles support for installing larger extension packages by applying the XML merge files in the module Config folder.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;WARNING!&lt;/strong&gt; This command updates web.config and can restart the website.&lt;/p&gt;
+    &lt;h4&gt;Using set-largefileupload&lt;/h4&gt;
+    &lt;code class="block"&gt;set-largefileupload&lt;/code&gt;
+    &lt;p&gt;This command does not have any options.&lt;/p&gt;
+    &lt;p&gt;If large extension uploads are not already supported, the command applies the install merge file. If large extension uploads are already supported, the command applies the restore merge file.&lt;/p&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="Prompt_LargeFileUpload_ResultHtml" xml:space="preserve">
+    <value>&lt;div&gt;
+    &lt;p&gt;This command toggles support for installing larger extension packages by applying the XML merge files in the module Config folder.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;WARNING!&lt;/strong&gt; This command updates web.config and can restart the website.&lt;/p&gt;
+    &lt;h4&gt;Using set-largefileupload&lt;/h4&gt;
+    &lt;code class="block"&gt;set-largefileupload&lt;/code&gt;
+    &lt;p&gt;This command does not have any options.&lt;/p&gt;
+    &lt;p&gt;If large extension uploads are not already supported, the command applies the install merge file. If large extension uploads are already supported, the command applies the restore merge file.&lt;/p&gt;
+&lt;/div&gt;</value>
+  </data>
   <data name="Prompt_ListAvailablePackages_ResultHtml.Text" xml:space="preserve">
     <value>&lt;div&gt;
     &lt;p&gt;Some DNN websites may have extension packages sitting in the `/Install/` folders, waiting to be installed.
@@ -712,6 +738,18 @@ disable: Disables the scheduled job if it exists. If it doesn’t exist, it crea
   </data>
   <data name="StateOn.Text" xml:space="preserve">
     <value>ON</value>
+  </data>
+  <data name="LargeFileUploadEnabled.Text" xml:space="preserve">
+    <value>Large extension uploads are now supported. The upload limits have been increased to allow extension packages up to 150 MB. Your website may restart while the configuration change is applied.</value>
+  </data>
+  <data name="LargeFileUploadEnabled" xml:space="preserve">
+    <value>Large extension uploads are now supported. The upload limits have been increased to allow extension packages up to 150 MB. Your website may restart while the configuration change is applied.</value>
+  </data>
+  <data name="LargeFileUploadRestored.Text" xml:space="preserve">
+    <value>Large extension uploads were already supported, so the default upload limits have been restored. Your website may restart while the configuration change is applied.</value>
+  </data>
+  <data name="LargeFileUploadRestored" xml:space="preserve">
+    <value>Large extension uploads were already supported, so the default upload limits have been restored. Your website may restart while the configuration change is applied.</value>
   </data>
   <data name="TempFolderFilesDeleteSuccess.Text" xml:space="preserve">
     <value>The files and folders in the installation temporary folder have been deleted. </value>

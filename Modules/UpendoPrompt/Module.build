@@ -48,7 +48,7 @@
     <Copy SourceFiles="@(Images)" DestinationFolder="$(FullModulePath)\Images\%(RecursiveDir)" />
     <Copy SourceFiles="@(JsFiles)" DestinationFolder="$(FullModulePath)\Scripts\%(RecursiveDir)" />
     <Copy SourceFiles="@(Styles)" DestinationFolder="$(FullModulePath)\Styles\%(RecursiveDir)" />
-    <Copy SourceFiles="@(Configs)" DestinationFolder="$(FullModulePath)\Configs\%(RecursiveDir)" />
+    <Copy SourceFiles="@(Configs)" DestinationFolder="$(FullModulePath)\Config\%(RecursiveDir)" />
     <Copy SourceFiles="@(DataProvider)" DestinationFolder="$(FullModulePath)\Providers\DataProviders\SqlDataProvider" />
   </Target>
 </Project>
