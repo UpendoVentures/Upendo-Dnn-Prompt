@@ -149,6 +149,9 @@ namespace Upendo.Modules.UpendoPrompt.Components
             public const string UpendoSponsorMessage = "UpendoSponsorMessage";
 
             public const string DisableAdminMessageResult = "DisableAdminMessageResult";
+
+            public const string LargeFileUploadEnabled = "LargeFileUploadEnabled";
+            public const string LargeFileUploadRestored = "LargeFileUploadRestored";
         }
 
         public static class Procedures

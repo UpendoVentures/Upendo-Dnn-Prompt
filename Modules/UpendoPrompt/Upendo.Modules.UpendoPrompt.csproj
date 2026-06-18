@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\CompressLogFiles.cs" />
+    <Compile Include="Commands\LargeFileUpload.cs" />
     <Compile Include="Commands\DeleteTestUsers.cs" />
     <Compile Include="Commands\DeleteTempFolder.cs" />
     <Compile Include="Commands\DeleteDemoUsers.cs" />
@@ -191,6 +192,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Config\LargeExtensionUpload.Intall.xml.resources" />
+    <EmbeddedResource Include="Config\LargeExtensionUpload.Restore.xml.resources" />
     <EmbeddedResource Include="Config\log4net-DebugOff.xml.resources" />
     <EmbeddedResource Include="Config\webConfig-DebugOff.xml.resources" />
     <EmbeddedResource Include="Config\log4net-DebugOn.xml.resources" />
