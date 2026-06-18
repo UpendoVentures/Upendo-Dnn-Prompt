@@ -16,7 +16,7 @@ using Upendo.Modules.UpendoPrompt.Entities;
 using System.Web.Security;
 using DotNetNuke.UI.UserControls;
 using DotNetNuke.Services.Scheduling;
-using Upendo.Modules.UpendoPrompt.ScheduledJobs.ClearLogsJob;
+using Upendo.Modules.UpendoPrompt.ScheduledJobs;
 using Upendo.Modules.UpendoPrompt.Utility;
 using System.Linq;
 using Upendo.Modules.UpendoPrompt.Custom;
@@ -47,8 +47,15 @@ namespace Upendo.Modules.UpendoPrompt.Commands
                     schedulerMessage = ManageScheduler(Scheduler);
                 }
 
-                RunClearLogsJob();
+                LogCompressionResult result = RunClearLogsJob();
+
                 var output = string.Format(this.LocalizeString(Constants.LocalizationKeys.CompressLogFilesRunnerSuccess));
+
+                if (result != null && !string.IsNullOrWhiteSpace(result.Summary))
+                {
+                    output += Environment.NewLine + result.Summary;
+                }
+
                 if (!string.IsNullOrEmpty(schedulerMessage))
                 {
                     output += Environment.NewLine + schedulerMessage;
@@ -68,11 +75,14 @@ namespace Upendo.Modules.UpendoPrompt.Commands
             }
         }
 
-        private void RunClearLogsJob()
+        private LogCompressionResult RunClearLogsJob()
         {
             var schedulerItem = new ScheduleHistoryItem();
             var clearLogsJob = new ClearLogsJob(schedulerItem);
+
             clearLogsJob.DoWork();
+
+            return clearLogsJob.Result;
         }
 
         #endregion
