@@ -221,3 +221,6 @@ $RECYCLE.BIN/
 # DNN Logs
 [Ww]ebsite/[Pp]ortals/_default/[Ll]ogs/
 /MSBuildLog.txt
+
+*.bak
+*.patch
