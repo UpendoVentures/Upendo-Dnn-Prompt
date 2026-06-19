@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <nodes configfile="web.config">
+    <node path="/configuration/system.net/mailSettings" action="remove" />
+    <node path="/configuration/system.net" action="add">
+      <mailSettings>
+        <smtp deliveryMethod="SpecifiedPickupDirectory">
+          <specifiedPickupDirectory pickupDirectoryLocation="__PICKUP_DIRECTORY__" />
+        </smtp>
+      </mailSettings>
+    </node>
+  </nodes>
+</configuration>

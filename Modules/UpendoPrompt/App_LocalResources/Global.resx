@@ -834,4 +834,102 @@ disable: Disables the scheduled job if it exists. If it doesn’t exist, it crea
     &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This is a one-time update command. It does not create or require a scheduler item.&lt;/p&gt;
 &lt;/div&gt;</value>
   </data>
+  <data name="PromptLocalSmtpFolder.Text" xml:space="preserve">
+    <value>Toggles local SMTP pickup delivery for this website. If local pickup delivery is not configured, this command creates the _SMTP folder in the website root and updates web.config. If local pickup delivery is already configured, this command removes the web.config entry but leaves the _SMTP folder in place.</value>
+  </data>
+  <data name="PromptLocalSmtpFolder" xml:space="preserve">
+    <value>Allows you to toggle support for local SMTP pickup delivery by applying the matching XML merge file in the module Config folder.</value>
+  </data>
+  <data name="Prompt_LocalSmtpFolder_ResultHtml.Text" xml:space="preserve">
+    <value>&lt;div&gt;
+    &lt;p&gt;This command toggles local SMTP pickup delivery for the current DNN installation.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;WARNING!&lt;/strong&gt; This command updates web.config and can restart the website.&lt;/p&gt;
+    &lt;h4&gt;What it does&lt;/h4&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Creates an &lt;code&gt;_SMTP&lt;/code&gt; folder in the website root when local pickup delivery is being enabled.&lt;/li&gt;
+        &lt;li&gt;Uses the DNN application path at runtime so the pickup folder points to the correct website root.&lt;/li&gt;
+        &lt;li&gt;Updates &lt;code&gt;web.config&lt;/code&gt; by applying an XML merge file from the module Config folder.&lt;/li&gt;
+        &lt;li&gt;When local pickup delivery is already configured, removes the web.config entry and leaves the &lt;code&gt;_SMTP&lt;/code&gt; folder in place.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;h4&gt;Using set-localsmtpfolder&lt;/h4&gt;
+    &lt;code class="block"&gt;set-localsmtpfolder&lt;/code&gt;
+    &lt;p&gt;This command does not have any options.&lt;/p&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="Prompt_LocalSmtpFolder_ResultHtml" xml:space="preserve">
+    <value>&lt;div&gt;
+    &lt;p&gt;This command toggles local SMTP pickup delivery for the current DNN installation.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;WARNING!&lt;/strong&gt; This command updates web.config and can restart the website.&lt;/p&gt;
+    &lt;h4&gt;What it does&lt;/h4&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Creates an &lt;code&gt;_SMTP&lt;/code&gt; folder in the website root when local pickup delivery is being enabled.&lt;/li&gt;
+        &lt;li&gt;Uses the DNN application path at runtime so the pickup folder points to the correct website root.&lt;/li&gt;
+        &lt;li&gt;Updates &lt;code&gt;web.config&lt;/code&gt; by applying an XML merge file from the module Config folder.&lt;/li&gt;
+        &lt;li&gt;When local pickup delivery is already configured, removes the web.config entry and leaves the &lt;code&gt;_SMTP&lt;/code&gt; folder in place.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;h4&gt;Using set-localsmtpfolder&lt;/h4&gt;
+    &lt;code class="block"&gt;set-localsmtpfolder&lt;/code&gt;
+    &lt;p&gt;This command does not have any options.&lt;/p&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="LocalSmtpFolderEnabled.Text" xml:space="preserve">
+    <value>Local SMTP pickup delivery is now enabled. Email messages will be written to {0}. Your website may restart while the configuration change is applied.</value>
+  </data>
+  <data name="LocalSmtpFolderEnabled" xml:space="preserve">
+    <value>Local SMTP pickup delivery is now enabled. Email messages will be written to {0}. Your website may restart while the configuration change is applied.</value>
+  </data>
+  <data name="LocalSmtpFolderRestored.Text" xml:space="preserve">
+    <value>Local SMTP pickup delivery was already configured, so the web.config entry has been removed. The _SMTP folder was left in place. Your website may restart while the configuration change is applied.</value>
+  </data>
+  <data name="LocalSmtpFolderRestored" xml:space="preserve">
+    <value>Local SMTP pickup delivery was already configured, so the web.config entry has been removed. The _SMTP folder was left in place. Your website may restart while the configuration change is applied.</value>
+  </data>
+  <data name="PromptRememberLogin.Text" xml:space="preserve">
+    <value>Toggles the Remember Login web.config values. If the longer login values are already configured, this command restores the default values.</value>
+  </data>
+  <data name="PromptRememberLogin" xml:space="preserve">
+    <value>Allows you to toggle the Remember Login timeout and persistent cookie timeout by applying the matching XML merge file in the module Config folder.</value>
+  </data>
+  <data name="Prompt_RememberLogin_ResultHtml.Text" xml:space="preserve">
+    <value>&lt;div&gt;
+    &lt;p&gt;This command toggles the web.config values used to keep users logged in longer when they choose Remember Login.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;WARNING!&lt;/strong&gt; This command updates web.config and can restart the website.&lt;/p&gt;
+    &lt;h4&gt;What it does&lt;/h4&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Updates the forms authentication timeout under &lt;code&gt;system.web&lt;/code&gt;.&lt;/li&gt;
+        &lt;li&gt;Adds or updates the &lt;code&gt;PersistentCookieTimeout&lt;/code&gt; app setting.&lt;/li&gt;
+        &lt;li&gt;If the longer values are already configured, restores the default values.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;h4&gt;Using set-rememberlogin&lt;/h4&gt;
+    &lt;code class="block"&gt;set-rememberlogin&lt;/code&gt;
+    &lt;p&gt;This command does not have any options.&lt;/p&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="Prompt_RememberLogin_ResultHtml" xml:space="preserve">
+    <value>&lt;div&gt;
+    &lt;p&gt;This command toggles the web.config values used to keep users logged in longer when they choose Remember Login.&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;WARNING!&lt;/strong&gt; This command updates web.config and can restart the website.&lt;/p&gt;
+    &lt;h4&gt;What it does&lt;/h4&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Updates the forms authentication timeout under &lt;code&gt;system.web&lt;/code&gt;.&lt;/li&gt;
+        &lt;li&gt;Adds or updates the &lt;code&gt;PersistentCookieTimeout&lt;/code&gt; app setting.&lt;/li&gt;
+        &lt;li&gt;If the longer values are already configured, restores the default values.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;h4&gt;Using set-rememberlogin&lt;/h4&gt;
+    &lt;code class="block"&gt;set-rememberlogin&lt;/code&gt;
+    &lt;p&gt;This command does not have any options.&lt;/p&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="RememberLoginEnabled.Text" xml:space="preserve">
+    <value>Remember Login is now configured to keep remembered users logged in longer. Your website may restart while the configuration change is applied.</value>
+  </data>
+  <data name="RememberLoginEnabled" xml:space="preserve">
+    <value>Remember Login is now configured to keep remembered users logged in longer. Your website may restart while the configuration change is applied.</value>
+  </data>
+  <data name="RememberLoginRestored.Text" xml:space="preserve">
+    <value>Remember Login was already configured for longer sessions, so the default timeout values have been restored. Your website may restart while the configuration change is applied.</value>
+  </data>
+  <data name="RememberLoginRestored" xml:space="preserve">
+    <value>Remember Login was already configured for longer sessions, so the default timeout values have been restored. Your website may restart while the configuration change is applied.</value>
+  </data>
 </root>
