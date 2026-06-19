@@ -96,6 +96,7 @@
     <Compile Include="Commands\Deprecated\ThemesUsed.cs" />
     <Compile Include="Commands\DemoUsers.cs" />
     <Compile Include="Commands\ResetPassword.cs" />
+    <Compile Include="Commands\SetProfileImageFromGravatar.cs" />
     <Compile Include="Commands\Impersonate.cs" />
     <Compile Include="Commands\DeletePackages .cs" />
     <Compile Include="Commands\ListAvailablePackages.cs" />

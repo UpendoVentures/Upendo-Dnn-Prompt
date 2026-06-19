@@ -152,6 +152,20 @@ namespace Upendo.Modules.UpendoPrompt.Components
 
             public const string LargeFileUploadEnabled = "LargeFileUploadEnabled";
             public const string LargeFileUploadRestored = "LargeFileUploadRestored";
+
+            public const string SetProfileImageFromGravatarFailedContentType = "SetProfileImageFromGravatarFailedContentType";
+            public const string SetProfileImageFromGravatarFailedDownload = "SetProfileImageFromGravatarFailedDownload";
+            public const string SetProfileImageFromGravatarFailedException = "SetProfileImageFromGravatarFailedException";
+            public const string SetProfileImageFromGravatarFailedSize = "SetProfileImageFromGravatarFailedSize";
+            public const string SetProfileImageFromGravatarOverride = "SetProfileImageFromGravatarOverride";
+            public const string SetProfileImageFromGravatarResult = "SetProfileImageFromGravatarResult";
+            public const string SetProfileImageFromGravatarSkippedEmailMissing = "SetProfileImageFromGravatarSkippedEmailMissing";
+            public const string SetProfileImageFromGravatarSkippedExisting = "SetProfileImageFromGravatarSkippedExisting";
+            public const string SetProfileImageFromGravatarSkippedNotFound = "SetProfileImageFromGravatarSkippedNotFound";
+            public const string SetProfileImageFromGravatarSkippedUserMissing = "SetProfileImageFromGravatarSkippedUserMissing";
+            public const string SetProfileImageFromGravatarUnknownContentType = "SetProfileImageFromGravatarUnknownContentType";
+            public const string SetProfileImageFromGravatarUnknownUser = "SetProfileImageFromGravatarUnknownUser";
+            public const string SetProfileImageFromGravatarUpdated = "SetProfileImageFromGravatarUpdated";
         }
 
         public static class Procedures

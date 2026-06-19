@@ -775,4 +775,63 @@ disable: Disables the scheduled job if it exists. If it doesn’t exist, it crea
   <data name="DisableAdminMessageResult.Text" xml:space="preserve">
     <value>Successfully updated {0} modules to hide the admin message.</value>
   </data>
+  <data name="SetProfileImageFromGravatar.Text" xml:space="preserve">
+    <value>Sets missing user profile images from Gravatar for the current website. Existing profile images are not changed unless --override true is used.</value>
+  </data>
+  <data name="SetProfileImageFromGravatarFailedContentType.Text" xml:space="preserve">
+    <value>Skipped {0}: Gravatar returned an unsupported image type ({1}).</value>
+  </data>
+  <data name="SetProfileImageFromGravatarFailedDownload.Text" xml:space="preserve">
+    <value>Skipped {0}: Gravatar returned HTTP status {1}.</value>
+  </data>
+  <data name="SetProfileImageFromGravatarFailedException.Text" xml:space="preserve">
+    <value>Skipped {0}: {1}</value>
+  </data>
+  <data name="SetProfileImageFromGravatarFailedSize.Text" xml:space="preserve">
+    <value>Skipped {0}: the Gravatar image was empty or larger than the supported one megabyte limit.</value>
+  </data>
+  <data name="SetProfileImageFromGravatarOverride.Text" xml:space="preserve">
+    <value>Optional. Use --override true to replace existing profile images. Any other value is ignored.</value>
+  </data>
+  <data name="SetProfileImageFromGravatarResult.Text" xml:space="preserve">
+    <value>Finished Gravatar profile image update. Updated {0}; skipped {1}; failed {2}; total users checked {3}.</value>
+  </data>
+  <data name="SetProfileImageFromGravatarSkippedEmailMissing.Text" xml:space="preserve">
+    <value>Skipped {0}: no email address is available.</value>
+  </data>
+  <data name="SetProfileImageFromGravatarSkippedExisting.Text" xml:space="preserve">
+    <value>Skipped {0}: a profile image already exists.</value>
+  </data>
+  <data name="SetProfileImageFromGravatarSkippedNotFound.Text" xml:space="preserve">
+    <value>Skipped {0}: no Gravatar image was found.</value>
+  </data>
+  <data name="SetProfileImageFromGravatarSkippedUserMissing.Text" xml:space="preserve">
+    <value>Skipped one record: the user account could not be loaded.</value>
+  </data>
+  <data name="SetProfileImageFromGravatarUnknownContentType.Text" xml:space="preserve">
+    <value>unknown</value>
+  </data>
+  <data name="SetProfileImageFromGravatarUnknownUser.Text" xml:space="preserve">
+    <value>unknown user</value>
+  </data>
+  <data name="SetProfileImageFromGravatarUpdated.Text" xml:space="preserve">
+    <value>Updated {0}: saved {1} to the user profile folder and assigned it as the profile image.</value>
+  </data>
+  <data name="Prompt_SetProfileImageFromGravatar_ResultHtml.Text" xml:space="preserve">
+    <value>&lt;div&gt;
+    &lt;p&gt;This command checks the users in the current website and fills in missing profile images from Gravatar.&lt;/p&gt;
+    &lt;p&gt;It only updates users who do not already have a profile image assigned. Existing profile images are skipped unless &lt;code&gt;--override true&lt;/code&gt; is used.&lt;/p&gt;
+    &lt;h4&gt;What it does&lt;/h4&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Builds the Gravatar avatar URL from the user email address.&lt;/li&gt;
+        &lt;li&gt;Downloads the avatar only when Gravatar has a real image for that email address.&lt;/li&gt;
+        &lt;li&gt;Saves the image into the user profile folder using the DNN file system API.&lt;/li&gt;
+        &lt;li&gt;Updates the user profile Photo property to point to the saved file using the DNN profile API.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;h4&gt;Usage&lt;/h4&gt;
+    &lt;code class="block"&gt;set-profileimagefromgravatar&lt;/code&gt;
+    &lt;code class="block"&gt;set-profileimagefromgravatar --override true&lt;/code&gt;
+    &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This is a one-time update command. It does not create or require a scheduler item.&lt;/p&gt;
+&lt;/div&gt;</value>
+  </data>
 </root>
