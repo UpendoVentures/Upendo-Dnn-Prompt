@@ -152,6 +152,10 @@ namespace Upendo.Modules.UpendoPrompt.Components
 
             public const string LargeFileUploadEnabled = "LargeFileUploadEnabled";
             public const string LargeFileUploadRestored = "LargeFileUploadRestored";
+            public const string LocalSmtpFolderEnabled = "LocalSmtpFolderEnabled";
+            public const string LocalSmtpFolderRestored = "LocalSmtpFolderRestored";
+            public const string RememberLoginEnabled = "RememberLoginEnabled";
+            public const string RememberLoginRestored = "RememberLoginRestored";
 
             public const string SetProfileImageFromGravatarFailedContentType = "SetProfileImageFromGravatarFailedContentType";
             public const string SetProfileImageFromGravatarFailedDownload = "SetProfileImageFromGravatarFailedDownload";

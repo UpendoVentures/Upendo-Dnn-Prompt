@@ -84,6 +84,8 @@
   <ItemGroup>
     <Compile Include="Commands\CompressLogFiles.cs" />
     <Compile Include="Commands\LargeFileUpload.cs" />
+    <Compile Include="Commands\LocalSmtpFolder.cs" />
+    <Compile Include="Commands\RememberLogin.cs" />
     <Compile Include="Commands\DeleteTestUsers.cs" />
     <Compile Include="Commands\DeleteTempFolder.cs" />
     <Compile Include="Commands\DeleteDemoUsers.cs" />
@@ -195,6 +197,11 @@
   <ItemGroup>
     <EmbeddedResource Include="Config\LargeExtensionUpload.Intall.xml.resources" />
     <EmbeddedResource Include="Config\LargeExtensionUpload.Restore.xml.resources" />
+    <EmbeddedResource Include="Config\LocalSmtpFolder.EnsureSystemNet.xml.resources" />
+    <EmbeddedResource Include="Config\LocalSmtpFolder.Install.xml.resources" />
+    <EmbeddedResource Include="Config\LocalSmtpFolder.Restore.xml.resources" />
+    <EmbeddedResource Include="Config\RememberLogin.Install.xml.resources" />
+    <EmbeddedResource Include="Config\RememberLogin.Restore.xml.resources" />
     <EmbeddedResource Include="Config\log4net-DebugOff.xml.resources" />
     <EmbeddedResource Include="Config\webConfig-DebugOff.xml.resources" />
     <EmbeddedResource Include="Config\log4net-DebugOn.xml.resources" />

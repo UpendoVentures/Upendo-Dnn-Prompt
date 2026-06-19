@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <nodes configfile="web.config">
+    <node path="/configuration" action="add">
+      <system.net />
+    </node>
+  </nodes>
+</configuration>

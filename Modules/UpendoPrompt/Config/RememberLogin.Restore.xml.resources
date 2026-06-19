@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <nodes configfile="web.config">
+    <node path="/configuration/system.web/authentication/forms" action="updateattribute" name="timeout" value="60" />
+    <node path="/configuration/appSettings" action="update" collision="overwrite" key="key">
+      <add key="PersistentCookieTimeout" value="0" />
+    </node>
+  </nodes>
+</configuration>

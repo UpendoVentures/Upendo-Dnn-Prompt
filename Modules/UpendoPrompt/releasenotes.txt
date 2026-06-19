@@ -1,7 +1,99 @@
 <style>
-	div.uv-install-wrapper h3, div.uv-install-wrapper h4, div.uv-install-wrapper p, div.uv-install-wrapper hr, div.uv-install-wrapper ul { margin-bottom: 0.5em; }
-	div.uv-install-wrapper ul { padding-left: 2em; }
-	.muy-importante { color:red;font-weight:bold; }
+	div.uv-install-wrapper {
+		box-sizing: border-box;
+		color: #1f2933;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 13px;
+		line-height: 1.45;
+		padding: 0.25em 0.75em 1em;
+	}
+
+	div.uv-install-wrapper * {
+		box-sizing: border-box;
+	}
+
+	div.uv-install-wrapper h2,
+	div.uv-install-wrapper h3,
+	div.uv-install-wrapper h4,
+	div.uv-install-wrapper p,
+	div.uv-install-wrapper hr,
+	div.uv-install-wrapper ul {
+		margin-top: 0;
+	}
+
+	div.uv-install-wrapper h2 {
+		border-bottom: 2px solid #0e6ba8;
+		color: #0b3d5c;
+		font-size: 1.35em;
+		line-height: 1.2;
+		margin-bottom: 0.8em;
+		padding-bottom: 0.35em;
+	}
+
+	div.uv-install-wrapper h3 {
+		background: #eef7fc;
+		border-left: 4px solid #0e6ba8;
+		color: #0b3d5c;
+		font-size: 1.1em;
+		line-height: 1.25;
+		margin: 1.1em 0 0.45em;
+		padding: 0.35em 0.55em;
+	}
+
+	div.uv-install-wrapper h4 {
+		color: #333;
+		font-size: 1em;
+		font-weight: bold;
+		margin: 0.85em 0 0.35em;
+	}
+
+	div.uv-install-wrapper p {
+		margin-bottom: 0.55em;
+	}
+
+	div.uv-install-wrapper ul {
+		list-style-position: outside;
+		margin: 0 0 0.85em 0;
+		padding-left: 2.25em;
+	}
+
+	div.uv-install-wrapper ul li {
+		display: list-item;
+		margin: 0 0 0.45em 0;
+		padding-left: 0.35em;
+	}
+
+	div.uv-install-wrapper a {
+		color: #0e6ba8;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+
+	div.uv-install-wrapper code {
+		background: #f3f4f6;
+		border: 1px solid #d8dde3;
+		border-radius: 3px;
+		color: #7a2e0e;
+		font-family: Consolas, Monaco, "Courier New", monospace;
+		font-size: 0.95em;
+		padding: 0.05em 0.25em;
+	}
+
+	div.uv-install-wrapper hr {
+		border: 0;
+		border-top: 1px solid #d8dde3;
+		height: 0;
+		margin: 0.9em 0;
+	}
+
+	div.uv-install-wrapper .muy-importante {
+		background: #fff4d6;
+		border: 1px solid #e5b95c;
+		border-left: 4px solid #d28c00;
+		color: #553800;
+		font-weight: bold;
+		padding: 0.55em 0.75em;
+	}
 </style>
 <div class="uv-install-wrapper">
 	<h2>UpendoPrompt Modules Extension for DNN</h2>
@@ -16,9 +108,8 @@
 		<p>THANK YOU to the following rockstars!</p>
 		<ul>
 			<li>Adam Bernstein, <a href="https://practicewise.com/" target="_blank">PracticeWise</a></li>
-			<li>Jeremy Farrance, <a href="https://accuraty.com/" target="_blank">Accuraty</a></li>
-			<li><a href="http://www.rammware.net/" target="_blank">John Ramminger</a></li>
-			<li><em>2 private sponsors</em></li>
+			<li>Dan Rice, <a href="https://www.puresystems.co.uk/" target="_blank">PureSystems</a></li>
+			<li><em>4 private sponsors</em></li>
 		</ul>
 	
 		<h3>Contributors</h3>
@@ -35,6 +126,28 @@
 		</ul>
 		<hr />
 
+		<h3>Version 01.11.00</h3>
+		<h4>Enhancements</h4>
+		<ul>
+			<li>Added <code>set-largefileupload</code> as a new command. This safely toggles the upload limits needed to install larger extension packages by applying the matching XML merge file, then allows administrators to run the same command again to restore the default upload limits. This helps avoid manual <code>web.config</code> edits and reduces the chance of leaving larger upload limits enabled longer than needed. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/84" target="_blank">Issue 84</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>Added <code>set-localsmtpfolder</code> as a new command. This safely toggles local SMTP pickup delivery by creating an <code>_SMTP</code> folder in the website root and applying the matching XML merge file to update <code>web.config</code>. Running the command again removes the local SMTP configuration while leaving the <code>_SMTP</code> folder in place, making it easier to test email delivery without manually editing configuration files. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/88" target="_blank">Issue 88</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>Added <code>set-rememberlogin</code> as a new command. This safely toggles the recommended persistent login settings for the Remember Login option by applying the matching XML merge files. Running the command once extends the login timeout and persistent cookie timeout, then running it again restores the default values. This helps administrators improve login convenience without manually editing <code>web.config</code>. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/89" target="_blank">Issue 89</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>Raised the minimum supported DNN version to 09.13.00. This aligns installation, development, testing, and support with a newer baseline and reduces maintenance overhead from older platform behavior. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/82" target="_blank">Issue 82</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<!--
+			<li>SI:  (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
+			-->
+		</ul>
+		<h4>Maintenance &amp; Bug Fixes</h4>
+		<ul>
+			<li>Improved the Clear DNN Logs compression logic to more reliably archive prior-month log files. The job now matches known log files by creation date, last write date, and filename date pattern, which prevents valid log files from being skipped after files are copied, restored, extracted, or moved. The command output is also clearer when no matching files are found. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/81" target="_blank">Issue 81</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>Release prep for 01.11.00, including version references, manifest updates, and packaging updates for the new commands and XML merge resources. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/pulls/83" target="_blank">Pull 83</a> and <a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/pulls/85" target="_blank">Pull 85</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<!--
+			<li>None at this time.</li>
+			<li> (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
+			-->
+		</ul>
+		<hr />
+
 		<h3>Version 01.10.01</h3>
 		<h4>Enhancements</h4>
 		<ul>
@@ -43,9 +156,9 @@
 			<li>SI:  (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
 			-->
 		</ul>
-		<h4>Maintenence &amp Bug Fixes</h4>
+		<h4>Maintenance &amp; Bug Fixes</h4>
 		<ul>
-			<li>Added a missing localization value to the new `disable-adminmessage` command. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/pulls/77" target="_blank">Pull 77</a>, thanks <a href="https://github.com/alejoroman0605" target="_blank">@alejoroman0605</a>!)</li>
+			<li>Added a missing localization value to the new <code>disable-adminmessage</code> command. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/pulls/77" target="_blank">Pull 77</a>, thanks <a href="https://github.com/alejoroman0605" target="_blank">@alejoroman0605</a>!)</li>
 			<li>Release prep for 01.10.01. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/76" target="_blank">Issue 76</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
 			<!--
 			<li>None at this time.</li>
@@ -57,12 +170,12 @@
 		<h3>Version 01.10.00</h3>
 		<h4>Enhancements</h4>
 		<ul>
-			<li>SI: Added the `disable-adminmessage` command. This allows you turn off the admin messages on the entire site. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/74" target="_blank">Issue 74</a>, thanks <a href="https://github.com/alejoroman0605" target="_blank">@alejoroman0605</a>!)</li>
+			<li>SI: Added the <code>disable-adminmessage</code> command. This allows you turn off the admin messages on the entire site. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/74" target="_blank">Issue 74</a>, thanks <a href="https://github.com/alejoroman0605" target="_blank">@alejoroman0605</a>!)</li>
 			<!--
 			<li>SI:  (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
 			-->
 		</ul>
-		<h4>Maintenence &amp Bug Fixes</h4>
+		<h4>Maintenance &amp; Bug Fixes</h4>
 		<ul>
 			<li>Release prep for 01.10.00. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/76" target="_blank">Issue 76</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
 			<!--
@@ -75,12 +188,12 @@
 		<h3>Version 01.09.01</h3>
 		<h4>Enhancements</h4>
 		<ul>
-			<li>SI: Added `-scheduler` switch to the `compress-log-files` command. This allows you to enable/disable the underlying scheduled job. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/69" target="_blank">Issue 69</a>, thanks <a href="https://github.com/ArielBlanco1990" target="_blank">@ArielBlanco1990</a>!)</li>
+			<li>SI: Added <code>-scheduler</code> switch to the <code>compress-log-files</code> command. This allows you to enable/disable the underlying scheduled job. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/69" target="_blank">Issue 69</a>, thanks <a href="https://github.com/ArielBlanco1990" target="_blank">@ArielBlanco1990</a>!)</li>
 			<!--
 			<li>SI:  (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
 			-->
 		</ul>
-		<h4>Maintenence &amp Bug Fixes</h4>
+		<h4>Maintenance &amp; Bug Fixes</h4>
 		<ul>
 			<li>Release prep for 01.09.01. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/71" target="_blank">Issue 71</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
 			<!--
@@ -93,12 +206,12 @@
 		<h3>Version 01.09.00</h3>
 		<h4>Enhancements</h4>
 		<ul>
-			<li>SI: Added `compress-log-files` as a new command. This allows you to archive the physical log files from the past month, automatically or on-demand. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/65" target="_blank">Issue 65</a>, thanks <a href="https://github.com/ArielBlanco1990" target="_blank">@ArielBlanco1990</a>!)</li>
+			<li>SI: Added <code>compress-log-files</code> as a new command. This allows you to archive the physical log files from the past month, automatically or on-demand. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/65" target="_blank">Issue 65</a>, thanks <a href="https://github.com/ArielBlanco1990" target="_blank">@ArielBlanco1990</a>!)</li>
 			<!--
 			<li>SI:  (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
 			-->
 		</ul>
-		<h4>Maintenence &amp Bug Fixes</h4>
+		<h4>Maintenance &amp; Bug Fixes</h4>
 		<ul>
 			<li>None at this time.</li>
 			<!--
@@ -111,12 +224,12 @@
 		<h3>Version 01.08.00</h3>
 		<h4>Enhancements</h4>
 		<ul>
-			<li>SI: Added `apply-roles` as a new command. This allows you to create and apply a site-wide `Site Admin` security role to use for content editing. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/62" target="_blank">Issue 62</a>, thanks <a href="https://github.com/ArielBlanco1990" target="_blank">@ArielBlanco1990</a>!)</li>
+			<li>SI: Added <code>apply-roles</code> as a new command. This allows you to create and apply a site-wide <code>Site Admin</code> security role to use for content editing. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/62" target="_blank">Issue 62</a>, thanks <a href="https://github.com/ArielBlanco1990" target="_blank">@ArielBlanco1990</a>!)</li>
 			<!--
 			<li>SI:  (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
 			-->
 		</ul>
-		<h4>Maintenence &amp Bug Fixes</h4>
+		<h4>Maintenance &amp; Bug Fixes</h4>
 		<ul>
 			<li>None at this time.</li>
 			<!--
@@ -129,18 +242,18 @@
 		<h3>Version 01.07.00</h3>
 		<h4>Enhancements</h4>
 		<ul>
-			<li>SI: Added `password-reset` as a new command. You can choose to flag which account(s) to specify for reset using multiple flags. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/pulls/56" target="_blank">No Issue</a>, thanks <a href="https://github.com/ArielBlanco1990" target="_blank">@ArielBlanco1990</a>!)</li>
-			<li>Added `set-testusers` &amp; `delete-testusers` as new commands. This helps to create test environments during development. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/45" target="_blank">Issue 45</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
-			<li>Added `delete-demousers` as a new command. This allows authorized end-users to permanently delete user accounts created by `set-demousers`. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/45" target="_blank">Issue 45</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>SI: Added <code>password-reset</code> as a new command. You can choose to flag which account(s) to specify for reset using multiple flags. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/pulls/56" target="_blank">No Issue</a>, thanks <a href="https://github.com/ArielBlanco1990" target="_blank">@ArielBlanco1990</a>!)</li>
+			<li>Added <code>set-testusers</code> &amp; <code>delete-testusers</code> as new commands. This helps to create test environments during development. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/45" target="_blank">Issue 45</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>Added <code>delete-demousers</code> as a new command. This allows authorized end-users to permanently delete user accounts created by <code>set-demousers</code>. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/45" target="_blank">Issue 45</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
 			<li>Increased minimum DNN support to 09.11.00. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/52" target="_blank">Issue 52</a>, thanks <a href="https://github.com/alejoroman0605" target="_blank">@alejoroman0605</a>!)</li>
 			<!--
 			<li>SI:  (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
 			-->
 		</ul>
-		<h4>Maintenence &amp Bug Fixes</h4>
+		<h4>Maintenance &amp; Bug Fixes</h4>
 		<ul>
-			<li>SI: Command `set-demousers` Not Working if Membership Rules are Not Met (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/47" target="_blank">Issue 47</a>, thanks <a href="https://github.com/alejoroman0605" target="_blank">@alejoroman0605</a>!)</li>
-			<li>Uninstall Script Doesn't Remove `uvm_Prompt_GetThemesUsed` Stored Procedure (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/43" target="_blank">Issue 43</a>, thanks <a href="https://github.com/alejoroman0605" target="_blank">@alejoroman0605</a>!)</li>
+			<li>SI: Command <code>set-demousers</code> Not Working if Membership Rules are Not Met (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/47" target="_blank">Issue 47</a>, thanks <a href="https://github.com/alejoroman0605" target="_blank">@alejoroman0605</a>!)</li>
+			<li>Uninstall Script Doesn't Remove <code>uvm_Prompt_GetThemesUsed</code> Stored Procedure (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/43" target="_blank">Issue 43</a>, thanks <a href="https://github.com/alejoroman0605" target="_blank">@alejoroman0605</a>!)</li>
 			<li>Updated to Build Against .NET 4.8 (No Issue. Thanks, <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
 			<li>Added a Missing Reference for an Earlier SqlDataProvider file (No Issue. Thanks, <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
 			<!--
@@ -153,13 +266,13 @@
 		<h3>Version 01.06.00</h3>
 		<h4>Enhancements</h4>
 		<ul>
-			<li>Added `set-demousers` as a new command. This allows authorized end-users to create a small number of user accounts for testing, demo, etc. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/45" target="_blank">Issue 45</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
-			<li>Added `delete-demousers` as a new command. This allows authorized end-users to permanently delete user accounts created by `set-demousers`. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/45" target="_blank">Issue 45</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>Added <code>set-demousers</code> as a new command. This allows authorized end-users to create a small number of user accounts for testing, demo, etc. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/45" target="_blank">Issue 45</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>Added <code>delete-demousers</code> as a new command. This allows authorized end-users to permanently delete user accounts created by <code>set-demousers</code>. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/45" target="_blank">Issue 45</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
 			<!--
 			<li>SI:  (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/" target="_blank">Issue </a>, thanks <a href="https://github.com/" target="_blank">@</a>!)</li>
 			-->
 		</ul>
-		<h4>Maintenence &amp Bug Fixes</h4>
+		<h4>Maintenance &amp; Bug Fixes</h4>
 		<ul>
 			<li>None at this time.</li>
 			<!--
@@ -171,9 +284,9 @@
 		<h3>Version 01.05.00</h3>
 		<h4>Enhancements</h4>
 		<ul>
-			<li>CI: Added `set-captcha` as a new command. This allows authorized end-users toggle the login CAPTCHA on and off. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/39" target="_blank">Issue 39</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
+			<li>CI: Added <code>set-captcha</code> as a new command. This allows authorized end-users toggle the login CAPTCHA on and off. (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/39" target="_blank">Issue 39</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
 		</ul>
-		<h4>Maintenence &amp Bug Fixes</h4>
+		<h4>Maintenance &amp; Bug Fixes</h4>
 		<ul>
 			<li>Raised the minimum DNN version to 09.11.00 (<a href="https://github.com/UpendoVentures/Upendo-Dnn-Prompt/issues/38" target="_blank">Issue 38</a>, thanks <a href="https://github.com/WillStrohl" target="_blank">@WillStrohl</a>!)</li>
 		</ul>
@@ -182,46 +295,46 @@
 		<h3>Version 01.04.00</h3>
 		<ul>
 			<li>Lowered the supported version of DNN Platform to 09.11.00 and higher.</li>
-			<li>Added `impersonate` as a new command. This allows authorized end-users to impersonate other user accounts.</li>
-			<li>Added `list-availablepackages` as a new command. This allows you to review to see if there are any extension packages waiting to be installed.</li>
-			<li>Added `list-packages` as a new command. This allows you to see what extension packages are saved in the `/App_Data/ExtensionPackages/` folder.</li>
-			<li>Added `delete-packages` as a new command. This allows you to delete all of the saved extension packages in the `/App_Data/ExtensionPackages/` folder.</li>
-			<li>Added `delete-tempfolder` as a new command. This allows you to delete the temporary install/upgrade folder and all all of its contents.</li>
+			<li>Added <code>impersonate</code> as a new command. This allows authorized end-users to impersonate other user accounts.</li>
+			<li>Added <code>list-availablepackages</code> as a new command. This allows you to review to see if there are any extension packages waiting to be installed.</li>
+			<li>Added <code>list-packages</code> as a new command. This allows you to see what extension packages are saved in the <code>/App_Data/ExtensionPackages/</code> folder.</li>
+			<li>Added <code>delete-packages</code> as a new command. This allows you to delete all of the saved extension packages in the <code>/App_Data/ExtensionPackages/</code> folder.</li>
+			<li>Added <code>delete-tempfolder</code> as a new command. This allows you to delete the temporary install/upgrade folder and all all of its contents.</li>
 		</ul>
 		<hr />
 
 		<h3>Version 01.03.01</h3>
 		<ul>
-			<li>Renamed `debug-info` to `list-debug`. The deprecated `debug-info` command will be removed in version 1.5.0 or newer.</li>
-			<li>Renamed `debug-mode` to `set-debug`. The deprecated `debug-mode` command will be removed in version 1.5.0 or newer.</li>
-			<li>Renamed `popups-mode` to `set-popups`. The deprecated `popup-mode` command will be removed in version 1.5.0 or newer.</li>
-			<li>Renamed `themes-used` to `list-themes`. The deprecated `themes-used` command will be removed in version 1.5.0 or newer.</li>
+			<li>Renamed <code>debug-info</code> to <code>list-debug</code>. The deprecated <code>debug-info</code> command will be removed in version 1.5.0 or newer.</li>
+			<li>Renamed <code>debug-mode</code> to <code>set-debug</code>. The deprecated <code>debug-mode</code> command will be removed in version 1.5.0 or newer.</li>
+			<li>Renamed <code>popups-mode</code> to <code>set-popups</code>. The deprecated <code>popup-mode</code> command will be removed in version 1.5.0 or newer.</li>
+			<li>Renamed <code>themes-used</code> to <code>list-themes</code>. The deprecated <code>themes-used</code> command will be removed in version 1.5.0 or newer.</li>
 		</ul>
 		<hr />
 
 		<h3>Version 01.03.00</h3>
 		<ul>
-			<li>`themes-used`: A new command is available that lists the themes used throughout the DNN instance.</li>
-			<li>Updated the help text for `debug-info` and `debug-mode`.</li>
+			<li><code>themes-used</code>: A new command is available that lists the themes used throughout the DNN instance.</li>
+			<li>Updated the help text for <code>debug-info</code> and <code>debug-mode</code>.</li>
 		</ul>
 		<hr />
 
 		<h3>Version 01.02.00</h3>
 		<ul>
-			<li>`debug-info`: A new command is available that lists the debug mode for the major 3 debug areas.</li>
+			<li><code>debug-info</code>: A new command is available that lists the debug mode for the major 3 debug areas.</li>
 			<li>Some minor refactoring was necessary to add the new prompt.</li>
 		</ul>
 		<hr />
 
 		<h3>Version 01.01.01</h3>
 		<ul>
-			<li>`debug-mode`: Removes a redundant call to save the configuration update.</li>
+			<li><code>debug-mode</code>: Removes a redundant call to save the configuration update.</li>
 		</ul>
 		<hr />
 
 		<h3>Version 01.01.00</h3>
 		<ul>
-			<li>Includes a prompt for: `debug-mode`</li>
+			<li>Includes a prompt for: <code>debug-mode</code></li>
 			<li>Resolves localization fixes for the 'popup-mode' prompt.</li>
 			<li>Cleaned up a minor typo in the solution project file.</li>
 			<li>Updated build process to include .resource files when in a Config folder.</li>
@@ -231,7 +344,7 @@
 		<h3>Version 01.00.00</h3>
 		<ul>
 			<li>Initial release.</li>
-			<li>Includes a prompt for: `popup-mode`</li>
+			<li>Includes a prompt for: <code>popup-mode</code></li>
 		</ul>
 		<hr />
 
